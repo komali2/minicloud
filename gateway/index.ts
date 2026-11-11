@@ -2,6 +2,8 @@ import type { AppRow, Manifest, Connection } from "../server/types";
 import { getConnection, audit } from "../server/db";
 import { erpQuery, erpCreate } from "../connectors/erpnext";
 import { csvQuery } from "../connectors/csvfile";
+import { webdavQuery } from "../connectors/webdav";
+import { restQuery } from "../connectors/rest";
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
@@ -53,6 +55,8 @@ export async function handleQuery(app: AppRow, queryId: string, url: URL): Promi
     const rows =
       conn.kind === "erpnext" ? await erpQuery(conn, q)
       : conn.kind === "csv" ? await csvQuery(conn, q)
+      : conn.kind === "webdav" ? await webdavQuery(conn, q)
+      : conn.kind === "rest" ? await restQuery(conn, q)
       : (() => { throw new Error(`unsupported connection kind ${conn.kind}`); })();
     audit({
       app_id: app.id, kind: "query", ref_id: queryId, connection_id: conn.id,

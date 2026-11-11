@@ -173,7 +173,7 @@ export async function generate(
   const spec = getModel(modelId);
   const messages: any[] = [
     { role: "system", content: SYSTEM_PROMPT },
-    { role: "user", content: `AVAILABLE CONNECTIONS\n\n${connectionHints(conns)}\n\nTHE EMPLOYEE'S REQUEST\n\n${prompt}` },
+    { role: "user", content: `AVAILABLE CONNECTIONS\n\n${await connectionHints(conns)}\n\nTHE EMPLOYEE'S REQUEST\n\n${prompt}` },
   ];
 
   onProgress("model", spec.label, { local: spec.local });

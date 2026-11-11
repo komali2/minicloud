@@ -1,4 +1,5 @@
 import { MODELS, defaultModelId } from "../generator/models";
+import { CONNECTOR_TYPES, type ConnectorType } from "../connectors/registry";
 import type { Connection, AppRow } from "./types";
 
 /** Render a stored ISO timestamp in the appliance's local timezone, not UTC. */
@@ -55,6 +56,29 @@ button:disabled{opacity:.55;cursor:default}
 .done .qr{background:#fff;padding:9px;border-radius:9px;line-height:0}
 .done .qr svg{width:116px;height:116px;display:block}
 .done .hint{color:var(--dim);font-size:13.5px;max-width:330px}
+/* admin */
+.nav{float:right;font-size:14px}
+.conn-row{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:15px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px}
+.conn-row .t{font-weight:600;font-size:16px}
+.conn-row .u{color:var(--dim);font:13px ui-monospace,Menlo,monospace;margin-top:4px;word-break:break-all}
+.conn-row .st{margin-top:8px;font-size:13.5px}
+.conn-row .st.ok{color:var(--ok)}
+.conn-row .st.bad{color:var(--err)}
+.conn-row .used{margin-top:7px;color:var(--dim);font-size:13px}
+.kind{display:inline-block;font:600 11px/1 ui-monospace,Menlo,monospace;color:var(--dim);background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:4px 7px;margin-left:9px;vertical-align:2px;text-transform:uppercase;letter-spacing:.05em}
+.types{display:grid;grid-template-columns:repeat(auto-fill,minmax(236px,1fr));gap:10px;margin-top:4px}
+.type{text-align:left;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:13px;cursor:pointer;color:var(--tx);font:inherit;min-height:0}
+.type:hover{border-color:var(--acc)}
+.type.sel{border-color:var(--acc);background:#16233a}
+.type[disabled]{opacity:.5;cursor:not-allowed}
+.type .n{font-weight:600;font-size:14.5px}
+.type .d{color:var(--dim);font-size:12.5px;margin-top:5px;line-height:1.45}
+.type .soon{display:inline-block;margin-top:8px;font:600 10.5px/1 inherit;letter-spacing:.06em;text-transform:uppercase;color:#d8a657}
+label{display:block;margin-top:13px;font-size:13px;color:var(--dim)}
+label input{width:100%;margin-top:5px;background:var(--panel2);color:var(--tx);border:1px solid var(--line);border-radius:9px;padding:10px 12px;font:inherit}
+label input:focus{outline:none;border-color:var(--acc)}
+.help{color:var(--dim);font-size:12.5px;margin-top:4px}
+.caps2{color:var(--dim);font-size:13px;margin-top:12px;line-height:1.6}
 button .sp{display:inline-block;width:13px;height:13px;margin-right:8px;border:2px solid rgba(7,16,31,.3);border-top-color:#07101f;border-radius:50%;animation:rot .6s linear infinite;vertical-align:-2px}
 @keyframes rot{to{transform:rotate(360deg)}}
 h2{font-size:14px;text-transform:uppercase;letter-spacing:.09em;color:var(--dim);margin:40px 0 12px;font-weight:600}
@@ -122,13 +146,14 @@ export function homePage(apps: AppRow[], conns: Connection[]) {
 
   return page(
     "minicloud",
-    `<header><h1>minicloud</h1><span class="tag">the app factory inside your network</span></header>
+    `<header><h1>minicloud</h1><span class="tag">the app factory inside your network</span>
+<span class="nav"><a href="/admin">connected systems &rarr;</a></span></header>
 <p class="sub">Describe the internal tool you need. You'll get a working app at a shareable link.</p>
 <div class="card">
   <textarea id="p" placeholder="e.g. a stock count form for Aisle 4"></textarea>
   <div class="row"><select id="m">${opts}</select><button id="go">Build it</button></div>
   <div class="ex">${EXAMPLES.map((e) => `<button data-e="${esc(e)}">${esc(e)}</button>`).join("")}</div>
-  <div class="conn">Connected systems: ${connLine}</div>
+  <div class="conn">Connected systems: ${connLine} <a href="/admin" style="margin-left:6px">manage</a></div>
   <div id="build"><div class="bhead"><span id="bphase">building</span><span id="elapsed">0.0s</span></div><div id="steps"></div></div>
   <div class="done" id="done">
     <div class="hd"><span class="tick">&#10003;</span><span id="dtitle">Your app is live</span></div>
@@ -251,5 +276,74 @@ ${(manifest.actions ?? [])
 <div class="card" style="padding:4px 8px"><table>
 <tr><th>time</th><th>ref</th><th>kind</th><th>conn</th><th>status</th><th>rows</th><th>took</th><th>detail</th></tr>
 ${body}</table></div>`
+  );
+}
+
+
+export function adminPage(
+  rows: { conn: Connection; status?: { ok: boolean; detail: string }; used: string[] }[]
+) {
+  const typeCards = CONNECTOR_TYPES.map(
+    (t: ConnectorType) => `<button type="button" class="type" data-kind="${esc(t.kind)}"${t.status === "planned" ? " disabled" : ""}>
+<div class="n">${esc(t.label)}</div><div class="d">${esc(t.blurb)}</div>${t.status === "planned" ? '<div class="soon">not yet verified</div>' : ""}</button>`
+  ).join("");
+
+  const list = rows.length
+    ? rows.map(({ conn, status, used }) => `<div class="conn-row">
+<div class="l"><div class="t">${esc(conn.name)}<span class="kind">${esc(conn.kind)}</span></div>
+<div class="u">${esc(conn.base_url)}</div>
+${status ? `<div class="st ${status.ok ? "ok" : "bad"}">${status.ok ? "&#10003;" : "&#10007;"} ${esc(status.detail)}</div>` : ""}
+<div class="used">${used.length ? `used by ${used.length} app(s): ${esc(used.join(", "))}` : "not used by any app yet"}</div></div>
+<div class="r">
+<form method="POST" action="/admin/connections/${esc(conn.id)}/test" style="display:inline"><button class="btn ghost">Test</button></form>
+<form method="POST" action="/admin/connections/${esc(conn.id)}/delete" style="display:inline"
+ onsubmit="return confirm('Remove ${esc(conn.name)}? Apps that declared queries against it will stop working.')">
+<button class="btn ghost">Remove</button></form></div></div>`).join("")
+    : `<div class="empty">No systems connected yet.</div>`;
+
+  const specs = JSON.stringify(
+    Object.fromEntries(CONNECTOR_TYPES.map((t) => [t.kind, { endpoint: t.endpoint, secrets: t.secrets, reads: t.reads, writes: t.writes }]))
+  );
+
+  return page(
+    "minicloud · connected systems",
+    `<header><h1>Connected systems</h1><span class="tag">IT administration</span><span class="nav"><a href="/">&larr; back to apps</a></span></header>
+<p class="sub">Credentials live here and nowhere else. Generated apps never receive them &mdash; they reach these systems only through the gateway, and only for the queries their manifest declares.</p>
+
+<h2 style="margin-top:0">Connections</h2>
+${list}
+
+<h2>Add a connection</h2>
+<div class="card">
+  <form method="POST" action="/admin/connections" id="addf">
+    <div class="types">${typeCards}</div>
+    <input type="hidden" name="kind" id="kind">
+    <div id="fields"></div>
+    <div class="row"><button type="submit" id="save" disabled>Connect</button></div>
+  </form>
+</div>
+<script>
+const SPECS=${specs};
+const $=s=>document.querySelector(s);
+function field(f,i){
+  return '<label>'+f.label+(f.required?' *':'')+
+    '<input name="'+f.key+'"'+(f.secret?' type="password"':'')+
+    (f.placeholder?' placeholder="'+f.placeholder+'"':'')+
+    (f.required?' required':'')+(i===0?' autofocus':'')+'></label>'+
+    (f.help?'<div class="help">'+f.help+'</div>':'');
+}
+document.querySelectorAll('.type').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.type').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel');
+  const kind=b.dataset.kind, sp=SPECS[kind];
+  $('#kind').value=kind;
+  let h='<label>Display name *<input name="name" required placeholder="e.g. Plant NAS" autofocus></label>';
+  h+=field(sp.endpoint,1);
+  sp.secrets.forEach(f=>h+=field(f,1));
+  h+='<div class="caps2">Apps may read: '+sp.reads+'<br>Apps may write: '+(sp.writes||'nothing \u2014 this connection is read-only')+'</div>';
+  $('#fields').innerHTML=h;
+  $('#save').disabled=false;
+});
+</script>`
   );
 }

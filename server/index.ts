@@ -1,5 +1,10 @@
-import { ensureSeedConnections, listConnections, listApps, getAppBySlug, insertApp, slugExists, auditForApp } from "./db";
-import { homePage, auditPage, page } from "./ui";
+import {
+  ensureSeedConnections, listConnections, getConnection, upsertConnection, deleteConnection,
+  appsUsingConnection, listApps, getAppBySlug, insertApp, slugExists, auditForApp,
+} from "./db";
+import { homePage, auditPage, adminPage, page } from "./ui";
+import { getType } from "../connectors/registry";
+import { testConnection } from "../connectors/test";
 import { generate } from "../generator";
 import { handleQuery, handleWrite } from "../gateway";
 
@@ -109,6 +114,58 @@ const server = Bun.serve({
     if (path === "/health") return json({ ok: true, apps: listApps().length });
 
     if (path === "/" && req.method === "GET") return html(homePage(listApps(), listConnections()));
+
+    // --- IT administration: the connector catalogue and configured connections ---
+    if (path === "/admin" && req.method === "GET") {
+      const tested = url.searchParams.get("tested");
+      const rows = await Promise.all(
+        listConnections().map(async (conn) => ({
+          conn,
+          status: tested === conn.id || tested === "all" ? await testConnection(conn) : undefined,
+          used: appsUsingConnection(conn.id),
+        }))
+      );
+      return html(adminPage(rows));
+    }
+
+    if (path === "/admin/connections" && req.method === "POST") {
+      const form = await req.formData();
+      const kind = String(form.get("kind") ?? "");
+      const spec = getType(kind);
+      if (!spec) return html(page("Bad request", `<h1>Unknown connector type</h1>`), 400);
+      if (spec.status !== "ready") {
+        return html(page("Not available", `<h1>${spec.label} is not verified yet</h1>
+<p class="sub">The connector is written but has not been proven against a live instance, so it cannot be configured.
+<a href="/admin">Back</a></p>`), 400);
+      }
+
+      const name = String(form.get("name") ?? "").trim();
+      const baseUrl = String(form.get(spec.endpoint.key) ?? "").trim();
+      if (!name || !baseUrl) return Response.redirect("/admin", 303);
+
+      const secret: Record<string, string> = {};
+      for (const f of spec.secrets) {
+        const v = String(form.get(f.key) ?? "").trim();
+        if (v) secret[f.key] = v;
+      }
+
+      // Stable, readable id derived from the name; suffixed if taken.
+      const root = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 24) || kind;
+      let id = root;
+      for (let i = 2; getConnection(id); i++) id = `${root}-${i}`;
+
+      upsertConnection({ id, name, kind, base_url: baseUrl, secret });
+      return Response.redirect(`/admin?tested=${encodeURIComponent(id)}`, 303);
+    }
+
+    const connTest = path.match(/^\/admin\/connections\/([\w-]+)\/test$/);
+    if (connTest && req.method === "POST") return Response.redirect(`/admin?tested=${connTest[1]}`, 303);
+
+    const connDel = path.match(/^\/admin\/connections\/([\w-]+)\/delete$/);
+    if (connDel && req.method === "POST") {
+      deleteConnection(connDel[1]);
+      return Response.redirect("/admin", 303);
+    }
     if (path === "/generate" && req.method === "POST") return doGenerate(req);
 
     // Generated apps live under /a/:slug/ so their relative fetches ("./api/q/q1") resolve correctly.

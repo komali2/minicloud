@@ -77,6 +77,35 @@ export function getConnection(id: string): Connection | null {
   return { id: r.id, name: r.name, kind: r.kind, base_url: r.base_url, secret: JSON.parse(r.secret_json) };
 }
 
+export function upsertConnection(c: {
+  id: string; name: string; kind: string; base_url: string; secret: Record<string, string>;
+}) {
+  db.query(
+    `INSERT INTO connections (id, name, kind, base_url, secret_json, created_at)
+     VALUES (?, ?, ?, ?, ?, ?)
+     ON CONFLICT(id) DO UPDATE SET
+       name = excluded.name, kind = excluded.kind,
+       base_url = excluded.base_url, secret_json = excluded.secret_json`
+  ).run(c.id, c.name, c.kind, c.base_url, JSON.stringify(c.secret), now());
+}
+
+export function deleteConnection(id: string) {
+  db.query(`DELETE FROM connections WHERE id = ?`).run(id);
+}
+
+/** Apps that declared a query against this connection — deleting it would break them. */
+export function appsUsingConnection(id: string): string[] {
+  const rows = db.query(`SELECT title, manifest_json FROM apps`).all() as any[];
+  return rows
+    .filter((r) => {
+      try {
+        const m = JSON.parse(r.manifest_json);
+        return [...(m.queries ?? []), ...(m.actions ?? [])].some((x: any) => x.connection === id);
+      } catch { return false; }
+    })
+    .map((r) => r.title as string);
+}
+
 export function insertApp(a: Omit<AppRow, "created_at">) {
   db.query(
     `INSERT INTO apps (id, slug, title, prompt, html, manifest_json, model, created_at)

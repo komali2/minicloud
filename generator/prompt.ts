@@ -1,10 +1,11 @@
 import type { Connection } from "../server/types";
 import { listFiles } from "../connectors/csvfile";
+import { webdavList, webdavColumns } from "../connectors/webdav";
 
 /** Schema hints only. Never a credential, never a data row. */
-export function connectionHints(conns: Connection[]): string {
-  return conns
-    .map((c) => {
+export async function connectionHints(conns: Connection[]): Promise<string> {
+  const parts = await Promise.all(
+    conns.map(async (c) => {
       if (c.kind === "erpnext") {
         return `Connection id: "${c.id}"  (${c.name} — ERPNext v15, company "Northwind Manufacturing", abbr "NM", currency TWD)
 
@@ -33,6 +34,29 @@ e.g. [["docstatus", "=", 1], ["posting_date", ">=", "2024-01-01"]]
 Submitted documents have docstatus = 1. Always filter invoices on docstatus = 1.
 Warehouse names are suffixed with the company abbreviation, e.g. "Stores - NM".`;
       }
+      if (c.kind === "webdav") {
+        try {
+          const files = await webdavList(c);
+          const described = await Promise.all(
+            files.map(async (f) => `- ${f.file}\n    columns: ${(await webdavColumns(c, f.file)).join(", ")}`)
+          );
+          return `Connection id: "${c.id}"  (${c.name} — CSV files on a WebDAV share, READ-ONLY)
+
+Use the FILENAME as the "doctype". Available files:
+${described.join("\n")}
+
+Filters use the same array form as the other connections. This connection cannot be written to.`;
+        } catch (e) {
+          return `Connection id: "${c.id}" (${c.name}, WebDAV share — currently unreachable: ${(e as Error).message})`;
+        }
+      }
+      if (c.kind === "rest") {
+        return `Connection id: "${c.id}"  (${c.name} — internal REST API at ${c.base_url}, READ-ONLY)
+
+Use the PATH as the "doctype", e.g. "tickets" reads ${c.base_url}/tickets.
+The endpoint must return a JSON array, or an object with a data/results/items array.
+Filters and field projection are applied to the returned rows.`;
+      }
       if (c.kind === "csv") {
         const files = listFiles(c.base_url);
         return `Connection id: "${c.id}"  (${c.name} — CSV files on the plant's shared drive, READ-ONLY)
@@ -46,7 +70,8 @@ Numeric columns are already numbers. This connection cannot be written to.`;
       }
       return `Connection id: "${c.id}" (${c.name}, kind ${c.kind})`;
     })
-    .join("\n\n");
+  );
+  return parts.join("\n\n");
 }
 
 export const SYSTEM_PROMPT = `You build tiny internal web applications for the staff of a manufacturing company. A non-technical employee describes the tool they need; you produce it.

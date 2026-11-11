@@ -2,6 +2,18 @@ import type { Connection, Query } from "../server/types";
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, basename } from "node:path";
 
+/** @internal exported for reuse by other file-backed connectors */
+export function rowsFromCsv(text: string): Record<string, string | number>[] {
+  const rows = parseCsv(text);
+  if (!rows.length) return [];
+  const header = rows[0].map((h) => h.trim());
+  return rows.slice(1).map((r) => {
+    const o: Record<string, string | number> = {};
+    header.forEach((h, i) => (o[h] = coerce(r[i] ?? "")));
+    return o;
+  });
+}
+
 /** Minimal RFC4180 parser: quoted fields, escaped quotes, embedded commas and newlines. */
 function parseCsv(text: string): string[][] {
   const rows: string[][] = [];
@@ -76,7 +88,7 @@ function cmp(have: unknown, want: unknown): number {
   return String(have).localeCompare(String(want));
 }
 
-function matches(row: Record<string, unknown>, filter: unknown): boolean {
+export function matches(row: Record<string, unknown>, filter: unknown): boolean {
   if (!Array.isArray(filter) || filter.length < 3) return true;
   const [field, op, want] = filter as [string, string, any];
   const have = row[field];
@@ -93,25 +105,32 @@ function matches(row: Record<string, unknown>, filter: unknown): boolean {
   }
 }
 
-/** Execute a declared read against a CSV on the appliance's data volume. */
-export async function csvQuery(c: Connection, q: Query): Promise<any[]> {
-  let rows = loadFile(c.base_url, q.doctype);
-
-  for (const f of q.filters ?? []) rows = rows.filter((r) => matches(r, f));
+/**
+ * Filter, order, limit and project in-memory rows according to a declared query.
+ * Shared by every connector that returns whole row sets (CSV, WebDAV, REST).
+ */
+export function applyQuery(rows: Record<string, unknown>[], q: Query): any[] {
+  let out = rows;
+  for (const f of q.filters ?? []) out = out.filter((r) => matches(r, f));
 
   if (q.order_by) {
     const [col, dir = "asc"] = String(q.order_by).split(/\s+/);
-    rows.sort((a, b) => {
+    out = [...out].sort((a, b) => {
       const n = cmp(a[col], b[col]);
       return dir.toLowerCase() === "desc" ? -n : n;
     });
   }
 
-  rows = rows.slice(0, Math.min(q.limit ?? 500, 2000));
+  out = out.slice(0, Math.min(q.limit ?? 500, 2000));
 
   // Project to declared fields only — the manifest is the capability grant here too.
   if (q.fields?.length && !q.fields.includes("*")) {
-    rows = rows.map((r) => Object.fromEntries(q.fields.map((f) => [f, r[f] ?? null])));
+    out = out.map((r) => Object.fromEntries(q.fields.map((f) => [f, r[f] ?? null])));
   }
-  return rows;
+  return out;
+}
+
+/** Execute a declared read against a CSV on the appliance's data volume. */
+export async function csvQuery(c: Connection, q: Query): Promise<any[]> {
+  return applyQuery(loadFile(c.base_url, q.doctype), q);
 }
