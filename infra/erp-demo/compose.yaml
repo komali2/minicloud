@@ -67,6 +67,10 @@ services:
       CLIENT_MAX_BODY_SIZE: 50m
     ports:
       - 127.0.0.1:8081:8080
+      # Also reachable over the tailnet, so the ERP can be watched live from
+      # elsewhere during a demo. WebSockets (socket.io live list updates) need a
+      # real port binding -- a raw TCP forwarder mangles the upgrade.
+      - 100.114.8.18:8081:8080
     depends_on:
       - backend
       - websocket
