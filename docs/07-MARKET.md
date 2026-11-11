@@ -101,3 +101,101 @@ The honest headline: **there is no single clean "on-prem AI TAM" number.** Resea
 - **Vendor-sponsored, use with a caveat:** Arqit (62% sovereignty figure), Emergence Capital (deskless "1%").
 - **Aggregators/secondary, treat as indicative:** Mordor on-prem share, DecisionBrain manufacturing-ERP, Caspio's Gartner citation, NeuralTrust sovereign-cloud, Market.us sovereign-AI, DataIntelo edge-inference.
 - **Dated (>2024), flag if used:** Gartner "70% by 2025," "4M developer shortfall by 2025," Airtable $11B (2021), Skedulo 51% (2022), Emergence Capital "1%" (orig. ~2021).
+
+---
+
+# The security argument (added 2026-11-11, after the market pass)
+
+## Do not say "air-gapped means you can't be hacked"
+
+It is false and a security-literate judge will know it. Stuxnet crossed an air
+gap; so do insider threat, removable media, and supply chain. Worse, **minicloud
+is not air-gapped in the demo** — it runs on an internet-connected machine,
+defaults to a hosted model, and is published through a public tunnel. Claiming
+invulnerability we do not have is the fastest way to lose a technical judge.
+
+## Say this instead
+
+**Every AI tool an enterprise adopts is a new path for its data to leave. We
+built one with no path.**
+
+That is defensible, specific, and true of what we built.
+
+### The mechanism: the "lethal trifecta"
+
+Simon Willison's framing, now widely adopted: an agent becomes an exfiltration
+channel when it has all three of —
+
+1. access to private data,
+2. exposure to untrusted content,
+3. the ability to communicate externally.
+
+**minicloud deliberately breaks the third.** A generated app holds no
+credentials and has no outbound reach. It can only call back into the gateway,
+and only for the queries its manifest declared before it ever ran. The untrusted
+content (model-authored code) and the private data (the ERP) are both present —
+but the channel out is absent by construction.
+
+That is a real architectural answer to the top-ranked LLM risk, not a slogan.
+
+## Sourced incidents to draw on
+
+Strongest first. Primary threat-intel reporting, then secondary trackers.
+
+- **An AI agent framework running on DeepSeek was used to orchestrate real
+  intrusions.** Unit 42 (Palo Alto Networks) documented a Chinese-speaking
+  actor (aliases *knaithe* / *KnYuan*) running the open-source Hermes Agent
+  framework with **DeepSeek as its reasoning engine**, orchestrated over
+  Telegram: target enumeration via FOFA, autonomous search for critical CVEs
+  when exploitation failed, and seven vulnerabilities exploited with **confirmed
+  data exfiltration**. *(Unit 42, 2026.)*
+
+  > Use this one. We demo with DeepSeek. The honest line is:
+  > *"the same model I'm using to build these apps has been used to run
+  > intrusions — which is exactly why the model selector exists."*
+
+- **AI infrastructure is itself attack surface.** CVE-2026-42208, a
+  pre-authentication SQL injection in **LiteLLM** with CVSS 9.3, was exploited
+  within roughly **36 hours** of its patch disclosure. *(Cloud Security
+  Alliance, May 2026.)* The gateway you put in front of your models is a target.
+
+- **LLM-orchestrated attack chains are documented.** CSA describes a Chinese
+  state-sponsored actor, GTG-1002, using LLMs to orchestrate attack chains in
+  late 2025. *(Cloud Security Alliance, May 2026.)*
+
+- **Agents are taking over parts of the kill chain.** Google Threat Intelligence
+  Group's Q3 2026 AI Threat Tracker reports AI agents automating vulnerability
+  scanning, credential harvesting and troubleshooting with less human
+  involvement. *(GTIG, Q3 2026.)*
+
+- **Prompt injection is the #1 LLM risk and has been since 2023.** OWASP ranks it
+  LLM01, and maps it to six of the ten categories in its Top 10 for Agentic
+  Applications. *(OWASP GenAI Security Project, 2026.)*
+
+- **Adoption is far ahead of readiness.** 83% of organisations plan to deploy
+  agentic AI; only **29% feel ready to do so securely**. *(Cisco, 2026.)*
+
+- **Send your data to an AI vendor and you inherit their breaches.** Mercor, an
+  AI training-data vendor whose customers reportedly include major labs,
+  confirmed a breach in April 2026; LAPSUS$ claimed roughly 4TB exfiltrated.
+  *(Secondary trackers — **verify before saying this on camera**.)*
+
+## The counterpoint, so you are not caught out
+
+The **International AI Safety Report 2026** states that fully autonomous,
+end-to-end attacks **have not been reported** — what is documented is AI-assisted
+and semi-autonomous operations with human oversight. If you claim "AI is running
+autonomous hacks," a judge who has read that report will correct you.
+
+Say **"AI is collapsing the cost and time of exploitation"** — which the Unit 42,
+CSA and GTIG material all support — not "AI is hacking by itself."
+
+## Figures I would NOT cite
+
+- CIS "340% year-over-year growth in prompt injection attempts" and "67% went
+  undetected for 72+ hours" — repeated by vendor blogs, not traceable to the CIS
+  report itself in the time available.
+- "73% of production deployments" attributed to OWASP — not traceable to a
+  primary OWASP document.
+- Claims of nine coordinated intrusions across 600+ enterprise firewalls — no
+  verifiable primary source.

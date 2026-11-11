@@ -82,10 +82,19 @@ authenticated, the shared drive with its row count, the NAS, Odoo. Scroll to the
 connector catalogue so the type cards are visible.
 
 **VO:** *"IT plugs in the systems. ERPNext, Odoo, a NAS, any internal API. Same
-gateway, same rules."*
+gateway, same rules. Half of enterprises now call data sovereignty their top
+constraint — and that number is climbing."*
+
+**On-screen caption:** `data sovereignty "very important": 42% → 51% · BARC 2026`
 
 > This is what turns it from a clever hack into a product someone deploys.
 > Two different ERPs is a stronger claim than one, and it is true.
+>
+> **One statistic, and only here.** In 90 seconds the demo is the argument; a
+> second number competes with your best footage. Use BARC rather than the
+> punchier 62% sovereignty figure — BARC is an independent analyst firm, while
+> the 62% is an Arqit-commissioned survey, and "who ran that study?" is exactly
+> what a founder-judge asks. The rising trend does more work than the level.
 
 ---
 
@@ -171,6 +180,27 @@ different building, which is a better proof than localhost would have been.
 Cut beats 5 and 6. Keep 1, 2, 3, 4, 7. That is still a complete argument:
 a tool appears from a sentence, it writes to a real ERP, it is sandboxed and
 audited, and here is a link you can scan.
+
+## If a judge pushes on security
+
+Do **not** say air-gapping makes you unhackable — it does not, and minicloud is
+not air-gapped in this demo. Say:
+
+> *"Every AI tool you adopt is a new path for your data to leave. An agent
+> becomes an exfiltration channel when it has private data, untrusted content,
+> and a way to talk out. The generated app here has the first two and not the
+> third — no credentials, no outbound reach, and a capability set fixed before it
+> ran."*
+
+Supporting facts, with sources, are in `07-MARKET.md`. The sharpest is Unit 42's
+2026 report of a threat actor running an agent framework **on DeepSeek** to
+orchestrate intrusions with confirmed exfiltration — which pairs with our model
+selector: *"that's why you can point this at a model in your own building."*
+
+Do not claim AI is running autonomous attacks. The International AI Safety
+Report 2026 says fully autonomous end-to-end attacks have not been reported.
+"AI is collapsing the cost and time of exploitation" is supported; "AI is hacking
+by itself" is not.
 
 ## Positioning line for the submission text
 
