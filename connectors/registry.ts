@@ -37,7 +37,7 @@ export const CONNECTOR_TYPES: ConnectorType[] = [
     status: "ready",
     endpoint: { key: "base_url", label: "Instance URL", placeholder: "http://erp.internal:8080", required: true },
     secrets: [
-      { key: "key", label: "API key", placeholder: "7c3c1a1f65bf9d5", required: true },
+      { key: "key", label: "API key", placeholder: "e.g. 1a2b3c4d5e6f7a8", required: true },
       { key: "secret", label: "API secret", secret: true, required: true },
     ],
     reads: "any doctype, with field and filter scoping",

@@ -74,6 +74,17 @@ Bun + SQLite. **Zero npm dependencies** — `Bun.serve`, `bun:sqlite`, and `fetc
 Generated apps are dependency-free single HTML files, so they work on an
 appliance with no internet.
 
+## Security posture
+
+The gateway holds every credential and is deliberately the only component that
+does. It contains no model, executes no user-supplied code, and refuses any
+query a manifest did not declare — small and boring is the point.
+
+A generated app is given private data and is itself untrusted content, but has
+**no way to talk out**: no credentials, no outbound reach, and a capability set
+fixed before it runs. That breaks the third leg of the exfiltration trifecta
+that makes agentic AI dangerous. See `docs/07-MARKET.md`.
+
 ## Run it
 
 ```bash
@@ -101,7 +112,7 @@ bun scripts/seed-erp.ts
 | `gateway/` | Manifest enforcement, credential injection, audit log |
 | `infra/erp-demo/` | Synthetic ERPNext for development |
 | `scripts/seed-erp.ts` | Three years of synthetic sales data |
-| `docs/` | Product spec, architecture, contracts, build plan, pitch |
+| `docs/` | Product spec, architecture, contracts, build plan, pitch, video script, market research |
 
 Built at **c0mpiled-18: YC Startup School Hackathon, Taipei**, 2026-11-11,
 under YC RFS *"AI for the Air-Gapped Economy."*
