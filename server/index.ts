@@ -95,6 +95,8 @@ const server = Bun.serve({
       if (rest === "" ) return Response.redirect(`/a/${slug}/`, 302);
       if (rest === "/") return html(app.html);
       if (rest === "/audit") return html(auditPage(app, auditForApp(app.id)));
+      // The declared capability set, readable. Same information as the audit page.
+      if (rest === "/manifest") return json(JSON.parse(app.manifest_json));
 
       const q = rest.match(/^\/api\/q\/([\w-]+)$/);
       if (q && req.method === "GET") return handleQuery(app, q[1]);

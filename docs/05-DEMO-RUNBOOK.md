@@ -88,13 +88,54 @@ Tailscale toggle fights you.
 
 Two generated live proves generality. The third's presence implies a dozen.
 
+## 3b. Verified state (as built, 2026-11-11)
+
+Measured, not assumed:
+
+| | |
+|---|---|
+| Generation latency, hosted (DeepSeek) | 13–16s, 6/6 runs, zero repair round-trips |
+| Generation latency, on-prem (Devstral 24B, RTX 5090) | **2m45s** — valid app, no repair. Too slow for a live shot; jump-cut it |
+| On-prem MoE alternative (Qwen3-Coder 30B A3B) | Slower still: 147s for 1096 tokens. Not worth switching |
+| Sales data | 272 submitted invoices across 2024 / 2025 / 2026 |
+| Self-containment | 0 external refs in every generated app |
+
+Demo apps currently in the list:
+
+| Slug | What | Use |
+|---|---|---|
+| `sales-by-quarter-fe9fom` | chart, 1 query, 272 rows | backup if live generation fails on camera |
+| `aisle-4-stock-count-gq23mq` | 5 queries + 1 write action, all passing | backup |
+| `inactive-customers-8dnjeo` | generated **on-prem** by Devstral | the pre-generated third app |
+
+Right before recording, prune to just the on-prem one so the two live
+generations land in a clean list — keeping the backups until then:
+
+```bash
+bun scripts/prune-apps.ts                                   # list
+bun scripts/prune-apps.ts keep inactive-customers-8dnjeo    # clean slate
+```
+
 ## 4. Pre-flight before filming
 
-- [ ] Funnel URL loads on a phone over cellular
+Run the automated check first — it verifies every link in the chain:
+
+```bash
+set -a && . ./.env && set +a && bun scripts/preflight.ts
+```
+
+It checks the platform, the public URL (and that it matches the local app
+count, catching a funnel pointed at the wrong thing), ERPNext reachability and
+credentials, three years of data, the on-prem model server, every registered
+app's declared queries, and that `erp-local` is **not** running.
+
+Then by hand:
+
+- [ ] `bun scripts/preflight.ts` passes 9/9
+- [ ] Funnel URL loads on a phone over **cellular**, not venue wifi
 - [ ] Both demo prompts run clean, twice in a row
-- [ ] Third app visible in the list
 - [ ] Audit view shows real rows
-- [ ] Model selector flips to the local endpoint and still generates
-- [ ] `erp-local` is **not** running / not visible in any window you'll film
+- [ ] **`cd ~/src/erp-local && docker compose down`** — the co-op instance holds real
+      client and bank data. Preflight fails until this is done.
 - [ ] No real client data anywhere on screen — check browser tabs and terminal scrollback
 - [ ] Repo pushed and public

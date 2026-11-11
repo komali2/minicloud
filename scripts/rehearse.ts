@@ -28,12 +28,14 @@ async function once(prompt: string, model: string) {
   const svg = (html.match(/<svg|createElementNS/g) ?? []).length;
   const calls = [...new Set(html.match(/\.\/api\/[qw]\/[\w-]+/g) ?? [])];
 
-  // Exercise every declared read the app will make on load.
+  // Exercise every DECLARED read. Apps may build fetch URLs dynamically, so the
+  // manifest is the only reliable list of what the app can call.
+  const manifest: any = await (await fetch(`${BASE}/a/${done.slug}/manifest`)).json();
   const probes: string[] = [];
-  for (const c of calls.filter((c) => c.includes("/q/"))) {
-    const r = await fetch(`${BASE}/a/${done.slug}/${c.replace("./", "")}`);
+  for (const q of manifest.queries ?? []) {
+    const r = await fetch(`${BASE}/a/${done.slug}/api/q/${q.id}`);
     const j: any = await r.json().catch(() => ({}));
-    probes.push(`${c.split("/").pop()}:${r.status === 200 ? (j.count ?? "?") + "rows" : "ERR" + r.status}`);
+    probes.push(`${q.id}:${r.status === 200 ? (j.count ?? "?") + "rows" : "ERR" + r.status}`);
   }
 
   return {

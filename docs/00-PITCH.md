@@ -28,7 +28,7 @@ appliance), gesture at physical-world with the demo itself.
 | 0:15–0:35 | Type *"sales by quarter for the last 3 years"* → ~3s → URL appears → click → chart with real ERP data | The generation must feel instant |
 | 0:35–0:55 | Type *"stock count form for Aisle 4"* → URL → **open it on a phone** → submit a count → cut to the record now in ERPNext | The write-back is what separates you from read-only BI toys |
 | 0:55–1:10 | Audit view: every data call that app made. "The agent never had your credentials. The app can only touch what its manifest declares." | The security thesis, on screen |
-| 1:10–1:20 | Model selector → `local/qwen36-35b` → generate again, works | "Nothing left the building." |
+| 1:10–1:20 | Model selector → `Devstral 24B — on-prem (RTX 5090) 🔒` → generate again. **Jump cut** with "generated on-prem · 2m45s" on screen | "Nothing left the building." A stated latency reads as more honest than a suspiciously fast cut |
 | 1:20–1:30 | Close: "minicloud — the app factory that lives inside your network." | Name the RFS category |
 
 ## Direction
