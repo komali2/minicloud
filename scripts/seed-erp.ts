@@ -76,11 +76,19 @@ async function main() {
   }
 
   console.log(`items (${ITEMS.length})…`);
-  for (const [code, name] of ITEMS) {
+  for (const [code, name, rate] of ITEMS) {
     await ensure("Item", {
       item_code: code, item_name: name, item_group: "Products",
       stock_uom: "Nos", is_stock_item: 1, include_item_in_manufacturing: 0,
+      valuation_rate: Math.round(Number(rate) * 0.6),
     }, String(code));
+  }
+
+  console.log("backfilling item valuation rates…");
+  for (const [code, , rate] of ITEMS) {
+    const r = await api("PUT", `/api/resource/Item/${encodeURIComponent(String(code))}`,
+      { valuation_rate: Math.round(Number(rate) * 0.6) });
+    if (!r.ok) console.warn(`  ! valuation ${code}: ${String(r.json?.exception ?? "").slice(0, 90)}`);
   }
 
   console.log(`customers (${CUSTOMERS.length})…`);

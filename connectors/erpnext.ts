@@ -57,9 +57,17 @@ async function trySubmit(c: Connection, doctype: string, name: string): Promise<
       { method: "PUT", headers: { ...authHeaders(c), "Content-Type": "application/json" },
         body: JSON.stringify({ docstatus: 1 }) }
     );
-    if (!res.ok) return false;
-    const j: any = await res.json();
-    return j?.data?.docstatus === 1;
+    if (res.ok) {
+      const j: any = await res.json();
+      if (j?.data?.docstatus === 1) return true;
+    }
+    // Fallback: some doctypes only submit through the client method.
+    const alt = await fetch(`${c.base_url}/api/method/frappe.client.submit`, {
+      method: "POST",
+      headers: { ...authHeaders(c), "Content-Type": "application/json" },
+      body: JSON.stringify({ doc: { doctype, name } }),
+    });
+    return alt.ok;
   } catch {
     return false;
   }
