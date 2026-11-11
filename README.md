@@ -1,5 +1,7 @@
 # minicloud
 
+### ▶ [Watch the 90-second demo](https://youtu.be/YSSxReDxWs0)
+
 **The app factory that lives inside your network.**
 
 Describe the internal tool you need. Get a working web app at a shareable link in
