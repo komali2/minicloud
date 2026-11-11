@@ -12,6 +12,8 @@ export async function erpQuery(c: Connection, q: Query): Promise<any[]> {
   if (q.filters && q.filters.length) params.set("filters", JSON.stringify(q.filters));
   params.set("limit_page_length", String(Math.min(q.limit ?? 500, 2000)));
   if (q.order_by) params.set("order_by", q.order_by);
+  // Reading a child table (Sales Invoice Item, Stock Entry Detail, ...) requires naming its parent.
+  if (q.parent_doctype) params.set("parent", q.parent_doctype);
 
   const url = `${c.base_url}/api/resource/${encodeURIComponent(q.doctype)}?${params.toString()}`;
   const res = await fetch(url, { headers: authHeaders(c) });

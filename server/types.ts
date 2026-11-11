@@ -6,6 +6,8 @@ export type Query = {
   filters?: unknown[];
   limit?: number;
   order_by?: string;
+  /** Required when `doctype` is a child table — Frappe rejects the read otherwise. */
+  parent_doctype?: string;
 };
 
 export type Action = {

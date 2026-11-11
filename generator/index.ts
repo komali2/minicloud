@@ -72,6 +72,7 @@ function parseArtifact(raw: string): Artifact {
       filters: Array.isArray(q.filters) ? q.filters : undefined,
       limit: Number.isFinite(q.limit) ? Math.min(Number(q.limit), 2000) : 500,
       order_by: typeof q.order_by === "string" ? q.order_by : undefined,
+      parent_doctype: typeof q.parent_doctype === "string" ? q.parent_doctype : undefined,
     };
   });
 

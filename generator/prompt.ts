@@ -7,14 +7,22 @@ export function connectionHints(conns: Connection[]): string {
       if (c.kind === "erpnext") {
         return `Connection id: "${c.id}"  (${c.name} — ERPNext v15, company "Northwind Manufacturing", abbr "NM", currency TWD)
 
-READABLE doctypes and their useful fields:
+READABLE parent doctypes and their useful fields:
 - Sales Invoice        : name, posting_date, customer, grand_total, net_total, status, docstatus
-- Sales Invoice Item   : parent, item_code, item_name, qty, rate, amount
 - Customer             : name, customer_name, customer_group, territory
-- Item                 : name, item_code, item_name, item_group, stock_uom
+- Item                 : name, item_code, item_name, item_group, stock_uom, valuation_rate
 - Warehouse            : name, warehouse_name
-- Bin                  : item_code, warehouse, actual_qty, projected_qty
+- Bin                  : name, item_code, warehouse, actual_qty, projected_qty
 - Stock Entry          : name, stock_entry_type, posting_date, docstatus
+
+READABLE child tables. These hold the LINE ITEMS of a parent document. To read one you
+MUST set "parent_doctype" to its parent, or the read is rejected:
+- Sales Invoice Item   : parent, item_code, item_name, qty, rate, amount   (parent_doctype: "Sales Invoice")
+- Stock Entry Detail   : parent, item_code, qty, s_warehouse, t_warehouse  (parent_doctype: "Stock Entry")
+
+CRITICAL: a parent doctype does NOT have its line-item fields. "Stock Entry" has no
+item_code and no qty; those live on "Stock Entry Detail". Asking a parent doctype for a
+child field fails. If you need line items, query the child table with parent_doctype set.
 
 WRITABLE doctype:
 - Stock Entry (use stock_entry_type "Material Receipt"), written through a body_template.
@@ -44,7 +52,8 @@ MANIFEST RULES
 - "slug_hint": lowercase kebab-case, max 4 words.
 - "queries": every read the app needs. Each is
   { "id": "q1", "connection": "<connection id>", "doctype": "...", "fields": [...], "filters": [...], "limit": 1000, "order_by": "posting_date asc" }
-  "filters" and "order_by" are optional. Keep "limit" <= 2000.
+  "filters", "order_by" and "parent_doctype" are optional. Keep "limit" <= 2000.
+  Set "parent_doctype" whenever "doctype" is a child table.
 - "actions": only if the app writes. Each is
   { "id": "a1", "connection": "...", "doctype": "...", "op": "create",
     "allowed_fields": ["item_code","qty","warehouse"],

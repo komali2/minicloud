@@ -1,0 +1,37 @@
+# The minicloud appliance, as a customer would run it on their own on-site VPS.
+#
+#   docker compose up -d
+#
+# Host networking is used so the appliance can reach systems of record and a local
+# model server already running on the box (ERPNext, Ollama, llama.cpp) over 127.0.0.1.
+# On a real deployment these would be LAN hostnames and you would use the bridge
+# network instead — see the commented block below.
+services:
+  minicloud:
+    build: .
+    container_name: minicloud
+    network_mode: host
+    restart: unless-stopped
+    environment:
+      PORT: 3000
+      PUBLIC_BASE_URL: ${PUBLIC_BASE_URL:-http://localhost:3000}
+      # Credentials for the customer's systems of record. Held by the appliance,
+      # never handed to the agent or to a generated app.
+      ERP_BASE_URL: ${ERP_BASE_URL:-http://127.0.0.1:8081}
+      ERP_API_KEY: ${ERP_API_KEY}
+      ERP_API_SECRET: ${ERP_API_SECRET}
+      # Generation. Omit the hosted key for a fully air-gapped deployment:
+      # the on-prem model entries in the selector need no credential at all.
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      OLLAMA_BASE_URL: ${OLLAMA_BASE_URL:-http://127.0.0.1:11434/v1}
+      DEFAULT_MODEL: ${DEFAULT_MODEL:-deepseek}
+    volumes:
+      - minicloud-data:/data
+
+# Bridge-network alternative (no host networking). Point the URLs at LAN hosts:
+#   ports: ["3000:3000"]
+#   extra_hosts: ["host.docker.internal:host-gateway"]
+#   ERP_BASE_URL: http://host.docker.internal:8081
+
+volumes:
+  minicloud-data:
