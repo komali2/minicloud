@@ -88,7 +88,9 @@ export const getAppBySlug = (slug: string) =>
   db.query(`SELECT * FROM apps WHERE slug = ?`).get(slug) as AppRow | null;
 
 export const listApps = () =>
-  db.query(`SELECT id, slug, title, prompt, model, created_at FROM apps ORDER BY created_at DESC`).all() as AppRow[];
+  db.query(
+    `SELECT id, slug, title, prompt, model, manifest_json, created_at FROM apps ORDER BY created_at DESC`
+  ).all() as AppRow[];
 
 export function slugExists(slug: string) {
   return !!db.query(`SELECT 1 FROM apps WHERE slug = ?`).get(slug);

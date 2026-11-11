@@ -1,6 +1,12 @@
 import { MODELS, defaultModelId } from "../generator/models";
 import type { Connection, AppRow } from "./types";
 
+/** Render a stored ISO timestamp in the appliance's local timezone, not UTC. */
+const localTime = (iso: string) =>
+  new Date(iso).toLocaleTimeString("en-GB", { hour12: false });
+const localDateTime = (iso: string) =>
+  new Date(iso).toLocaleString("en-GB", { hour12: false, dateStyle: "short", timeStyle: "medium" });
+
 const esc = (s: unknown) =>
   String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]!));
 
@@ -31,10 +37,18 @@ button:disabled{opacity:.55;cursor:default}
 .done.on{display:block}
 .done .u{display:block;margin-top:6px;font:15px ui-monospace,Menlo,monospace;word-break:break-all}
 h2{font-size:14px;text-transform:uppercase;letter-spacing:.09em;color:var(--dim);margin:40px 0 12px;font-weight:600}
-.app{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:11px;background:var(--panel);margin-bottom:9px}
-.app .t{font-weight:600}
-.app .p{color:var(--dim);font-size:13.5px;margin-top:2px}
-.app .r{display:flex;gap:14px;align-items:center;white-space:nowrap;font-size:14px}
+.app{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:15px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;transition:border-color .15s}
+.app:hover{border-color:#36404d}
+.app .l{min-width:0}
+.app .t{font-weight:600;font-size:16px}
+.app .p{color:var(--dim);font-size:13.5px;margin-top:3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.app .meta{margin-top:9px;display:flex;gap:6px;flex-wrap:wrap}
+.app .b{font:500 11.5px/1 ui-monospace,Menlo,monospace;color:var(--dim);background:var(--panel2);border:1px solid var(--line);border-radius:5px;padding:4px 7px}
+.app .b.loc{color:#7ec8a9;border-color:#2c4c3f;background:#16241e}
+.app .r{display:flex;gap:8px;align-items:center;white-space:nowrap}
+.btn{display:inline-block;background:var(--acc);color:#07101f;border-radius:8px;padding:8px 15px;font:600 14px/1.4 inherit;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--dim);border:1px solid var(--line)}
+.btn.ghost:hover{color:var(--tx);border-color:var(--acc)}
 .empty{color:var(--dim);font-size:15px}
 .conn{color:var(--dim);font-size:13.5px;margin-top:10px}
 .pill{display:inline-block;background:#122;border:1px solid #244;color:#7ec;border-radius:20px;padding:2px 10px;font-size:12px}
@@ -65,8 +79,18 @@ export function homePage(apps: AppRow[], conns: Connection[]) {
   const list = apps.length
     ? apps
         .map(
-          (a) => `<div class="app"><div><div class="t">${esc(a.title)}</div><div class="p">${esc(a.prompt)}</div></div>
-<div class="r"><a href="/a/${esc(a.slug)}/">open</a><a href="/a/${esc(a.slug)}/audit">audit</a></div></div>`
+          (a) => {
+          const m = MODELS.find((x) => x.id === a.model);
+          const conns = [...new Set(((JSON.parse((a as any).manifest_json || '{"queries":[]}').queries) ?? [])
+            .map((q: any) => q.connection))] as string[];
+          const badges = [
+            m ? `<span class="b${m.local ? " loc" : ""}">${esc(m.local ? "on-prem" : "hosted")} · ${esc(m.model)}</span>` : "",
+            ...conns.map((c) => `<span class="b">${esc(c)}</span>`),
+          ].join("");
+          return `<div class="app"><div class="l"><div class="t">${esc(a.title)}</div>
+<div class="p">${esc(a.prompt)}</div><div class="meta">${badges}</div></div>
+<div class="r"><a class="btn" href="/a/${esc(a.slug)}/">Open</a><a class="btn ghost" href="/a/${esc(a.slug)}/audit">Audit</a></div></div>`;
+        }
         )
         .join("")
     : `<div class="empty">No apps yet. Describe one above.</div>`;
@@ -126,7 +150,7 @@ export function auditPage(app: AppRow, rows: any[]) {
   const body = rows.length
     ? rows
         .map(
-          (r) => `<tr><td>${esc(r.created_at.slice(11, 19))}</td><td><code>${esc(r.ref_id)}</code></td>
+          (r) => `<tr><td title="${esc(localDateTime(r.created_at))}">${esc(localTime(r.created_at))}</td><td><code>${esc(r.ref_id)}</code></td>
 <td>${esc(r.kind)}</td><td>${esc(r.connection_id ?? "—")}</td>
 <td class="${r.status === "ok" ? "ok" : "bad"}">${esc(r.status)}</td>
 <td>${r.row_count ?? "—"}</td><td>${r.duration_ms ?? "—"}ms</td><td>${esc(r.detail ?? "")}</td></tr>`
