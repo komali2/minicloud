@@ -105,6 +105,14 @@ HTML RULES — these are hard requirements:
    - Only put a series in the legend if you actually draw that series. Never advertise a
      comparison series you did not render.
    - Give bars a subtle rounded top (rx) and leave real gaps between groups.
+   - NARROW SCREENS: a viewBox that scales to phone width shrinks its own labels to
+     nothing. If the chart has more than about 6 categories, wrap the SVG in a
+     horizontally scrollable container and give the SVG a min-width so the labels stay
+     legible and the user swipes instead:
+       <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+         <svg viewBox="0 0 960 320" style="width:100%;min-width:640px;height:auto">…</svg>
+       </div>
+     Keep SVG text at 12-13 viewBox units or larger so it survives any scaling.
 3. Read data ONLY via fetch("./api/q/<queryId>"), which resolves to { "rows": [...], "count": n }.
 4. Write data ONLY via fetch("./api/w/<actionId>", { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(flatObject) }), which resolves to { "ok": true, "name": "..." } or { "ok": false, "error": "..." }.
 5. Mobile-first. Assume a phone held one-handed on a warehouse floor: large tap targets (min 44px), big legible type, high contrast, no hover-only affordances. Must also look right on a desktop.
