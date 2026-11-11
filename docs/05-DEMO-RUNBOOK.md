@@ -110,8 +110,24 @@ Measured, not assumed:
 | | |
 |---|---|
 | Generation latency, hosted (DeepSeek) | 13–16s, 6/6 runs, zero repair round-trips |
-| Generation latency, on-prem (Devstral 24B, RTX 5090) | **2m45s** — valid app, no repair. Too slow for a live shot; jump-cut it |
-| On-prem MoE alternative (Qwen3-Coder 30B A3B) | Slower still: 147s for 1096 tokens. Not worth switching |
+| Generation latency, on-prem (Devstral 24B, RTX 5090) | 2m45s — **measured under GPU contention, see below** |
+| On-prem MoE alternative (Qwen3-Coder 30B A3B) | 147s for 1096 tokens — **also contended, conclusion was wrong** |
+
+> **Both on-prem numbers above are invalid as general figures.** They were taken
+> while an unrelated benchmark (`eval.run`, Qwen3.8-27B via llama-server) held
+> 18,996 MiB of the 32,607 MiB card and pinned it at 98%. Only ~13.6 GB was
+> free, but devstral-small-2 is 15 GB and Qwen3-Coder-30B-A3B is 21 GB — so
+> neither fit, and Ollama ran them partially offloaded to CPU while time-slicing
+> a saturated GPU.
+>
+> On an idle 5090 devstral fits entirely in VRAM with ~17 GB spare and should be
+> far faster. The A3B MoE, which was the *most* starved (21 GB into 13.6 GB),
+> has only ~3B active parameters and would likely be the fastest of the three —
+> the opposite of what the contended measurement suggested.
+>
+> **Re-measure on an idle GPU before quoting any on-prem latency.** Check with
+> `nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv`
+> first; if anything else holds VRAM, the number is meaningless.
 | Sales data | 272 submitted invoices across 2024 / 2025 / 2026 |
 | Self-containment | 0 external refs in every generated app |
 

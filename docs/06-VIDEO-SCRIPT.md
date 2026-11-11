@@ -120,8 +120,12 @@ an API. Nothing leaves."*
 > written is harder to fake than a wifi icon going dark, and it is literally the
 > claim being made.
 >
-> Say the 2m45s out loud. A number you admit to reads honest; a suspiciously
-> fast cut reads edited.
+> Say whatever the real elapsed time is, out loud. A number you admit to reads
+> honest; a suspiciously fast cut reads edited.
+>
+> **Do not reuse the 2m45s figure.** It was measured while an unrelated
+> benchmark held 19 GB of the GPU, forcing the model to run partly on CPU — see
+> the note in `05-DEMO-RUNBOOK.md`. Re-measure on an idle card.
 >
 > **A stronger line is available if you want it.** The appliance really is in a
 > different building from the venue, reached over a private network. *"That box
