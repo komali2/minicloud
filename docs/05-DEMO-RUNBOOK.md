@@ -60,6 +60,21 @@ Keys. Store as `secret_json` on the `erpnext` connection row.
 `customers / items / stock_entries / invoices` schema instead. The gateway
 abstracts the connector, so no platform code changes.
 
+## 1b. Second ERP and a WebDAV share (for the multi-connector beat)
+
+```bash
+docker compose -f infra/odoo-demo/compose.yaml -p minicloud-odoo up -d
+docker compose -f infra/odoo-demo/compose.yaml -p minicloud-odoo exec -T odoo \
+  odoo -d demo -i base,sale,stock --stop-after-init \
+    --db_host=odoo-db --db_user=odoo --db_password=odoo
+# admin / admin, database "demo", at http://127.0.0.1:8069
+
+rclone serve webdav /tmp/plant-nas --addr 127.0.0.1:8099 &   # stand-in NAS
+```
+
+Then add both through `/admin` the way IT would. Odoo: database `demo`,
+user `admin`, password `admin`.
+
 ## 2. Public URL (Role D)
 
 ```bash

@@ -1,6 +1,7 @@
 import type { Connection } from "../server/types";
 import { listFiles } from "../connectors/csvfile";
 import { webdavList, webdavColumns } from "../connectors/webdav";
+import { odooModels, odooFields } from "../connectors/odoo";
 
 /** Schema hints only. Never a credential, never a data row. */
 export async function connectionHints(conns: Connection[]): Promise<string> {
@@ -33,6 +34,26 @@ Filters use the Frappe array form: [["fieldname", "operator", value], ...]
 e.g. [["docstatus", "=", 1], ["posting_date", ">=", "2024-01-01"]]
 Submitted documents have docstatus = 1. Always filter invoices on docstatus = 1.
 Warehouse names are suffixed with the company abbreviation, e.g. "Stores - NM".`;
+      }
+      if (c.kind === "odoo") {
+        try {
+          const models = await odooModels(c, 14);
+          const described = await Promise.all(
+            models.map(async (m) => `- ${m.model.padEnd(22)} (${m.name})\n    fields: ${(await odooFields(c, m.model, 10)).join(", ")}`)
+          );
+          return `Connection id: "${c.id}"  (${c.name} — Odoo, READ-ONLY)
+
+Use the MODEL NAME as the "doctype", e.g. "sale.order".
+Models available on this instance:
+${described.join("\n")}
+
+Filters use the same array form, which is also an Odoo domain:
+[["state", "=", "sale"], ["amount_total", ">", 1000]]
+Relational fields are returned as their display name, not their id.
+This connection cannot be written to.`;
+        } catch (e) {
+          return `Connection id: "${c.id}" (${c.name}, Odoo — currently unreachable: ${(e as Error).message})`;
+        }
       }
       if (c.kind === "webdav") {
         try {

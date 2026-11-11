@@ -1,0 +1,33 @@
+# A synthetic Odoo, used only to verify the Odoo connector against a live instance.
+# Not part of the appliance — this is the "customer's existing ERP" in development.
+services:
+  odoo-db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_DB: postgres
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 5s
+      retries: 30
+
+  odoo:
+    image: odoo:17
+    depends_on:
+      odoo-db:
+        condition: service_healthy
+    environment:
+      HOST: odoo-db
+      USER: odoo
+      PASSWORD: odoo
+    ports:
+      - 127.0.0.1:8069:8069
+    volumes:
+      - odoo-data:/var/lib/odoo
+
+volumes:
+  odoo-db-data:
+  odoo-data:

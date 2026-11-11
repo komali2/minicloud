@@ -82,15 +82,15 @@ export const CONNECTOR_TYPES: ConnectorType[] = [
   {
     kind: "odoo",
     label: "Odoo",
-    blurb: "Odoo external API over JSON-RPC. Connector written, not yet verified against a live instance.",
-    status: "planned",
+    blurb: "Odoo external API over JSON-RPC. The instance is asked which models and fields it has.",
+    status: "ready",
     endpoint: { key: "base_url", label: "Odoo URL", placeholder: "http://odoo.internal:8069", required: true },
     secrets: [
       { key: "db", label: "Database", required: true },
       { key: "user", label: "Username", required: true },
       { key: "password", label: "API key / password", secret: true, required: true },
     ],
-    reads: "models via search_read",
+    reads: "any business model, discovered by introspection",
     writes: null,
   },
   {

@@ -106,6 +106,33 @@ free: because the generator only ever sees doctype names, not records, even the
 hosted posture never ships customer data to a third party. Managing the local
 model's lifecycle (pull, serve, upgrade) is explicitly roadmap, not MVP.
 
+## Connectors are generic, connections are per-deployment
+
+A connector is written once and ships with the appliance. A connection is a row
+IT creates at deploy time. No customer gets bespoke code.
+
+| Ships with the product | Supplied by the deployer |
+|---|---|
+| `connectors/registry.ts` — the type's fields and capabilities | The connection's display name |
+| `connectors/<kind>.ts` — the protocol implementation | URL / path / host |
+| Gateway dispatch on `kind` | Credentials, held only in `connections.secret_json` |
+
+Adding Odoo to a deployment is: open `/admin`, pick Odoo, paste the instance
+URL, database, user and API key, press Connect. The appliance then **asks that
+instance what it has** — `ir.model` for its models, `fields_get` for their
+fields — and those become the schema hints the generator sees. Nothing about any
+particular customer's Odoo is baked in.
+
+The same holds for CSV and WebDAV, which list the directory or share and read
+column headers. ERPNext is currently the exception: its schema hints are a
+curated doctype list rather than introspection via the `DocType` doctype. That
+is a known gap, not a design choice.
+
+Verified connectors: **ERPNext**, **local filesystem (CSV)**, **WebDAV**,
+**internal REST**, **Odoo**. PostgreSQL is declared in the catalogue but refuses
+creation until it has been proven against a live instance — the admin panel
+shows unverified types rather than pretending they work.
+
 ## Threat model notes
 
 - Generated HTML is untrusted. It is served from the appliance origin, so it

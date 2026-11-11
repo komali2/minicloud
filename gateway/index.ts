@@ -4,6 +4,7 @@ import { erpQuery, erpCreate } from "../connectors/erpnext";
 import { csvQuery } from "../connectors/csvfile";
 import { webdavQuery } from "../connectors/webdav";
 import { restQuery } from "../connectors/rest";
+import { odooQuery } from "../connectors/odoo";
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
@@ -57,6 +58,7 @@ export async function handleQuery(app: AppRow, queryId: string, url: URL): Promi
       : conn.kind === "csv" ? await csvQuery(conn, q)
       : conn.kind === "webdav" ? await webdavQuery(conn, q)
       : conn.kind === "rest" ? await restQuery(conn, q)
+      : conn.kind === "odoo" ? await odooQuery(conn, q)
       : (() => { throw new Error(`unsupported connection kind ${conn.kind}`); })();
     audit({
       app_id: app.id, kind: "query", ref_id: queryId, connection_id: conn.id,

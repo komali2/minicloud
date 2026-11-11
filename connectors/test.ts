@@ -1,6 +1,7 @@
 import type { Connection } from "../server/types";
 import { listFiles } from "./csvfile";
 import { webdavList } from "./webdav";
+import { odooPing } from "./odoo";
 
 /** Actually reach out and prove a connection works. Never returns credentials. */
 export async function testConnection(c: Connection): Promise<{ ok: boolean; detail: string }> {
@@ -26,6 +27,8 @@ export async function testConnection(c: Connection): Promise<{ ok: boolean; deta
         if (!files.length) return { ok: false, detail: "share reachable, but no .csv files on it" };
         return { ok: true, detail: `${files.length} file(s) on the share` };
       }
+      case "odoo":
+        return { ok: true, detail: await odooPing(c) };
       case "rest": {
         const headers: Record<string, string> = { Accept: "application/json" };
         if (c.secret.header && c.secret.token) headers[c.secret.header] = c.secret.token;
