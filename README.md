@@ -116,3 +116,11 @@ bun scripts/seed-erp.ts
 
 Built at **c0mpiled-18: YC Startup School Hackathon, Taipei**, 2026-11-11,
 under YC RFS *"AI for the Air-Gapped Economy."*
+
+## License
+
+minicloud is free software: you can redistribute it and/or modify it under the
+terms of the **GNU General Public License v3.0** as published by the Free
+Software Foundation. See [`LICENSE`](LICENSE) for the full text.
+
+Copyright © 2026 Caleb Bergman
