@@ -67,7 +67,7 @@ tailscale funnel 3000          # prints an admin link if Funnel isn't enabled ye
 tailscale funnel status
 ```
 
-Hostname: `https://caleb-manjarotop.tail6c0d62.ts.net`
+Hostname: `https://caleb-manjarotop.taile06653.ts.net`
 
 Enable HTTPS certs + the Funnel node attribute once in the tailnet admin
 console (you own the tailnet — two clicks). Verify by loading it **on a phone
