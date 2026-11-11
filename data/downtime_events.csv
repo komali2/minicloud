@@ -1,0 +1,973 @@
+event_date,line,reason,minutes_lost,technician,shift
+2025-01-06,Line 3 - Packing,Sensor fault,35,J. Hsu,B
+2025-01-06,Line 2 - Assembly,Material shortage,43,L. Chen,B
+2025-01-06,Line 3 - Packing,Power dip,14,A. Lin,B
+2025-01-08,Line 2 - Assembly,Label printer fault,12,S. Yeh,A
+2025-01-08,Line 1 - Assembly,Material shortage,145,S. Yeh,C
+2025-01-09,Line 1 - Assembly,Material shortage,117,J. Hsu,C
+2025-01-09,Line 3 - Packing,Conveyor jam,29,J. Hsu,B
+2025-01-10,Line 2 - Assembly,Operator break overrun,13,M. Wu,B
+2025-01-10,Line 2 - Assembly,Planned maintenance,180,J. Hsu,A
+2025-01-10,Line 3 - Packing,Quality hold,24,M. Wu,C
+2025-01-11,Line 4 - Finishing,Power dip,14,L. Chen,B
+2025-01-11,Line 4 - Finishing,Tooling changeover,42,S. Yeh,C
+2025-01-13,Line 2 - Assembly,Label printer fault,39,M. Wu,B
+2025-01-13,Line 4 - Finishing,Planned maintenance,165,S. Yeh,B
+2025-01-14,Line 2 - Assembly,Tooling changeover,40,P. Kao,B
+2025-01-15,Line 2 - Assembly,Tooling changeover,55,M. Wu,C
+2025-01-15,Line 2 - Assembly,Quality hold,117,S. Yeh,C
+2025-01-16,Line 4 - Finishing,Material shortage,165,A. Lin,B
+2025-01-16,Line 4 - Finishing,Power dip,8,L. Chen,C
+2025-01-18,Line 1 - Assembly,Label printer fault,15,S. Yeh,C
+2025-01-18,Line 1 - Assembly,Sensor fault,38,J. Hsu,A
+2025-01-19,Line 4 - Finishing,Material shortage,71,J. Hsu,C
+2025-01-19,Line 3 - Packing,Sensor fault,49,L. Chen,B
+2025-01-20,Line 3 - Packing,Operator break overrun,18,A. Lin,A
+2025-01-20,Line 2 - Assembly,Label printer fault,21,A. Lin,A
+2025-01-20,Line 1 - Assembly,Planned maintenance,107,M. Wu,B
+2025-01-22,Line 4 - Finishing,Operator break overrun,24,L. Chen,B
+2025-01-22,Line 3 - Packing,Sensor fault,46,L. Chen,C
+2025-01-24,Line 1 - Assembly,Conveyor jam,55,S. Yeh,B
+2025-01-25,Line 2 - Assembly,Conveyor jam,66,S. Yeh,C
+2025-01-25,Line 3 - Packing,Conveyor jam,19,J. Hsu,B
+2025-01-25,Line 3 - Packing,Power dip,38,A. Lin,A
+2025-01-26,Line 1 - Assembly,Power dip,29,A. Lin,C
+2025-01-27,Line 3 - Packing,Tooling changeover,33,L. Chen,A
+2025-01-27,Line 3 - Packing,Conveyor jam,44,A. Lin,C
+2025-01-27,Line 3 - Packing,Tooling changeover,51,L. Chen,C
+2025-01-28,Line 2 - Assembly,Operator break overrun,25,J. Hsu,A
+2025-01-28,Line 1 - Assembly,Operator break overrun,18,J. Hsu,A
+2025-01-29,Line 4 - Finishing,Conveyor jam,60,M. Wu,B
+2025-01-31,Line 4 - Finishing,Operator break overrun,9,S. Yeh,A
+2025-01-31,Line 2 - Assembly,Tooling changeover,41,A. Lin,A
+2025-02-01,Line 4 - Finishing,Tooling changeover,46,A. Lin,C
+2025-02-01,Line 1 - Assembly,Planned maintenance,83,P. Kao,B
+2025-02-01,Line 1 - Assembly,Conveyor jam,42,S. Yeh,B
+2025-02-02,Line 2 - Assembly,Sensor fault,58,S. Yeh,A
+2025-02-03,Line 4 - Finishing,Operator break overrun,22,A. Lin,C
+2025-02-04,Line 2 - Assembly,Sensor fault,85,P. Kao,C
+2025-02-04,Line 3 - Packing,Conveyor jam,28,S. Yeh,C
+2025-02-04,Line 1 - Assembly,Material shortage,75,M. Wu,B
+2025-02-05,Line 4 - Finishing,Label printer fault,30,J. Hsu,C
+2025-02-05,Line 2 - Assembly,Material shortage,94,A. Lin,C
+2025-02-05,Line 4 - Finishing,Planned maintenance,145,S. Yeh,B
+2025-02-06,Line 1 - Assembly,Power dip,33,A. Lin,B
+2025-02-08,Line 3 - Packing,Sensor fault,90,P. Kao,A
+2025-02-11,Line 2 - Assembly,Power dip,36,A. Lin,C
+2025-02-11,Line 4 - Finishing,Operator break overrun,14,P. Kao,B
+2025-02-11,Line 3 - Packing,Operator break overrun,24,J. Hsu,C
+2025-02-12,Line 3 - Packing,Tooling changeover,54,J. Hsu,B
+2025-02-12,Line 1 - Assembly,Quality hold,62,M. Wu,C
+2025-02-12,Line 1 - Assembly,Power dip,36,M. Wu,A
+2025-02-13,Line 1 - Assembly,Label printer fault,9,L. Chen,A
+2025-02-14,Line 4 - Finishing,Planned maintenance,156,L. Chen,B
+2025-02-17,Line 1 - Assembly,Quality hold,92,J. Hsu,A
+2025-02-17,Line 3 - Packing,Label printer fault,13,J. Hsu,C
+2025-02-17,Line 2 - Assembly,Planned maintenance,118,P. Kao,B
+2025-02-18,Line 4 - Finishing,Tooling changeover,36,P. Kao,C
+2025-02-20,Line 1 - Assembly,Planned maintenance,94,J. Hsu,A
+2025-02-20,Line 3 - Packing,Material shortage,161,S. Yeh,A
+2025-02-20,Line 3 - Packing,Quality hold,56,S. Yeh,C
+2025-02-21,Line 4 - Finishing,Conveyor jam,22,A. Lin,A
+2025-02-21,Line 4 - Finishing,Quality hold,68,L. Chen,A
+2025-02-24,Line 4 - Finishing,Conveyor jam,62,A. Lin,C
+2025-02-24,Line 1 - Assembly,Power dip,27,A. Lin,B
+2025-02-24,Line 1 - Assembly,Planned maintenance,187,P. Kao,B
+2025-02-25,Line 4 - Finishing,Sensor fault,83,L. Chen,C
+2025-02-26,Line 1 - Assembly,Material shortage,66,J. Hsu,A
+2025-02-27,Line 1 - Assembly,Sensor fault,72,S. Yeh,C
+2025-02-27,Line 4 - Finishing,Tooling changeover,36,L. Chen,C
+2025-02-27,Line 1 - Assembly,Sensor fault,75,P. Kao,B
+2025-02-28,Line 4 - Finishing,Tooling changeover,28,P. Kao,C
+2025-03-02,Line 3 - Packing,Operator break overrun,20,A. Lin,B
+2025-03-03,Line 1 - Assembly,Quality hold,59,L. Chen,B
+2025-03-04,Line 1 - Assembly,Label printer fault,18,L. Chen,A
+2025-03-04,Line 1 - Assembly,Planned maintenance,86,A. Lin,C
+2025-03-05,Line 4 - Finishing,Operator break overrun,21,S. Yeh,B
+2025-03-05,Line 3 - Packing,Planned maintenance,125,S. Yeh,B
+2025-03-06,Line 2 - Assembly,Material shortage,68,J. Hsu,B
+2025-03-06,Line 3 - Packing,Operator break overrun,13,J. Hsu,A
+2025-03-06,Line 3 - Packing,Power dip,13,M. Wu,B
+2025-03-07,Line 3 - Packing,Quality hold,109,L. Chen,C
+2025-03-08,Line 3 - Packing,Operator break overrun,18,P. Kao,C
+2025-03-08,Line 4 - Finishing,Material shortage,56,M. Wu,A
+2025-03-08,Line 4 - Finishing,Label printer fault,16,S. Yeh,A
+2025-03-11,Line 4 - Finishing,Planned maintenance,118,A. Lin,A
+2025-03-14,Line 3 - Packing,Conveyor jam,55,S. Yeh,B
+2025-03-14,Line 4 - Finishing,Quality hold,107,P. Kao,A
+2025-03-14,Line 2 - Assembly,Operator break overrun,16,A. Lin,A
+2025-03-16,Line 4 - Finishing,Conveyor jam,69,P. Kao,A
+2025-03-16,Line 1 - Assembly,Conveyor jam,15,M. Wu,A
+2025-03-17,Line 4 - Finishing,Conveyor jam,68,M. Wu,B
+2025-03-17,Line 1 - Assembly,Conveyor jam,53,M. Wu,C
+2025-03-18,Line 1 - Assembly,Sensor fault,62,A. Lin,B
+2025-03-18,Line 2 - Assembly,Tooling changeover,25,L. Chen,B
+2025-03-19,Line 1 - Assembly,Planned maintenance,203,S. Yeh,C
+2025-03-21,Line 1 - Assembly,Tooling changeover,42,S. Yeh,A
+2025-03-22,Line 1 - Assembly,Tooling changeover,49,A. Lin,B
+2025-03-23,Line 3 - Packing,Sensor fault,43,A. Lin,A
+2025-03-23,Line 4 - Finishing,Material shortage,143,A. Lin,C
+2025-03-24,Line 1 - Assembly,Conveyor jam,32,L. Chen,A
+2025-03-25,Line 1 - Assembly,Operator break overrun,25,J. Hsu,C
+2025-03-26,Line 3 - Packing,Material shortage,85,A. Lin,B
+2025-03-26,Line 3 - Packing,Power dip,23,J. Hsu,A
+2025-03-28,Line 2 - Assembly,Planned maintenance,191,L. Chen,A
+2025-03-28,Line 1 - Assembly,Tooling changeover,53,A. Lin,C
+2025-03-30,Line 1 - Assembly,Quality hold,100,M. Wu,A
+2025-03-31,Line 4 - Finishing,Conveyor jam,56,J. Hsu,A
+2025-03-31,Line 2 - Assembly,Tooling changeover,27,A. Lin,C
+2025-04-01,Line 4 - Finishing,Label printer fault,25,L. Chen,A
+2025-04-01,Line 3 - Packing,Quality hold,44,J. Hsu,A
+2025-04-01,Line 1 - Assembly,Power dip,20,P. Kao,C
+2025-04-02,Line 4 - Finishing,Label printer fault,43,S. Yeh,A
+2025-04-02,Line 3 - Packing,Sensor fault,64,P. Kao,C
+2025-04-04,Line 4 - Finishing,Material shortage,115,P. Kao,A
+2025-04-04,Line 4 - Finishing,Planned maintenance,61,M. Wu,C
+2025-04-06,Line 1 - Assembly,Conveyor jam,44,S. Yeh,B
+2025-04-06,Line 2 - Assembly,Power dip,21,S. Yeh,B
+2025-04-06,Line 1 - Assembly,Planned maintenance,205,M. Wu,C
+2025-04-07,Line 4 - Finishing,Power dip,26,M. Wu,C
+2025-04-07,Line 1 - Assembly,Planned maintenance,156,S. Yeh,C
+2025-04-07,Line 1 - Assembly,Quality hold,117,S. Yeh,A
+2025-04-08,Line 1 - Assembly,Label printer fault,19,L. Chen,C
+2025-04-08,Line 4 - Finishing,Tooling changeover,41,M. Wu,C
+2025-04-08,Line 1 - Assembly,Material shortage,172,J. Hsu,B
+2025-04-09,Line 4 - Finishing,Quality hold,94,L. Chen,B
+2025-04-09,Line 1 - Assembly,Material shortage,65,J. Hsu,A
+2025-04-09,Line 3 - Packing,Power dip,38,L. Chen,B
+2025-04-10,Line 4 - Finishing,Operator break overrun,12,S. Yeh,C
+2025-04-10,Line 2 - Assembly,Operator break overrun,24,S. Yeh,A
+2025-04-10,Line 2 - Assembly,Tooling changeover,18,S. Yeh,B
+2025-04-11,Line 1 - Assembly,Power dip,34,M. Wu,B
+2025-04-14,Line 4 - Finishing,Material shortage,171,A. Lin,B
+2025-04-14,Line 4 - Finishing,Label printer fault,39,S. Yeh,B
+2025-04-15,Line 1 - Assembly,Planned maintenance,75,S. Yeh,C
+2025-04-15,Line 2 - Assembly,Sensor fault,58,M. Wu,A
+2025-04-15,Line 4 - Finishing,Material shortage,25,L. Chen,C
+2025-04-16,Line 2 - Assembly,Power dip,10,A. Lin,C
+2025-04-16,Line 2 - Assembly,Tooling changeover,34,L. Chen,C
+2025-04-17,Line 1 - Assembly,Operator break overrun,13,S. Yeh,A
+2025-04-18,Line 3 - Packing,Quality hold,74,J. Hsu,C
+2025-04-18,Line 2 - Assembly,Planned maintenance,141,L. Chen,B
+2025-04-19,Line 4 - Finishing,Quality hold,81,S. Yeh,B
+2025-04-21,Line 2 - Assembly,Operator break overrun,21,L. Chen,C
+2025-04-21,Line 2 - Assembly,Power dip,30,P. Kao,B
+2025-04-22,Line 1 - Assembly,Quality hold,48,A. Lin,B
+2025-04-22,Line 2 - Assembly,Label printer fault,16,P. Kao,A
+2025-04-25,Line 2 - Assembly,Conveyor jam,62,P. Kao,A
+2025-04-26,Line 3 - Packing,Power dip,10,A. Lin,A
+2025-04-28,Line 4 - Finishing,Material shortage,141,S. Yeh,C
+2025-04-28,Line 2 - Assembly,Operator break overrun,24,S. Yeh,A
+2025-04-28,Line 2 - Assembly,Material shortage,98,A. Lin,A
+2025-04-29,Line 4 - Finishing,Tooling changeover,35,S. Yeh,A
+2025-04-29,Line 2 - Assembly,Tooling changeover,21,L. Chen,C
+2025-04-29,Line 3 - Packing,Label printer fault,9,L. Chen,B
+2025-05-01,Line 3 - Packing,Label printer fault,14,S. Yeh,B
+2025-05-03,Line 2 - Assembly,Conveyor jam,26,S. Yeh,C
+2025-05-03,Line 3 - Packing,Conveyor jam,35,M. Wu,A
+2025-05-05,Line 1 - Assembly,Quality hold,23,S. Yeh,A
+2025-05-06,Line 1 - Assembly,Planned maintenance,128,L. Chen,C
+2025-05-06,Line 2 - Assembly,Sensor fault,57,S. Yeh,C
+2025-05-07,Line 4 - Finishing,Conveyor jam,17,S. Yeh,B
+2025-05-07,Line 2 - Assembly,Planned maintenance,230,A. Lin,C
+2025-05-07,Line 3 - Packing,Material shortage,164,P. Kao,C
+2025-05-08,Line 2 - Assembly,Power dip,18,A. Lin,C
+2025-05-08,Line 4 - Finishing,Label printer fault,15,P. Kao,A
+2025-05-09,Line 1 - Assembly,Quality hold,108,J. Hsu,B
+2025-05-09,Line 2 - Assembly,Planned maintenance,81,L. Chen,A
+2025-05-09,Line 4 - Finishing,Quality hold,48,S. Yeh,B
+2025-05-11,Line 1 - Assembly,Power dip,36,A. Lin,B
+2025-05-11,Line 1 - Assembly,Tooling changeover,51,S. Yeh,C
+2025-05-13,Line 1 - Assembly,Planned maintenance,184,A. Lin,B
+2025-05-13,Line 2 - Assembly,Operator break overrun,8,A. Lin,C
+2025-05-14,Line 1 - Assembly,Quality hold,47,A. Lin,C
+2025-05-14,Line 3 - Packing,Tooling changeover,47,L. Chen,A
+2025-05-15,Line 1 - Assembly,Material shortage,91,S. Yeh,C
+2025-05-15,Line 4 - Finishing,Planned maintenance,197,J. Hsu,B
+2025-05-15,Line 3 - Packing,Operator break overrun,17,A. Lin,C
+2025-05-16,Line 1 - Assembly,Conveyor jam,67,M. Wu,A
+2025-05-17,Line 1 - Assembly,Operator break overrun,13,M. Wu,B
+2025-05-17,Line 3 - Packing,Label printer fault,24,P. Kao,B
+2025-05-17,Line 4 - Finishing,Quality hold,95,M. Wu,B
+2025-05-18,Line 4 - Finishing,Quality hold,70,L. Chen,A
+2025-05-21,Line 4 - Finishing,Operator break overrun,14,M. Wu,B
+2025-05-21,Line 4 - Finishing,Power dip,36,M. Wu,B
+2025-05-21,Line 2 - Assembly,Planned maintenance,128,P. Kao,B
+2025-05-22,Line 4 - Finishing,Operator break overrun,10,S. Yeh,B
+2025-05-22,Line 4 - Finishing,Material shortage,30,M. Wu,B
+2025-05-22,Line 3 - Packing,Material shortage,178,L. Chen,A
+2025-05-23,Line 3 - Packing,Label printer fault,17,J. Hsu,C
+2025-05-24,Line 1 - Assembly,Tooling changeover,34,L. Chen,B
+2025-05-25,Line 1 - Assembly,Tooling changeover,49,J. Hsu,A
+2025-05-26,Line 4 - Finishing,Operator break overrun,23,L. Chen,A
+2025-05-26,Line 1 - Assembly,Planned maintenance,81,S. Yeh,C
+2025-05-26,Line 1 - Assembly,Power dip,25,P. Kao,B
+2025-05-28,Line 2 - Assembly,Tooling changeover,43,P. Kao,B
+2025-05-28,Line 1 - Assembly,Sensor fault,50,L. Chen,C
+2025-05-28,Line 2 - Assembly,Quality hold,105,L. Chen,B
+2025-06-01,Line 1 - Assembly,Label printer fault,11,P. Kao,B
+2025-06-03,Line 1 - Assembly,Material shortage,146,P. Kao,B
+2025-06-04,Line 2 - Assembly,Sensor fault,58,M. Wu,A
+2025-06-04,Line 1 - Assembly,Tooling changeover,22,A. Lin,B
+2025-06-05,Line 3 - Packing,Conveyor jam,43,P. Kao,C
+2025-06-06,Line 2 - Assembly,Material shortage,179,M. Wu,A
+2025-06-08,Line 1 - Assembly,Quality hold,98,L. Chen,A
+2025-06-10,Line 2 - Assembly,Label printer fault,34,L. Chen,A
+2025-06-10,Line 2 - Assembly,Power dip,12,P. Kao,B
+2025-06-12,Line 3 - Packing,Operator break overrun,19,J. Hsu,A
+2025-06-14,Line 2 - Assembly,Operator break overrun,24,M. Wu,C
+2025-06-15,Line 2 - Assembly,Label printer fault,28,J. Hsu,A
+2025-06-15,Line 3 - Packing,Conveyor jam,45,P. Kao,C
+2025-06-15,Line 1 - Assembly,Sensor fault,65,S. Yeh,C
+2025-06-16,Line 2 - Assembly,Tooling changeover,30,M. Wu,C
+2025-06-16,Line 2 - Assembly,Conveyor jam,58,M. Wu,B
+2025-06-16,Line 2 - Assembly,Planned maintenance,107,M. Wu,A
+2025-06-17,Line 4 - Finishing,Sensor fault,55,J. Hsu,A
+2025-06-17,Line 1 - Assembly,Planned maintenance,87,A. Lin,B
+2025-06-17,Line 3 - Packing,Material shortage,165,P. Kao,B
+2025-06-19,Line 3 - Packing,Sensor fault,64,L. Chen,B
+2025-06-19,Line 2 - Assembly,Conveyor jam,55,J. Hsu,A
+2025-06-19,Line 1 - Assembly,Sensor fault,43,L. Chen,C
+2025-06-20,Line 2 - Assembly,Power dip,28,A. Lin,C
+2025-06-20,Line 4 - Finishing,Material shortage,68,L. Chen,B
+2025-06-20,Line 3 - Packing,Material shortage,91,M. Wu,B
+2025-06-21,Line 4 - Finishing,Material shortage,173,A. Lin,C
+2025-06-22,Line 4 - Finishing,Quality hold,81,L. Chen,B
+2025-06-22,Line 1 - Assembly,Quality hold,65,M. Wu,A
+2025-06-22,Line 1 - Assembly,Planned maintenance,186,M. Wu,A
+2025-06-23,Line 1 - Assembly,Label printer fault,36,L. Chen,C
+2025-06-23,Line 4 - Finishing,Power dip,27,P. Kao,C
+2025-06-23,Line 4 - Finishing,Material shortage,130,P. Kao,B
+2025-06-24,Line 2 - Assembly,Tooling changeover,42,M. Wu,B
+2025-06-24,Line 4 - Finishing,Conveyor jam,67,J. Hsu,B
+2025-06-25,Line 1 - Assembly,Operator break overrun,25,A. Lin,A
+2025-06-26,Line 4 - Finishing,Quality hold,66,L. Chen,C
+2025-06-27,Line 1 - Assembly,Planned maintenance,222,L. Chen,B
+2025-06-27,Line 3 - Packing,Operator break overrun,9,M. Wu,A
+2025-06-29,Line 1 - Assembly,Sensor fault,89,M. Wu,B
+2025-06-29,Line 4 - Finishing,Power dip,8,P. Kao,C
+2025-06-30,Line 4 - Finishing,Label printer fault,39,S. Yeh,C
+2025-06-30,Line 3 - Packing,Power dip,7,A. Lin,C
+2025-07-01,Line 2 - Assembly,Planned maintenance,115,L. Chen,A
+2025-07-01,Line 4 - Finishing,Conveyor jam,24,M. Wu,B
+2025-07-01,Line 2 - Assembly,Material shortage,36,S. Yeh,B
+2025-07-03,Line 1 - Assembly,Material shortage,93,A. Lin,A
+2025-07-04,Line 1 - Assembly,Planned maintenance,199,J. Hsu,B
+2025-07-04,Line 1 - Assembly,Sensor fault,39,P. Kao,C
+2025-07-04,Line 3 - Packing,Conveyor jam,70,M. Wu,C
+2025-07-06,Line 4 - Finishing,Sensor fault,81,S. Yeh,B
+2025-07-06,Line 4 - Finishing,Power dip,32,P. Kao,A
+2025-07-06,Line 2 - Assembly,Conveyor jam,61,M. Wu,C
+2025-07-07,Line 2 - Assembly,Label printer fault,18,L. Chen,C
+2025-07-09,Line 4 - Finishing,Quality hold,36,S. Yeh,A
+2025-07-09,Line 2 - Assembly,Tooling changeover,29,P. Kao,B
+2025-07-09,Line 1 - Assembly,Tooling changeover,54,J. Hsu,A
+2025-07-11,Line 1 - Assembly,Operator break overrun,20,L. Chen,A
+2025-07-11,Line 1 - Assembly,Material shortage,91,A. Lin,B
+2025-07-12,Line 3 - Packing,Planned maintenance,165,A. Lin,C
+2025-07-12,Line 4 - Finishing,Planned maintenance,145,S. Yeh,A
+2025-07-12,Line 2 - Assembly,Planned maintenance,184,P. Kao,C
+2025-07-13,Line 2 - Assembly,Quality hold,26,S. Yeh,A
+2025-07-13,Line 3 - Packing,Tooling changeover,22,P. Kao,C
+2025-07-13,Line 1 - Assembly,Sensor fault,21,L. Chen,C
+2025-07-14,Line 1 - Assembly,Tooling changeover,33,J. Hsu,B
+2025-07-14,Line 2 - Assembly,Label printer fault,34,A. Lin,B
+2025-07-14,Line 3 - Packing,Label printer fault,13,P. Kao,B
+2025-07-16,Line 3 - Packing,Tooling changeover,46,P. Kao,B
+2025-07-16,Line 1 - Assembly,Planned maintenance,124,L. Chen,A
+2025-07-18,Line 3 - Packing,Planned maintenance,197,S. Yeh,C
+2025-07-18,Line 1 - Assembly,Planned maintenance,145,S. Yeh,C
+2025-07-19,Line 2 - Assembly,Power dip,30,J. Hsu,B
+2025-07-20,Line 4 - Finishing,Tooling changeover,43,M. Wu,C
+2025-07-20,Line 3 - Packing,Quality hold,115,A. Lin,B
+2025-07-21,Line 3 - Packing,Label printer fault,18,A. Lin,B
+2025-07-21,Line 3 - Packing,Quality hold,64,A. Lin,C
+2025-07-22,Line 1 - Assembly,Tooling changeover,27,M. Wu,B
+2025-07-22,Line 2 - Assembly,Material shortage,114,P. Kao,A
+2025-07-23,Line 1 - Assembly,Quality hold,64,P. Kao,C
+2025-07-24,Line 1 - Assembly,Operator break overrun,19,P. Kao,C
+2025-07-25,Line 4 - Finishing,Operator break overrun,18,L. Chen,A
+2025-07-25,Line 3 - Packing,Tooling changeover,39,J. Hsu,A
+2025-07-26,Line 2 - Assembly,Label printer fault,45,S. Yeh,B
+2025-07-27,Line 1 - Assembly,Sensor fault,87,P. Kao,A
+2025-07-27,Line 4 - Finishing,Operator break overrun,14,A. Lin,B
+2025-07-28,Line 4 - Finishing,Label printer fault,31,A. Lin,A
+2025-07-28,Line 3 - Packing,Sensor fault,37,P. Kao,B
+2025-07-28,Line 4 - Finishing,Sensor fault,29,P. Kao,A
+2025-07-29,Line 4 - Finishing,Planned maintenance,63,J. Hsu,B
+2025-07-30,Line 1 - Assembly,Operator break overrun,25,L. Chen,B
+2025-08-01,Line 4 - Finishing,Planned maintenance,222,M. Wu,A
+2025-08-01,Line 2 - Assembly,Label printer fault,23,P. Kao,A
+2025-08-02,Line 3 - Packing,Tooling changeover,28,M. Wu,A
+2025-08-02,Line 1 - Assembly,Quality hold,58,S. Yeh,A
+2025-08-02,Line 2 - Assembly,Operator break overrun,21,M. Wu,A
+2025-08-04,Line 3 - Packing,Planned maintenance,225,M. Wu,A
+2025-08-04,Line 4 - Finishing,Tooling changeover,55,M. Wu,C
+2025-08-04,Line 3 - Packing,Conveyor jam,49,L. Chen,C
+2025-08-05,Line 3 - Packing,Sensor fault,16,A. Lin,C
+2025-08-05,Line 1 - Assembly,Conveyor jam,35,L. Chen,C
+2025-08-05,Line 2 - Assembly,Conveyor jam,45,A. Lin,B
+2025-08-07,Line 3 - Packing,Conveyor jam,26,S. Yeh,A
+2025-08-07,Line 1 - Assembly,Planned maintenance,100,L. Chen,C
+2025-08-08,Line 3 - Packing,Planned maintenance,179,J. Hsu,B
+2025-08-11,Line 4 - Finishing,Operator break overrun,25,J. Hsu,A
+2025-08-11,Line 2 - Assembly,Material shortage,150,A. Lin,C
+2025-08-11,Line 1 - Assembly,Planned maintenance,198,S. Yeh,A
+2025-08-13,Line 2 - Assembly,Planned maintenance,144,J. Hsu,C
+2025-08-13,Line 3 - Packing,Quality hold,47,M. Wu,B
+2025-08-13,Line 3 - Packing,Planned maintenance,146,J. Hsu,C
+2025-08-14,Line 3 - Packing,Tooling changeover,31,J. Hsu,A
+2025-08-15,Line 4 - Finishing,Conveyor jam,44,J. Hsu,C
+2025-08-15,Line 4 - Finishing,Material shortage,120,L. Chen,A
+2025-08-15,Line 3 - Packing,Conveyor jam,24,L. Chen,A
+2025-08-16,Line 2 - Assembly,Conveyor jam,42,L. Chen,C
+2025-08-16,Line 4 - Finishing,Sensor fault,78,J. Hsu,B
+2025-08-17,Line 3 - Packing,Power dip,5,P. Kao,C
+2025-08-17,Line 3 - Packing,Material shortage,180,P. Kao,A
+2025-08-17,Line 4 - Finishing,Planned maintenance,111,S. Yeh,B
+2025-08-18,Line 4 - Finishing,Sensor fault,43,M. Wu,A
+2025-08-18,Line 3 - Packing,Tooling changeover,54,P. Kao,C
+2025-08-18,Line 3 - Packing,Power dip,8,S. Yeh,C
+2025-08-19,Line 3 - Packing,Sensor fault,34,A. Lin,C
+2025-08-19,Line 2 - Assembly,Material shortage,159,A. Lin,C
+2025-08-20,Line 4 - Finishing,Tooling changeover,55,J. Hsu,C
+2025-08-20,Line 3 - Packing,Material shortage,148,J. Hsu,B
+2025-08-21,Line 3 - Packing,Label printer fault,45,S. Yeh,A
+2025-08-21,Line 2 - Assembly,Conveyor jam,16,J. Hsu,C
+2025-08-21,Line 2 - Assembly,Conveyor jam,59,S. Yeh,B
+2025-08-22,Line 2 - Assembly,Power dip,26,P. Kao,B
+2025-08-22,Line 4 - Finishing,Sensor fault,53,L. Chen,B
+2025-08-23,Line 1 - Assembly,Planned maintenance,120,M. Wu,A
+2025-08-23,Line 3 - Packing,Sensor fault,29,A. Lin,C
+2025-08-23,Line 1 - Assembly,Quality hold,46,A. Lin,A
+2025-08-24,Line 2 - Assembly,Sensor fault,36,S. Yeh,A
+2025-08-25,Line 2 - Assembly,Conveyor jam,37,M. Wu,B
+2025-08-25,Line 3 - Packing,Power dip,22,S. Yeh,B
+2025-08-25,Line 3 - Packing,Operator break overrun,10,J. Hsu,B
+2025-08-26,Line 1 - Assembly,Label printer fault,37,A. Lin,B
+2025-08-26,Line 2 - Assembly,Tooling changeover,43,J. Hsu,C
+2025-08-26,Line 2 - Assembly,Tooling changeover,53,P. Kao,C
+2025-08-27,Line 4 - Finishing,Conveyor jam,66,M. Wu,A
+2025-08-27,Line 1 - Assembly,Conveyor jam,10,A. Lin,C
+2025-08-27,Line 1 - Assembly,Power dip,14,L. Chen,C
+2025-08-28,Line 4 - Finishing,Planned maintenance,182,A. Lin,C
+2025-08-28,Line 2 - Assembly,Sensor fault,57,A. Lin,C
+2025-08-28,Line 2 - Assembly,Quality hold,104,L. Chen,A
+2025-08-29,Line 1 - Assembly,Quality hold,57,L. Chen,B
+2025-08-31,Line 1 - Assembly,Conveyor jam,34,J. Hsu,A
+2025-09-01,Line 3 - Packing,Planned maintenance,91,M. Wu,C
+2025-09-01,Line 4 - Finishing,Material shortage,120,P. Kao,B
+2025-09-01,Line 1 - Assembly,Label printer fault,13,A. Lin,B
+2025-09-02,Line 1 - Assembly,Power dip,26,L. Chen,A
+2025-09-03,Line 2 - Assembly,Quality hold,86,S. Yeh,A
+2025-09-03,Line 2 - Assembly,Material shortage,164,J. Hsu,A
+2025-09-05,Line 4 - Finishing,Conveyor jam,57,S. Yeh,A
+2025-09-08,Line 1 - Assembly,Operator break overrun,14,L. Chen,C
+2025-09-09,Line 1 - Assembly,Conveyor jam,17,M. Wu,C
+2025-09-09,Line 1 - Assembly,Conveyor jam,16,M. Wu,C
+2025-09-09,Line 3 - Packing,Material shortage,166,J. Hsu,A
+2025-09-11,Line 4 - Finishing,Operator break overrun,12,A. Lin,C
+2025-09-12,Line 1 - Assembly,Material shortage,105,A. Lin,A
+2025-09-12,Line 4 - Finishing,Label printer fault,15,M. Wu,C
+2025-09-13,Line 2 - Assembly,Material shortage,127,M. Wu,B
+2025-09-13,Line 2 - Assembly,Label printer fault,30,A. Lin,C
+2025-09-13,Line 2 - Assembly,Planned maintenance,173,J. Hsu,B
+2025-09-14,Line 1 - Assembly,Label printer fault,11,J. Hsu,A
+2025-09-15,Line 3 - Packing,Operator break overrun,22,P. Kao,C
+2025-09-16,Line 4 - Finishing,Power dip,14,S. Yeh,A
+2025-09-17,Line 3 - Packing,Operator break overrun,8,L. Chen,A
+2025-09-19,Line 3 - Packing,Quality hold,90,P. Kao,B
+2025-09-20,Line 1 - Assembly,Quality hold,62,A. Lin,B
+2025-09-22,Line 3 - Packing,Label printer fault,21,P. Kao,C
+2025-09-24,Line 3 - Packing,Sensor fault,78,P. Kao,C
+2025-09-24,Line 2 - Assembly,Planned maintenance,119,L. Chen,B
+2025-09-25,Line 3 - Packing,Conveyor jam,58,L. Chen,B
+2025-09-25,Line 1 - Assembly,Sensor fault,39,S. Yeh,B
+2025-09-26,Line 1 - Assembly,Power dip,37,M. Wu,A
+2025-09-26,Line 1 - Assembly,Label printer fault,37,L. Chen,A
+2025-09-26,Line 4 - Finishing,Label printer fault,10,A. Lin,C
+2025-09-28,Line 2 - Assembly,Power dip,40,P. Kao,C
+2025-09-28,Line 1 - Assembly,Operator break overrun,24,P. Kao,A
+2025-09-29,Line 3 - Packing,Operator break overrun,19,J. Hsu,A
+2025-09-29,Line 1 - Assembly,Planned maintenance,60,M. Wu,B
+2025-09-30,Line 1 - Assembly,Quality hold,51,P. Kao,B
+2025-09-30,Line 2 - Assembly,Material shortage,46,J. Hsu,A
+2025-10-01,Line 3 - Packing,Conveyor jam,23,S. Yeh,C
+2025-10-02,Line 1 - Assembly,Tooling changeover,42,S. Yeh,A
+2025-10-04,Line 3 - Packing,Power dip,30,L. Chen,C
+2025-10-04,Line 2 - Assembly,Material shortage,52,L. Chen,C
+2025-10-04,Line 2 - Assembly,Label printer fault,31,M. Wu,B
+2025-10-05,Line 4 - Finishing,Power dip,38,P. Kao,A
+2025-10-05,Line 4 - Finishing,Label printer fault,38,L. Chen,C
+2025-10-08,Line 2 - Assembly,Sensor fault,27,M. Wu,A
+2025-10-08,Line 2 - Assembly,Power dip,26,J. Hsu,B
+2025-10-08,Line 1 - Assembly,Sensor fault,57,A. Lin,C
+2025-10-09,Line 4 - Finishing,Power dip,6,P. Kao,A
+2025-10-09,Line 1 - Assembly,Quality hold,87,A. Lin,B
+2025-10-10,Line 4 - Finishing,Label printer fault,40,M. Wu,B
+2025-10-10,Line 2 - Assembly,Operator break overrun,19,M. Wu,A
+2025-10-12,Line 2 - Assembly,Power dip,24,A. Lin,C
+2025-10-12,Line 3 - Packing,Sensor fault,33,L. Chen,B
+2025-10-14,Line 4 - Finishing,Tooling changeover,23,P. Kao,B
+2025-10-14,Line 4 - Finishing,Sensor fault,59,S. Yeh,C
+2025-10-14,Line 4 - Finishing,Operator break overrun,18,S. Yeh,B
+2025-10-15,Line 1 - Assembly,Planned maintenance,156,M. Wu,A
+2025-10-16,Line 3 - Packing,Sensor fault,90,L. Chen,B
+2025-10-20,Line 1 - Assembly,Tooling changeover,45,J. Hsu,C
+2025-10-20,Line 3 - Packing,Conveyor jam,61,S. Yeh,C
+2025-10-20,Line 3 - Packing,Operator break overrun,12,S. Yeh,C
+2025-10-21,Line 1 - Assembly,Sensor fault,34,S. Yeh,A
+2025-10-21,Line 4 - Finishing,Conveyor jam,21,P. Kao,A
+2025-10-21,Line 1 - Assembly,Quality hold,27,L. Chen,A
+2025-10-22,Line 3 - Packing,Tooling changeover,34,J. Hsu,B
+2025-10-24,Line 2 - Assembly,Power dip,18,M. Wu,C
+2025-10-24,Line 4 - Finishing,Power dip,22,A. Lin,B
+2025-10-24,Line 4 - Finishing,Quality hold,71,J. Hsu,B
+2025-10-25,Line 2 - Assembly,Operator break overrun,10,J. Hsu,A
+2025-10-25,Line 3 - Packing,Material shortage,37,J. Hsu,C
+2025-10-26,Line 1 - Assembly,Sensor fault,71,A. Lin,A
+2025-10-27,Line 3 - Packing,Quality hold,63,J. Hsu,C
+2025-10-28,Line 3 - Packing,Label printer fault,36,M. Wu,C
+2025-10-28,Line 1 - Assembly,Conveyor jam,29,A. Lin,A
+2025-10-28,Line 3 - Packing,Material shortage,79,L. Chen,A
+2025-10-30,Line 3 - Packing,Tooling changeover,41,A. Lin,C
+2025-11-01,Line 1 - Assembly,Operator break overrun,23,P. Kao,B
+2025-11-01,Line 1 - Assembly,Conveyor jam,29,L. Chen,A
+2025-11-02,Line 4 - Finishing,Power dip,5,J. Hsu,C
+2025-11-02,Line 2 - Assembly,Planned maintenance,86,S. Yeh,A
+2025-11-02,Line 3 - Packing,Conveyor jam,26,P. Kao,C
+2025-11-03,Line 1 - Assembly,Conveyor jam,44,J. Hsu,C
+2025-11-03,Line 3 - Packing,Conveyor jam,53,S. Yeh,A
+2025-11-03,Line 1 - Assembly,Tooling changeover,45,P. Kao,A
+2025-11-04,Line 2 - Assembly,Power dip,30,P. Kao,A
+2025-11-06,Line 4 - Finishing,Sensor fault,76,P. Kao,B
+2025-11-07,Line 2 - Assembly,Quality hold,81,P. Kao,A
+2025-11-08,Line 1 - Assembly,Material shortage,59,M. Wu,A
+2025-11-09,Line 1 - Assembly,Planned maintenance,70,J. Hsu,A
+2025-11-09,Line 4 - Finishing,Planned maintenance,86,J. Hsu,A
+2025-11-10,Line 4 - Finishing,Quality hold,109,J. Hsu,A
+2025-11-11,Line 4 - Finishing,Label printer fault,17,J. Hsu,A
+2025-11-15,Line 3 - Packing,Sensor fault,32,S. Yeh,B
+2025-11-16,Line 1 - Assembly,Material shortage,57,J. Hsu,B
+2025-11-16,Line 3 - Packing,Label printer fault,11,P. Kao,C
+2025-11-17,Line 3 - Packing,Conveyor jam,58,S. Yeh,B
+2025-11-17,Line 3 - Packing,Operator break overrun,23,S. Yeh,B
+2025-11-17,Line 2 - Assembly,Sensor fault,70,A. Lin,A
+2025-11-18,Line 1 - Assembly,Label printer fault,31,M. Wu,B
+2025-11-19,Line 2 - Assembly,Operator break overrun,20,M. Wu,B
+2025-11-19,Line 3 - Packing,Operator break overrun,11,S. Yeh,C
+2025-11-20,Line 1 - Assembly,Label printer fault,30,L. Chen,C
+2025-11-21,Line 3 - Packing,Material shortage,34,L. Chen,A
+2025-11-21,Line 4 - Finishing,Operator break overrun,15,S. Yeh,C
+2025-11-22,Line 4 - Finishing,Operator break overrun,21,S. Yeh,C
+2025-11-24,Line 4 - Finishing,Sensor fault,44,A. Lin,B
+2025-11-24,Line 1 - Assembly,Material shortage,148,P. Kao,B
+2025-11-24,Line 3 - Packing,Label printer fault,36,S. Yeh,A
+2025-11-25,Line 3 - Packing,Sensor fault,37,S. Yeh,B
+2025-11-25,Line 2 - Assembly,Operator break overrun,15,A. Lin,C
+2025-11-25,Line 2 - Assembly,Planned maintenance,208,J. Hsu,A
+2025-11-26,Line 1 - Assembly,Operator break overrun,25,J. Hsu,A
+2025-11-26,Line 4 - Finishing,Label printer fault,33,J. Hsu,C
+2025-11-26,Line 1 - Assembly,Label printer fault,22,J. Hsu,A
+2025-11-27,Line 2 - Assembly,Sensor fault,85,P. Kao,A
+2025-11-27,Line 2 - Assembly,Planned maintenance,188,P. Kao,A
+2025-11-28,Line 1 - Assembly,Sensor fault,66,S. Yeh,A
+2025-11-28,Line 2 - Assembly,Operator break overrun,21,L. Chen,A
+2025-11-28,Line 4 - Finishing,Sensor fault,69,M. Wu,C
+2025-11-29,Line 4 - Finishing,Planned maintenance,171,L. Chen,C
+2025-11-29,Line 4 - Finishing,Conveyor jam,58,P. Kao,C
+2025-11-29,Line 2 - Assembly,Conveyor jam,26,J. Hsu,B
+2025-11-30,Line 1 - Assembly,Label printer fault,13,P. Kao,C
+2025-11-30,Line 1 - Assembly,Material shortage,143,A. Lin,A
+2025-11-30,Line 4 - Finishing,Sensor fault,85,L. Chen,A
+2025-12-01,Line 3 - Packing,Sensor fault,70,L. Chen,A
+2025-12-02,Line 1 - Assembly,Operator break overrun,21,M. Wu,C
+2025-12-06,Line 4 - Finishing,Operator break overrun,16,S. Yeh,B
+2025-12-07,Line 3 - Packing,Power dip,29,P. Kao,C
+2025-12-07,Line 3 - Packing,Operator break overrun,25,P. Kao,C
+2025-12-07,Line 4 - Finishing,Material shortage,48,L. Chen,C
+2025-12-08,Line 2 - Assembly,Operator break overrun,21,L. Chen,C
+2025-12-09,Line 3 - Packing,Sensor fault,17,J. Hsu,A
+2025-12-11,Line 4 - Finishing,Quality hold,49,L. Chen,A
+2025-12-11,Line 1 - Assembly,Power dip,27,J. Hsu,C
+2025-12-12,Line 1 - Assembly,Label printer fault,14,M. Wu,B
+2025-12-12,Line 3 - Packing,Conveyor jam,65,L. Chen,A
+2025-12-14,Line 2 - Assembly,Power dip,12,A. Lin,B
+2025-12-15,Line 4 - Finishing,Material shortage,136,J. Hsu,C
+2025-12-16,Line 4 - Finishing,Planned maintenance,73,P. Kao,A
+2025-12-18,Line 3 - Packing,Power dip,18,A. Lin,B
+2025-12-18,Line 1 - Assembly,Sensor fault,53,L. Chen,C
+2025-12-19,Line 2 - Assembly,Label printer fault,38,L. Chen,A
+2025-12-21,Line 2 - Assembly,Quality hold,42,L. Chen,C
+2025-12-22,Line 3 - Packing,Sensor fault,23,P. Kao,A
+2025-12-22,Line 3 - Packing,Power dip,23,A. Lin,A
+2025-12-23,Line 3 - Packing,Sensor fault,29,P. Kao,A
+2025-12-23,Line 3 - Packing,Operator break overrun,24,M. Wu,B
+2025-12-24,Line 4 - Finishing,Quality hold,90,J. Hsu,A
+2025-12-25,Line 1 - Assembly,Label printer fault,17,P. Kao,C
+2025-12-25,Line 2 - Assembly,Quality hold,25,P. Kao,B
+2025-12-26,Line 1 - Assembly,Conveyor jam,40,L. Chen,B
+2025-12-26,Line 1 - Assembly,Material shortage,157,P. Kao,B
+2025-12-28,Line 1 - Assembly,Quality hold,33,J. Hsu,C
+2025-12-28,Line 4 - Finishing,Sensor fault,17,P. Kao,B
+2025-12-28,Line 4 - Finishing,Quality hold,56,P. Kao,A
+2025-12-29,Line 4 - Finishing,Operator break overrun,14,J. Hsu,C
+2025-12-29,Line 1 - Assembly,Sensor fault,54,L. Chen,A
+2025-12-29,Line 2 - Assembly,Planned maintenance,148,J. Hsu,A
+2025-12-31,Line 1 - Assembly,Power dip,27,M. Wu,A
+2025-12-31,Line 3 - Packing,Sensor fault,71,J. Hsu,A
+2025-12-31,Line 2 - Assembly,Conveyor jam,53,M. Wu,A
+2026-01-02,Line 3 - Packing,Sensor fault,83,A. Lin,A
+2026-01-03,Line 4 - Finishing,Conveyor jam,35,L. Chen,A
+2026-01-04,Line 4 - Finishing,Conveyor jam,11,L. Chen,C
+2026-01-05,Line 4 - Finishing,Tooling changeover,28,J. Hsu,C
+2026-01-06,Line 1 - Assembly,Operator break overrun,25,A. Lin,A
+2026-01-06,Line 1 - Assembly,Planned maintenance,91,L. Chen,B
+2026-01-07,Line 3 - Packing,Tooling changeover,28,M. Wu,B
+2026-01-08,Line 2 - Assembly,Conveyor jam,63,M. Wu,C
+2026-01-08,Line 4 - Finishing,Operator break overrun,15,P. Kao,A
+2026-01-09,Line 1 - Assembly,Conveyor jam,56,A. Lin,A
+2026-01-10,Line 2 - Assembly,Material shortage,97,M. Wu,B
+2026-01-10,Line 2 - Assembly,Label printer fault,31,P. Kao,C
+2026-01-11,Line 1 - Assembly,Label printer fault,9,S. Yeh,B
+2026-01-12,Line 2 - Assembly,Tooling changeover,34,J. Hsu,C
+2026-01-12,Line 1 - Assembly,Label printer fault,39,M. Wu,A
+2026-01-13,Line 4 - Finishing,Power dip,5,P. Kao,C
+2026-01-13,Line 1 - Assembly,Sensor fault,84,A. Lin,C
+2026-01-15,Line 3 - Packing,Power dip,12,S. Yeh,A
+2026-01-15,Line 2 - Assembly,Planned maintenance,77,J. Hsu,C
+2026-01-16,Line 1 - Assembly,Label printer fault,25,M. Wu,C
+2026-01-16,Line 2 - Assembly,Label printer fault,33,S. Yeh,A
+2026-01-16,Line 3 - Packing,Power dip,24,A. Lin,A
+2026-01-17,Line 4 - Finishing,Conveyor jam,64,J. Hsu,C
+2026-01-19,Line 4 - Finishing,Conveyor jam,11,P. Kao,B
+2026-01-20,Line 2 - Assembly,Label printer fault,30,A. Lin,B
+2026-01-21,Line 3 - Packing,Planned maintenance,163,M. Wu,B
+2026-01-21,Line 2 - Assembly,Material shortage,124,M. Wu,B
+2026-01-25,Line 4 - Finishing,Sensor fault,45,J. Hsu,A
+2026-01-25,Line 3 - Packing,Sensor fault,89,M. Wu,B
+2026-01-28,Line 3 - Packing,Material shortage,141,M. Wu,C
+2026-01-28,Line 1 - Assembly,Quality hold,57,L. Chen,B
+2026-01-28,Line 3 - Packing,Operator break overrun,19,P. Kao,A
+2026-01-30,Line 2 - Assembly,Sensor fault,70,P. Kao,A
+2026-01-30,Line 2 - Assembly,Material shortage,97,J. Hsu,C
+2026-01-31,Line 3 - Packing,Power dip,37,A. Lin,B
+2026-01-31,Line 2 - Assembly,Label printer fault,22,J. Hsu,A
+2026-01-31,Line 2 - Assembly,Conveyor jam,64,J. Hsu,A
+2026-02-01,Line 1 - Assembly,Sensor fault,90,J. Hsu,C
+2026-02-01,Line 3 - Packing,Conveyor jam,67,S. Yeh,B
+2026-02-01,Line 2 - Assembly,Operator break overrun,11,J. Hsu,C
+2026-02-03,Line 3 - Packing,Operator break overrun,8,P. Kao,C
+2026-02-04,Line 3 - Packing,Conveyor jam,70,S. Yeh,A
+2026-02-04,Line 1 - Assembly,Planned maintenance,157,P. Kao,A
+2026-02-05,Line 1 - Assembly,Operator break overrun,18,J. Hsu,C
+2026-02-06,Line 4 - Finishing,Sensor fault,48,P. Kao,B
+2026-02-06,Line 4 - Finishing,Label printer fault,23,S. Yeh,A
+2026-02-08,Line 2 - Assembly,Power dip,10,P. Kao,C
+2026-02-09,Line 4 - Finishing,Material shortage,132,L. Chen,A
+2026-02-09,Line 2 - Assembly,Label printer fault,28,J. Hsu,B
+2026-02-11,Line 1 - Assembly,Quality hold,42,J. Hsu,A
+2026-02-11,Line 1 - Assembly,Sensor fault,52,M. Wu,C
+2026-02-12,Line 1 - Assembly,Label printer fault,43,S. Yeh,C
+2026-02-13,Line 1 - Assembly,Quality hold,29,M. Wu,B
+2026-02-14,Line 1 - Assembly,Quality hold,77,S. Yeh,C
+2026-02-15,Line 3 - Packing,Power dip,16,S. Yeh,B
+2026-02-15,Line 4 - Finishing,Conveyor jam,50,J. Hsu,B
+2026-02-15,Line 4 - Finishing,Label printer fault,8,S. Yeh,C
+2026-02-16,Line 3 - Packing,Planned maintenance,153,J. Hsu,A
+2026-02-16,Line 2 - Assembly,Sensor fault,88,P. Kao,B
+2026-02-17,Line 4 - Finishing,Tooling changeover,32,L. Chen,B
+2026-02-19,Line 1 - Assembly,Label printer fault,10,L. Chen,A
+2026-02-20,Line 2 - Assembly,Label printer fault,18,M. Wu,C
+2026-02-20,Line 3 - Packing,Label printer fault,15,A. Lin,C
+2026-02-20,Line 2 - Assembly,Label printer fault,22,S. Yeh,C
+2026-02-21,Line 4 - Finishing,Planned maintenance,70,L. Chen,B
+2026-02-21,Line 1 - Assembly,Tooling changeover,51,P. Kao,C
+2026-02-21,Line 1 - Assembly,Planned maintenance,158,J. Hsu,A
+2026-02-22,Line 1 - Assembly,Material shortage,39,M. Wu,C
+2026-02-23,Line 4 - Finishing,Material shortage,137,M. Wu,A
+2026-02-23,Line 4 - Finishing,Operator break overrun,14,J. Hsu,B
+2026-02-24,Line 1 - Assembly,Sensor fault,17,M. Wu,B
+2026-02-26,Line 1 - Assembly,Sensor fault,62,L. Chen,B
+2026-02-26,Line 3 - Packing,Power dip,6,P. Kao,B
+2026-02-26,Line 1 - Assembly,Planned maintenance,198,P. Kao,A
+2026-02-28,Line 1 - Assembly,Planned maintenance,129,P. Kao,B
+2026-03-01,Line 2 - Assembly,Planned maintenance,70,J. Hsu,B
+2026-03-01,Line 2 - Assembly,Label printer fault,28,S. Yeh,C
+2026-03-01,Line 1 - Assembly,Conveyor jam,13,M. Wu,B
+2026-03-02,Line 4 - Finishing,Planned maintenance,118,M. Wu,B
+2026-03-02,Line 4 - Finishing,Sensor fault,88,J. Hsu,C
+2026-03-03,Line 2 - Assembly,Planned maintenance,95,M. Wu,A
+2026-03-03,Line 1 - Assembly,Planned maintenance,158,S. Yeh,B
+2026-03-03,Line 4 - Finishing,Quality hold,38,J. Hsu,A
+2026-03-04,Line 3 - Packing,Sensor fault,85,M. Wu,A
+2026-03-04,Line 1 - Assembly,Power dip,16,J. Hsu,C
+2026-03-04,Line 1 - Assembly,Planned maintenance,135,A. Lin,B
+2026-03-05,Line 3 - Packing,Sensor fault,43,P. Kao,B
+2026-03-06,Line 1 - Assembly,Tooling changeover,25,P. Kao,B
+2026-03-06,Line 2 - Assembly,Sensor fault,50,M. Wu,B
+2026-03-08,Line 2 - Assembly,Power dip,20,S. Yeh,C
+2026-03-09,Line 1 - Assembly,Tooling changeover,31,A. Lin,B
+2026-03-09,Line 3 - Packing,Material shortage,68,L. Chen,C
+2026-03-10,Line 2 - Assembly,Conveyor jam,36,A. Lin,A
+2026-03-10,Line 1 - Assembly,Sensor fault,90,L. Chen,B
+2026-03-11,Line 1 - Assembly,Tooling changeover,39,P. Kao,B
+2026-03-11,Line 1 - Assembly,Planned maintenance,71,L. Chen,B
+2026-03-11,Line 2 - Assembly,Quality hold,89,M. Wu,C
+2026-03-13,Line 4 - Finishing,Power dip,16,J. Hsu,B
+2026-03-13,Line 3 - Packing,Power dip,38,M. Wu,B
+2026-03-14,Line 4 - Finishing,Label printer fault,38,L. Chen,B
+2026-03-15,Line 3 - Packing,Tooling changeover,22,L. Chen,B
+2026-03-16,Line 3 - Packing,Power dip,31,J. Hsu,A
+2026-03-18,Line 4 - Finishing,Sensor fault,69,S. Yeh,A
+2026-03-18,Line 2 - Assembly,Planned maintenance,95,L. Chen,B
+2026-03-19,Line 4 - Finishing,Label printer fault,18,P. Kao,C
+2026-03-20,Line 4 - Finishing,Label printer fault,12,S. Yeh,B
+2026-03-20,Line 4 - Finishing,Planned maintenance,185,A. Lin,C
+2026-03-20,Line 1 - Assembly,Planned maintenance,121,A. Lin,A
+2026-03-21,Line 1 - Assembly,Conveyor jam,46,P. Kao,C
+2026-03-21,Line 4 - Finishing,Operator break overrun,13,P. Kao,B
+2026-03-21,Line 4 - Finishing,Conveyor jam,12,M. Wu,C
+2026-03-22,Line 1 - Assembly,Material shortage,140,L. Chen,A
+2026-03-22,Line 4 - Finishing,Power dip,24,L. Chen,A
+2026-03-23,Line 2 - Assembly,Operator break overrun,15,P. Kao,C
+2026-03-23,Line 2 - Assembly,Conveyor jam,32,L. Chen,B
+2026-03-24,Line 4 - Finishing,Planned maintenance,90,A. Lin,C
+2026-03-24,Line 1 - Assembly,Conveyor jam,53,A. Lin,A
+2026-03-25,Line 1 - Assembly,Planned maintenance,110,M. Wu,C
+2026-03-27,Line 1 - Assembly,Sensor fault,67,A. Lin,B
+2026-03-28,Line 4 - Finishing,Operator break overrun,25,A. Lin,B
+2026-03-29,Line 3 - Packing,Operator break overrun,9,A. Lin,B
+2026-03-29,Line 1 - Assembly,Power dip,33,P. Kao,B
+2026-03-29,Line 4 - Finishing,Material shortage,107,S. Yeh,C
+2026-03-31,Line 1 - Assembly,Quality hold,98,M. Wu,B
+2026-04-01,Line 2 - Assembly,Sensor fault,30,M. Wu,B
+2026-04-01,Line 3 - Packing,Sensor fault,55,P. Kao,C
+2026-04-01,Line 1 - Assembly,Operator break overrun,18,J. Hsu,B
+2026-04-04,Line 1 - Assembly,Quality hold,101,M. Wu,B
+2026-04-05,Line 1 - Assembly,Conveyor jam,21,A. Lin,C
+2026-04-06,Line 2 - Assembly,Quality hold,41,A. Lin,B
+2026-04-06,Line 4 - Finishing,Power dip,21,S. Yeh,C
+2026-04-07,Line 4 - Finishing,Operator break overrun,24,S. Yeh,C
+2026-04-07,Line 2 - Assembly,Planned maintenance,73,P. Kao,A
+2026-04-07,Line 2 - Assembly,Conveyor jam,13,A. Lin,C
+2026-04-08,Line 2 - Assembly,Sensor fault,70,J. Hsu,B
+2026-04-08,Line 3 - Packing,Sensor fault,84,L. Chen,B
+2026-04-08,Line 1 - Assembly,Planned maintenance,93,A. Lin,B
+2026-04-10,Line 4 - Finishing,Material shortage,32,A. Lin,B
+2026-04-10,Line 1 - Assembly,Power dip,23,P. Kao,A
+2026-04-10,Line 1 - Assembly,Power dip,6,J. Hsu,A
+2026-04-12,Line 3 - Packing,Tooling changeover,49,P. Kao,A
+2026-04-12,Line 4 - Finishing,Label printer fault,17,L. Chen,B
+2026-04-14,Line 3 - Packing,Conveyor jam,52,M. Wu,A
+2026-04-14,Line 4 - Finishing,Tooling changeover,24,S. Yeh,A
+2026-04-15,Line 2 - Assembly,Material shortage,53,S. Yeh,B
+2026-04-15,Line 4 - Finishing,Sensor fault,64,S. Yeh,A
+2026-04-16,Line 1 - Assembly,Planned maintenance,75,P. Kao,A
+2026-04-16,Line 2 - Assembly,Quality hold,88,S. Yeh,C
+2026-04-16,Line 4 - Finishing,Operator break overrun,8,M. Wu,B
+2026-04-17,Line 3 - Packing,Power dip,30,S. Yeh,B
+2026-04-19,Line 4 - Finishing,Tooling changeover,27,L. Chen,B
+2026-04-19,Line 3 - Packing,Planned maintenance,106,S. Yeh,A
+2026-04-19,Line 2 - Assembly,Material shortage,96,A. Lin,A
+2026-04-20,Line 4 - Finishing,Sensor fault,53,L. Chen,B
+2026-04-20,Line 1 - Assembly,Tooling changeover,32,A. Lin,B
+2026-04-20,Line 1 - Assembly,Material shortage,37,M. Wu,C
+2026-04-21,Line 2 - Assembly,Power dip,26,S. Yeh,B
+2026-04-22,Line 1 - Assembly,Material shortage,140,J. Hsu,C
+2026-04-22,Line 3 - Packing,Operator break overrun,12,P. Kao,B
+2026-04-26,Line 3 - Packing,Power dip,15,L. Chen,A
+2026-04-26,Line 4 - Finishing,Power dip,13,M. Wu,A
+2026-04-26,Line 3 - Packing,Sensor fault,62,A. Lin,A
+2026-04-27,Line 3 - Packing,Conveyor jam,24,L. Chen,C
+2026-04-27,Line 3 - Packing,Material shortage,113,J. Hsu,C
+2026-04-28,Line 1 - Assembly,Quality hold,39,S. Yeh,B
+2026-04-28,Line 3 - Packing,Planned maintenance,210,J. Hsu,C
+2026-04-29,Line 2 - Assembly,Conveyor jam,23,P. Kao,A
+2026-04-29,Line 3 - Packing,Material shortage,47,S. Yeh,B
+2026-04-30,Line 3 - Packing,Label printer fault,21,A. Lin,C
+2026-04-30,Line 1 - Assembly,Quality hold,64,J. Hsu,A
+2026-04-30,Line 3 - Packing,Sensor fault,63,L. Chen,C
+2026-05-01,Line 3 - Packing,Power dip,25,M. Wu,A
+2026-05-02,Line 4 - Finishing,Power dip,34,P. Kao,A
+2026-05-02,Line 3 - Packing,Label printer fault,37,A. Lin,B
+2026-05-03,Line 3 - Packing,Operator break overrun,21,J. Hsu,C
+2026-05-03,Line 4 - Finishing,Conveyor jam,38,L. Chen,C
+2026-05-05,Line 3 - Packing,Label printer fault,36,A. Lin,A
+2026-05-09,Line 2 - Assembly,Label printer fault,32,L. Chen,A
+2026-05-11,Line 2 - Assembly,Operator break overrun,19,P. Kao,A
+2026-05-11,Line 3 - Packing,Power dip,24,S. Yeh,B
+2026-05-12,Line 4 - Finishing,Conveyor jam,19,M. Wu,A
+2026-05-13,Line 4 - Finishing,Material shortage,95,L. Chen,A
+2026-05-13,Line 2 - Assembly,Quality hold,25,P. Kao,C
+2026-05-14,Line 3 - Packing,Operator break overrun,13,S. Yeh,C
+2026-05-15,Line 3 - Packing,Power dip,40,A. Lin,A
+2026-05-15,Line 1 - Assembly,Conveyor jam,24,S. Yeh,C
+2026-05-17,Line 4 - Finishing,Sensor fault,15,L. Chen,B
+2026-05-21,Line 2 - Assembly,Planned maintenance,149,P. Kao,B
+2026-05-21,Line 2 - Assembly,Conveyor jam,35,J. Hsu,A
+2026-05-22,Line 1 - Assembly,Sensor fault,80,A. Lin,A
+2026-05-22,Line 2 - Assembly,Operator break overrun,18,J. Hsu,C
+2026-05-23,Line 2 - Assembly,Material shortage,106,L. Chen,C
+2026-05-23,Line 1 - Assembly,Tooling changeover,39,M. Wu,A
+2026-05-24,Line 2 - Assembly,Planned maintenance,209,M. Wu,C
+2026-05-24,Line 4 - Finishing,Planned maintenance,136,P. Kao,C
+2026-05-25,Line 4 - Finishing,Material shortage,163,J. Hsu,B
+2026-05-26,Line 1 - Assembly,Operator break overrun,11,M. Wu,C
+2026-05-26,Line 4 - Finishing,Power dip,17,M. Wu,A
+2026-05-27,Line 1 - Assembly,Planned maintenance,152,P. Kao,C
+2026-05-27,Line 2 - Assembly,Power dip,17,M. Wu,A
+2026-05-30,Line 3 - Packing,Quality hold,52,P. Kao,A
+2026-05-31,Line 3 - Packing,Power dip,20,M. Wu,B
+2026-05-31,Line 2 - Assembly,Operator break overrun,16,S. Yeh,C
+2026-05-31,Line 1 - Assembly,Material shortage,142,M. Wu,B
+2026-06-01,Line 1 - Assembly,Conveyor jam,49,M. Wu,C
+2026-06-01,Line 3 - Packing,Label printer fault,14,S. Yeh,C
+2026-06-01,Line 3 - Packing,Tooling changeover,24,L. Chen,B
+2026-06-02,Line 1 - Assembly,Operator break overrun,10,P. Kao,B
+2026-06-02,Line 4 - Finishing,Conveyor jam,67,A. Lin,B
+2026-06-02,Line 3 - Packing,Conveyor jam,70,S. Yeh,C
+2026-06-04,Line 4 - Finishing,Material shortage,100,M. Wu,B
+2026-06-04,Line 3 - Packing,Tooling changeover,30,M. Wu,B
+2026-06-05,Line 4 - Finishing,Label printer fault,37,M. Wu,A
+2026-06-05,Line 1 - Assembly,Tooling changeover,46,A. Lin,C
+2026-06-05,Line 4 - Finishing,Quality hold,33,S. Yeh,A
+2026-06-06,Line 2 - Assembly,Operator break overrun,8,J. Hsu,C
+2026-06-07,Line 3 - Packing,Operator break overrun,18,A. Lin,C
+2026-06-07,Line 1 - Assembly,Conveyor jam,36,A. Lin,B
+2026-06-07,Line 4 - Finishing,Conveyor jam,50,L. Chen,C
+2026-06-08,Line 1 - Assembly,Operator break overrun,9,L. Chen,C
+2026-06-08,Line 3 - Packing,Tooling changeover,20,J. Hsu,A
+2026-06-10,Line 1 - Assembly,Power dip,33,A. Lin,B
+2026-06-10,Line 3 - Packing,Label printer fault,29,L. Chen,A
+2026-06-10,Line 2 - Assembly,Sensor fault,72,L. Chen,A
+2026-06-12,Line 4 - Finishing,Material shortage,48,S. Yeh,C
+2026-06-12,Line 2 - Assembly,Quality hold,76,L. Chen,A
+2026-06-12,Line 4 - Finishing,Power dip,24,P. Kao,A
+2026-06-13,Line 4 - Finishing,Power dip,11,P. Kao,B
+2026-06-13,Line 1 - Assembly,Sensor fault,51,S. Yeh,B
+2026-06-14,Line 1 - Assembly,Label printer fault,23,S. Yeh,A
+2026-06-14,Line 4 - Finishing,Power dip,8,S. Yeh,C
+2026-06-15,Line 1 - Assembly,Operator break overrun,13,S. Yeh,A
+2026-06-15,Line 3 - Packing,Quality hold,82,M. Wu,A
+2026-06-16,Line 2 - Assembly,Power dip,38,S. Yeh,A
+2026-06-18,Line 3 - Packing,Planned maintenance,198,M. Wu,A
+2026-06-18,Line 3 - Packing,Power dip,13,S. Yeh,A
+2026-06-19,Line 3 - Packing,Quality hold,119,J. Hsu,B
+2026-06-19,Line 1 - Assembly,Planned maintenance,167,S. Yeh,B
+2026-06-19,Line 4 - Finishing,Planned maintenance,239,L. Chen,A
+2026-06-20,Line 4 - Finishing,Sensor fault,59,S. Yeh,A
+2026-06-20,Line 2 - Assembly,Label printer fault,11,S. Yeh,A
+2026-06-20,Line 3 - Packing,Sensor fault,18,J. Hsu,C
+2026-06-22,Line 2 - Assembly,Material shortage,48,M. Wu,B
+2026-06-22,Line 3 - Packing,Planned maintenance,100,M. Wu,A
+2026-06-23,Line 3 - Packing,Tooling changeover,39,M. Wu,A
+2026-06-23,Line 2 - Assembly,Conveyor jam,16,A. Lin,B
+2026-06-23,Line 3 - Packing,Quality hold,31,J. Hsu,A
+2026-06-24,Line 2 - Assembly,Conveyor jam,49,J. Hsu,B
+2026-06-24,Line 3 - Packing,Planned maintenance,212,J. Hsu,A
+2026-06-26,Line 3 - Packing,Operator break overrun,11,S. Yeh,A
+2026-06-26,Line 2 - Assembly,Conveyor jam,16,S. Yeh,B
+2026-06-27,Line 2 - Assembly,Tooling changeover,32,S. Yeh,A
+2026-06-27,Line 1 - Assembly,Planned maintenance,201,A. Lin,B
+2026-06-28,Line 2 - Assembly,Power dip,6,L. Chen,B
+2026-06-29,Line 3 - Packing,Label printer fault,37,S. Yeh,C
+2026-06-29,Line 2 - Assembly,Conveyor jam,27,M. Wu,B
+2026-06-29,Line 4 - Finishing,Tooling changeover,27,P. Kao,C
+2026-06-30,Line 4 - Finishing,Conveyor jam,21,P. Kao,A
+2026-06-30,Line 3 - Packing,Label printer fault,35,A. Lin,C
+2026-07-01,Line 3 - Packing,Label printer fault,32,M. Wu,A
+2026-07-02,Line 2 - Assembly,Power dip,15,S. Yeh,C
+2026-07-02,Line 4 - Finishing,Operator break overrun,14,L. Chen,B
+2026-07-03,Line 3 - Packing,Tooling changeover,30,M. Wu,C
+2026-07-04,Line 3 - Packing,Conveyor jam,45,P. Kao,B
+2026-07-04,Line 4 - Finishing,Quality hold,118,J. Hsu,C
+2026-07-05,Line 4 - Finishing,Material shortage,92,A. Lin,B
+2026-07-05,Line 4 - Finishing,Conveyor jam,45,L. Chen,B
+2026-07-05,Line 3 - Packing,Conveyor jam,63,S. Yeh,C
+2026-07-06,Line 1 - Assembly,Sensor fault,55,L. Chen,C
+2026-07-06,Line 1 - Assembly,Sensor fault,74,L. Chen,C
+2026-07-07,Line 1 - Assembly,Tooling changeover,42,M. Wu,C
+2026-07-09,Line 3 - Packing,Conveyor jam,51,A. Lin,C
+2026-07-09,Line 2 - Assembly,Conveyor jam,52,J. Hsu,A
+2026-07-10,Line 1 - Assembly,Conveyor jam,46,S. Yeh,C
+2026-07-10,Line 2 - Assembly,Sensor fault,82,P. Kao,B
+2026-07-10,Line 4 - Finishing,Material shortage,62,M. Wu,C
+2026-07-11,Line 1 - Assembly,Sensor fault,28,P. Kao,A
+2026-07-12,Line 4 - Finishing,Sensor fault,45,A. Lin,A
+2026-07-12,Line 3 - Packing,Quality hold,75,S. Yeh,A
+2026-07-12,Line 2 - Assembly,Conveyor jam,67,S. Yeh,A
+2026-07-13,Line 1 - Assembly,Power dip,34,A. Lin,C
+2026-07-13,Line 2 - Assembly,Label printer fault,34,L. Chen,C
+2026-07-14,Line 1 - Assembly,Quality hold,81,L. Chen,B
+2026-07-14,Line 1 - Assembly,Sensor fault,38,L. Chen,C
+2026-07-16,Line 3 - Packing,Tooling changeover,21,L. Chen,C
+2026-07-17,Line 4 - Finishing,Sensor fault,23,P. Kao,B
+2026-07-17,Line 3 - Packing,Power dip,14,S. Yeh,A
+2026-07-18,Line 1 - Assembly,Quality hold,37,A. Lin,C
+2026-07-19,Line 4 - Finishing,Tooling changeover,26,P. Kao,A
+2026-07-19,Line 2 - Assembly,Sensor fault,60,P. Kao,A
+2026-07-20,Line 1 - Assembly,Operator break overrun,9,J. Hsu,C
+2026-07-20,Line 4 - Finishing,Quality hold,56,M. Wu,A
+2026-07-21,Line 3 - Packing,Label printer fault,29,A. Lin,C
+2026-07-22,Line 3 - Packing,Planned maintenance,182,M. Wu,B
+2026-07-22,Line 4 - Finishing,Planned maintenance,207,A. Lin,B
+2026-07-23,Line 1 - Assembly,Power dip,6,S. Yeh,B
+2026-07-23,Line 3 - Packing,Power dip,30,S. Yeh,A
+2026-07-23,Line 4 - Finishing,Conveyor jam,70,S. Yeh,B
+2026-07-24,Line 3 - Packing,Material shortage,166,P. Kao,B
+2026-07-24,Line 1 - Assembly,Power dip,28,L. Chen,C
+2026-07-24,Line 1 - Assembly,Operator break overrun,13,M. Wu,B
+2026-07-25,Line 4 - Finishing,Label printer fault,27,P. Kao,C
+2026-07-26,Line 1 - Assembly,Material shortage,145,L. Chen,C
+2026-07-26,Line 4 - Finishing,Tooling changeover,19,M. Wu,B
+2026-07-27,Line 4 - Finishing,Label printer fault,25,J. Hsu,A
+2026-07-27,Line 4 - Finishing,Power dip,38,A. Lin,C
+2026-07-28,Line 3 - Packing,Conveyor jam,21,J. Hsu,C
+2026-07-29,Line 3 - Packing,Power dip,29,J. Hsu,B
+2026-07-29,Line 4 - Finishing,Sensor fault,87,P. Kao,B
+2026-07-30,Line 1 - Assembly,Material shortage,97,L. Chen,A
+2026-07-30,Line 4 - Finishing,Operator break overrun,19,A. Lin,A
+2026-07-31,Line 1 - Assembly,Operator break overrun,15,P. Kao,B
+2026-07-31,Line 1 - Assembly,Quality hold,87,P. Kao,B
+2026-08-01,Line 2 - Assembly,Quality hold,34,J. Hsu,C
+2026-08-01,Line 3 - Packing,Operator break overrun,20,A. Lin,B
+2026-08-02,Line 3 - Packing,Quality hold,39,L. Chen,A
+2026-08-02,Line 2 - Assembly,Operator break overrun,15,J. Hsu,A
+2026-08-03,Line 1 - Assembly,Conveyor jam,43,P. Kao,B
+2026-08-05,Line 4 - Finishing,Material shortage,175,S. Yeh,B
+2026-08-05,Line 4 - Finishing,Material shortage,135,J. Hsu,B
+2026-08-06,Line 1 - Assembly,Conveyor jam,37,A. Lin,B
+2026-08-06,Line 3 - Packing,Conveyor jam,52,L. Chen,A
+2026-08-07,Line 3 - Packing,Label printer fault,40,J. Hsu,C
+2026-08-07,Line 1 - Assembly,Label printer fault,15,A. Lin,C
+2026-08-08,Line 1 - Assembly,Planned maintenance,140,J. Hsu,B
+2026-08-08,Line 2 - Assembly,Tooling changeover,39,S. Yeh,B
+2026-08-08,Line 2 - Assembly,Quality hold,100,S. Yeh,C
+2026-08-09,Line 3 - Packing,Conveyor jam,26,S. Yeh,C
+2026-08-10,Line 1 - Assembly,Conveyor jam,11,M. Wu,B
+2026-08-10,Line 3 - Packing,Sensor fault,75,M. Wu,C
+2026-08-10,Line 4 - Finishing,Label printer fault,21,P. Kao,A
+2026-08-11,Line 3 - Packing,Operator break overrun,12,S. Yeh,B
+2026-08-11,Line 2 - Assembly,Conveyor jam,11,P. Kao,B
+2026-08-11,Line 3 - Packing,Quality hold,71,A. Lin,C
+2026-08-12,Line 2 - Assembly,Sensor fault,63,P. Kao,B
+2026-08-12,Line 4 - Finishing,Label printer fault,41,P. Kao,A
+2026-08-12,Line 1 - Assembly,Planned maintenance,239,A. Lin,B
+2026-08-13,Line 2 - Assembly,Quality hold,32,A. Lin,B
+2026-08-14,Line 3 - Packing,Conveyor jam,26,M. Wu,C
+2026-08-14,Line 2 - Assembly,Planned maintenance,69,A. Lin,A
+2026-08-15,Line 2 - Assembly,Tooling changeover,39,P. Kao,C
+2026-08-15,Line 3 - Packing,Quality hold,110,J. Hsu,B
+2026-08-16,Line 2 - Assembly,Planned maintenance,62,S. Yeh,A
+2026-08-18,Line 4 - Finishing,Power dip,32,M. Wu,B
+2026-08-21,Line 1 - Assembly,Conveyor jam,14,S. Yeh,C
+2026-08-21,Line 3 - Packing,Power dip,25,S. Yeh,C
+2026-08-22,Line 1 - Assembly,Material shortage,88,S. Yeh,A
+2026-08-22,Line 1 - Assembly,Power dip,29,L. Chen,B
+2026-08-22,Line 4 - Finishing,Conveyor jam,16,S. Yeh,B
+2026-08-23,Line 2 - Assembly,Sensor fault,35,P. Kao,A
+2026-08-24,Line 1 - Assembly,Label printer fault,32,A. Lin,B
+2026-08-24,Line 2 - Assembly,Sensor fault,67,M. Wu,B
+2026-08-25,Line 1 - Assembly,Label printer fault,21,J. Hsu,B
+2026-08-25,Line 2 - Assembly,Material shortage,165,J. Hsu,C
+2026-08-25,Line 2 - Assembly,Material shortage,91,J. Hsu,B
+2026-08-26,Line 2 - Assembly,Power dip,16,J. Hsu,B
+2026-08-26,Line 4 - Finishing,Tooling changeover,49,L. Chen,A
+2026-08-27,Line 1 - Assembly,Sensor fault,87,P. Kao,A
+2026-08-27,Line 2 - Assembly,Quality hold,75,P. Kao,A
+2026-08-28,Line 3 - Packing,Conveyor jam,67,S. Yeh,C
+2026-08-30,Line 2 - Assembly,Material shortage,108,S. Yeh,C
+2026-08-30,Line 2 - Assembly,Conveyor jam,39,M. Wu,B
+2026-08-30,Line 4 - Finishing,Sensor fault,48,S. Yeh,B
+2026-08-31,Line 3 - Packing,Material shortage,94,P. Kao,B
+2026-09-03,Line 1 - Assembly,Label printer fault,15,P. Kao,A
+2026-09-03,Line 1 - Assembly,Sensor fault,38,L. Chen,C
+2026-09-03,Line 1 - Assembly,Tooling changeover,48,S. Yeh,B
+2026-09-04,Line 1 - Assembly,Material shortage,115,L. Chen,C
+2026-09-04,Line 2 - Assembly,Label printer fault,18,A. Lin,C
+2026-09-05,Line 1 - Assembly,Power dip,35,A. Lin,C
+2026-09-05,Line 4 - Finishing,Conveyor jam,44,L. Chen,B
+2026-09-07,Line 3 - Packing,Power dip,11,J. Hsu,C
+2026-09-07,Line 4 - Finishing,Quality hold,115,J. Hsu,C
+2026-09-10,Line 3 - Packing,Tooling changeover,26,P. Kao,B
+2026-09-11,Line 3 - Packing,Power dip,12,A. Lin,A
+2026-09-11,Line 2 - Assembly,Quality hold,90,A. Lin,A
+2026-09-11,Line 1 - Assembly,Operator break overrun,23,M. Wu,C
+2026-09-12,Line 2 - Assembly,Conveyor jam,45,L. Chen,A
+2026-09-12,Line 1 - Assembly,Tooling changeover,35,S. Yeh,C
+2026-09-12,Line 2 - Assembly,Power dip,37,S. Yeh,C
+2026-09-13,Line 2 - Assembly,Planned maintenance,165,P. Kao,B
+2026-09-13,Line 4 - Finishing,Planned maintenance,117,L. Chen,B
+2026-09-13,Line 1 - Assembly,Power dip,32,S. Yeh,A
+2026-09-14,Line 1 - Assembly,Conveyor jam,56,P. Kao,A
+2026-09-14,Line 2 - Assembly,Sensor fault,50,S. Yeh,C
+2026-09-15,Line 2 - Assembly,Material shortage,75,A. Lin,B
+2026-09-17,Line 3 - Packing,Power dip,40,A. Lin,C
+2026-09-17,Line 2 - Assembly,Power dip,39,L. Chen,B
+2026-09-17,Line 2 - Assembly,Quality hold,110,M. Wu,B
+2026-09-18,Line 3 - Packing,Tooling changeover,20,M. Wu,B
+2026-09-19,Line 3 - Packing,Label printer fault,29,J. Hsu,A
+2026-09-19,Line 4 - Finishing,Tooling changeover,34,A. Lin,C
+2026-09-19,Line 2 - Assembly,Operator break overrun,22,L. Chen,C
+2026-09-20,Line 2 - Assembly,Sensor fault,55,S. Yeh,C
+2026-09-20,Line 4 - Finishing,Tooling changeover,40,S. Yeh,B
+2026-09-22,Line 1 - Assembly,Sensor fault,78,L. Chen,B
+2026-09-22,Line 2 - Assembly,Operator break overrun,13,A. Lin,C
+2026-09-22,Line 2 - Assembly,Power dip,18,P. Kao,B
+2026-09-23,Line 2 - Assembly,Operator break overrun,15,L. Chen,C
+2026-09-23,Line 1 - Assembly,Operator break overrun,23,S. Yeh,B
+2026-09-24,Line 1 - Assembly,Conveyor jam,31,A. Lin,B
+2026-09-26,Line 3 - Packing,Label printer fault,26,J. Hsu,C
+2026-09-26,Line 4 - Finishing,Quality hold,47,P. Kao,A
+2026-09-27,Line 4 - Finishing,Material shortage,43,J. Hsu,C
+2026-09-28,Line 4 - Finishing,Conveyor jam,61,A. Lin,C
+2026-09-28,Line 1 - Assembly,Sensor fault,18,M. Wu,B
+2026-09-29,Line 4 - Finishing,Sensor fault,62,A. Lin,A
+2026-09-30,Line 4 - Finishing,Power dip,9,M. Wu,A
+2026-10-02,Line 2 - Assembly,Sensor fault,86,S. Yeh,C
+2026-10-06,Line 2 - Assembly,Quality hold,111,A. Lin,C
+2026-10-06,Line 3 - Packing,Conveyor jam,10,A. Lin,B
+2026-10-06,Line 1 - Assembly,Label printer fault,26,S. Yeh,A
+2026-10-08,Line 3 - Packing,Planned maintenance,155,M. Wu,B
+2026-10-08,Line 1 - Assembly,Material shortage,125,J. Hsu,C
+2026-10-09,Line 3 - Packing,Sensor fault,88,J. Hsu,A
+2026-10-09,Line 1 - Assembly,Planned maintenance,78,S. Yeh,C
+2026-10-11,Line 3 - Packing,Tooling changeover,42,P. Kao,B
+2026-10-11,Line 3 - Packing,Label printer fault,32,L. Chen,B
+2026-10-12,Line 1 - Assembly,Label printer fault,35,M. Wu,B
+2026-10-12,Line 2 - Assembly,Sensor fault,71,L. Chen,A
+2026-10-12,Line 4 - Finishing,Power dip,16,A. Lin,C
+2026-10-13,Line 1 - Assembly,Sensor fault,77,A. Lin,A
+2026-10-14,Line 1 - Assembly,Quality hold,89,L. Chen,C
+2026-10-15,Line 3 - Packing,Label printer fault,41,P. Kao,B
+2026-10-15,Line 4 - Finishing,Operator break overrun,8,L. Chen,C
+2026-10-18,Line 2 - Assembly,Operator break overrun,9,A. Lin,C
+2026-10-19,Line 2 - Assembly,Operator break overrun,24,P. Kao,A
+2026-10-19,Line 2 - Assembly,Quality hold,98,J. Hsu,C
+2026-10-19,Line 3 - Packing,Tooling changeover,44,P. Kao,C
+2026-10-20,Line 1 - Assembly,Tooling changeover,18,J. Hsu,C
+2026-10-20,Line 3 - Packing,Material shortage,132,J. Hsu,B
+2026-10-22,Line 1 - Assembly,Tooling changeover,48,L. Chen,B
+2026-10-25,Line 2 - Assembly,Operator break overrun,11,A. Lin,A
+2026-10-25,Line 3 - Packing,Sensor fault,62,M. Wu,B
+2026-10-27,Line 4 - Finishing,Quality hold,28,M. Wu,A
+2026-10-27,Line 1 - Assembly,Conveyor jam,54,M. Wu,C
+2026-10-27,Line 4 - Finishing,Planned maintenance,111,P. Kao,A
+2026-10-28,Line 2 - Assembly,Planned maintenance,88,J. Hsu,B
+2026-10-28,Line 4 - Finishing,Conveyor jam,51,L. Chen,C
+2026-10-28,Line 2 - Assembly,Material shortage,53,A. Lin,B
+2026-10-30,Line 2 - Assembly,Label printer fault,20,J. Hsu,C
+2026-10-30,Line 1 - Assembly,Power dip,16,M. Wu,B
+2026-10-31,Line 2 - Assembly,Label printer fault,22,P. Kao,A
+2026-10-31,Line 1 - Assembly,Sensor fault,27,J. Hsu,A
+2026-10-31,Line 4 - Finishing,Tooling changeover,30,L. Chen,A
+2026-11-02,Line 1 - Assembly,Power dip,13,A. Lin,C
+2026-11-02,Line 3 - Packing,Conveyor jam,19,M. Wu,B
+2026-11-03,Line 4 - Finishing,Quality hold,28,J. Hsu,B
+2026-11-03,Line 3 - Packing,Operator break overrun,21,L. Chen,B
+2026-11-03,Line 2 - Assembly,Tooling changeover,44,A. Lin,A
+2026-11-04,Line 3 - Packing,Power dip,21,J. Hsu,B
+2026-11-06,Line 4 - Finishing,Tooling changeover,45,S. Yeh,B
+2026-11-07,Line 2 - Assembly,Operator break overrun,10,L. Chen,C
+2026-11-10,Line 1 - Assembly,Material shortage,136,M. Wu,B

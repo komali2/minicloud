@@ -1,0 +1,121 @@
+wo_number,machine,reported_date,status,priority,assigned_to,fault_description,est_hours
+WO-1001,CNC-11,2026-05-29,Closed,Low,L. Chen,label applicator misfeeding,2.0
+WO-1002,PRESS-01,2026-01-16,In Progress,Low,L. Chen,temperature probe drifting,7.0
+WO-1003,PRESS-02,2026-07-10,Closed,Low,P. Kao,hydraulic leak at manifold,15.2
+WO-1004,PRESS-01,2026-01-16,Closed,Low,M. Wu,bearing noise on drive end,9.1
+WO-1005,CONV-03,2026-09-03,Closed,Normal,P. Kao,hydraulic leak at manifold,9.3
+WO-1006,CNC-11,2026-01-28,Open,Normal,A. Lin,hydraulic leak at manifold,9.0
+WO-1007,PRESS-01,2026-10-09,In Progress,Urgent,S. Yeh,label applicator misfeeding,7.1
+WO-1008,PACK-06,2026-06-03,Closed,High,A. Lin,belt slipping under load,12.8
+WO-1009,PRESS-02,2026-07-09,Awaiting Parts,Urgent,A. Lin,air line pressure drop,7.5
+WO-1010,PRESS-02,2026-10-04,Closed,Normal,A. Lin,spindle overheating,15.0
+WO-1011,PRESS-01,2026-04-09,Open,High,A. Lin,air line pressure drop,5.9
+WO-1012,PACK-06,2026-03-01,Open,Low,A. Lin,vacuum seal worn,11.3
+WO-1013,PRESS-01,2026-10-08,Awaiting Parts,Urgent,A. Lin,air line pressure drop,6.5
+WO-1014,PRESS-01,2026-05-17,Closed,High,M. Wu,servo alarm on axis 2,2.3
+WO-1015,CNC-12,2026-10-11,Awaiting Parts,Normal,S. Yeh,belt slipping under load,6.7
+WO-1016,PRESS-02,2026-03-01,In Progress,Urgent,J. Hsu,label applicator misfeeding,4.8
+WO-1017,PACK-05,2026-09-01,Awaiting Parts,Urgent,A. Lin,chain tension out of spec,14.2
+WO-1018,CNC-11,2026-07-15,Open,Normal,M. Wu,belt slipping under load,10.7
+WO-1019,PACK-06,2026-11-04,In Progress,High,A. Lin,bearing noise on drive end,2.8
+WO-1020,OVEN-02,2026-02-10,Awaiting Parts,Normal,S. Yeh,label applicator misfeeding,15.2
+WO-1021,PACK-06,2026-10-14,Closed,Urgent,J. Hsu,temperature probe drifting,2.1
+WO-1022,PRESS-01,2026-04-19,In Progress,Low,M. Wu,vacuum seal worn,3.0
+WO-1023,PRESS-01,2026-05-20,Open,Low,P. Kao,spindle overheating,8.8
+WO-1024,PRESS-01,2026-05-08,Open,Normal,P. Kao,temperature probe drifting,2.8
+WO-1025,OVEN-02,2026-07-04,Awaiting Parts,Urgent,L. Chen,hydraulic leak at manifold,13.7
+WO-1026,PACK-06,2026-03-17,Closed,High,L. Chen,spindle overheating,2.1
+WO-1027,CONV-03,2026-05-19,Closed,Normal,P. Kao,bearing noise on drive end,3.7
+WO-1028,OVEN-02,2026-02-13,In Progress,Low,P. Kao,coolant pump intermittent,15.7
+WO-1029,CONV-03,2026-09-25,Awaiting Parts,Normal,A. Lin,belt slipping under load,8.8
+WO-1030,OVEN-02,2026-02-26,In Progress,Normal,M. Wu,temperature probe drifting,12.0
+WO-1031,CNC-12,2026-07-17,Closed,High,S. Yeh,bearing noise on drive end,15.8
+WO-1032,PACK-06,2026-06-20,Awaiting Parts,Normal,S. Yeh,servo alarm on axis 2,15.3
+WO-1033,OVEN-02,2026-03-27,Awaiting Parts,Low,M. Wu,hydraulic leak at manifold,4.0
+WO-1034,OVEN-02,2026-08-02,In Progress,Urgent,P. Kao,servo alarm on axis 2,13.5
+WO-1035,OVEN-02,2026-03-10,Open,Low,J. Hsu,air line pressure drop,12.1
+WO-1036,CNC-11,2026-03-11,Closed,High,L. Chen,air line pressure drop,6.6
+WO-1037,PRESS-02,2026-04-19,In Progress,Normal,M. Wu,bearing noise on drive end,2.8
+WO-1038,CNC-11,2026-03-17,Closed,High,M. Wu,label applicator misfeeding,9.0
+WO-1039,PRESS-01,2026-10-31,Open,Normal,J. Hsu,belt slipping under load,13.3
+WO-1040,PRESS-01,2026-07-25,Awaiting Parts,Normal,A. Lin,label applicator misfeeding,4.2
+WO-1041,OVEN-02,2026-01-14,Awaiting Parts,Urgent,M. Wu,bearing noise on drive end,14.6
+WO-1042,PACK-06,2026-05-13,Closed,Normal,P. Kao,spindle overheating,8.6
+WO-1043,PACK-06,2026-11-01,In Progress,Low,M. Wu,spindle overheating,2.7
+WO-1044,PRESS-01,2026-09-10,Awaiting Parts,Urgent,L. Chen,label applicator misfeeding,1.4
+WO-1045,CONV-03,2026-08-05,Open,Low,P. Kao,vacuum seal worn,9.2
+WO-1046,PACK-06,2026-10-09,Awaiting Parts,Normal,S. Yeh,coolant pump intermittent,7.5
+WO-1047,PACK-06,2026-02-10,In Progress,High,P. Kao,belt slipping under load,13.5
+WO-1048,PACK-05,2026-09-01,Open,Urgent,J. Hsu,door interlock failing,1.6
+WO-1049,PACK-05,2026-07-10,Open,Normal,S. Yeh,coolant pump intermittent,12.7
+WO-1050,OVEN-02,2026-08-23,In Progress,High,M. Wu,vacuum seal worn,3.9
+WO-1051,PACK-05,2026-09-23,Closed,Normal,S. Yeh,belt slipping under load,3.0
+WO-1052,PACK-05,2026-04-04,Awaiting Parts,Urgent,M. Wu,door interlock failing,5.4
+WO-1053,PRESS-01,2026-05-07,Awaiting Parts,Urgent,J. Hsu,air line pressure drop,0.8
+WO-1054,CONV-03,2026-05-25,Open,Low,M. Wu,hydraulic leak at manifold,1.8
+WO-1055,PRESS-01,2026-06-24,In Progress,High,M. Wu,temperature probe drifting,13.7
+WO-1056,PACK-05,2026-07-01,In Progress,Urgent,S. Yeh,door interlock failing,1.9
+WO-1057,CNC-11,2026-10-12,Closed,Low,A. Lin,bearing noise on drive end,10.3
+WO-1058,PRESS-02,2026-06-30,In Progress,Low,A. Lin,hydraulic leak at manifold,7.5
+WO-1059,PACK-05,2026-05-21,Awaiting Parts,Normal,L. Chen,label applicator misfeeding,11.5
+WO-1060,CNC-11,2026-09-15,Awaiting Parts,Low,M. Wu,belt slipping under load,14.9
+WO-1061,CNC-12,2026-06-07,Awaiting Parts,Urgent,P. Kao,chain tension out of spec,3.3
+WO-1062,PRESS-01,2026-05-17,Awaiting Parts,Low,L. Chen,bearing noise on drive end,11.9
+WO-1063,CNC-12,2026-02-01,Closed,Normal,J. Hsu,hydraulic leak at manifold,10.7
+WO-1064,PACK-06,2026-04-03,Closed,High,S. Yeh,belt slipping under load,15.7
+WO-1065,CNC-12,2026-05-19,In Progress,Urgent,A. Lin,bearing noise on drive end,13.5
+WO-1066,PRESS-02,2026-11-03,Awaiting Parts,Urgent,M. Wu,bearing noise on drive end,1.8
+WO-1067,CONV-03,2026-04-29,In Progress,High,L. Chen,vacuum seal worn,3.4
+WO-1068,PACK-06,2026-06-26,Open,High,A. Lin,door interlock failing,15.6
+WO-1069,OVEN-02,2026-02-03,In Progress,Low,A. Lin,belt slipping under load,6.0
+WO-1070,OVEN-02,2026-11-10,Closed,Low,J. Hsu,coolant pump intermittent,8.3
+WO-1071,CNC-12,2026-07-31,Open,Low,A. Lin,hydraulic leak at manifold,2.7
+WO-1072,PRESS-01,2026-01-14,Closed,Low,A. Lin,coolant pump intermittent,10.3
+WO-1073,CNC-11,2026-09-28,Closed,High,S. Yeh,vacuum seal worn,2.8
+WO-1074,PRESS-01,2026-08-28,Closed,Normal,P. Kao,label applicator misfeeding,9.3
+WO-1075,CNC-12,2026-11-02,Open,Low,L. Chen,spindle overheating,10.4
+WO-1076,PACK-05,2026-09-18,Closed,Low,S. Yeh,bearing noise on drive end,10.2
+WO-1077,PACK-06,2026-07-08,Awaiting Parts,Low,J. Hsu,hydraulic leak at manifold,12.1
+WO-1078,PRESS-02,2026-02-26,Open,Urgent,A. Lin,hydraulic leak at manifold,13.6
+WO-1079,CNC-12,2026-07-13,In Progress,Urgent,J. Hsu,temperature probe drifting,1.7
+WO-1080,PRESS-01,2026-06-16,In Progress,Low,P. Kao,spindle overheating,5.6
+WO-1081,CNC-11,2026-06-08,Open,Urgent,L. Chen,vacuum seal worn,4.7
+WO-1082,CNC-12,2026-09-21,Closed,High,S. Yeh,label applicator misfeeding,4.9
+WO-1083,PACK-06,2026-03-17,Open,Normal,A. Lin,hydraulic leak at manifold,15.0
+WO-1084,CONV-03,2026-11-02,Closed,Low,P. Kao,vacuum seal worn,15.9
+WO-1085,CNC-12,2026-04-26,In Progress,Low,P. Kao,hydraulic leak at manifold,2.7
+WO-1086,CONV-03,2026-02-15,Awaiting Parts,Normal,P. Kao,chain tension out of spec,8.4
+WO-1087,OVEN-02,2026-09-14,In Progress,Urgent,J. Hsu,temperature probe drifting,0.9
+WO-1088,PACK-06,2026-11-09,Closed,Urgent,A. Lin,air line pressure drop,2.7
+WO-1089,PACK-05,2026-05-18,Awaiting Parts,Low,A. Lin,bearing noise on drive end,5.5
+WO-1090,PACK-05,2026-05-21,Open,Normal,S. Yeh,bearing noise on drive end,14.5
+WO-1091,CONV-03,2026-06-15,Awaiting Parts,Low,J. Hsu,temperature probe drifting,16.0
+WO-1092,OVEN-02,2026-10-02,Closed,High,L. Chen,coolant pump intermittent,2.1
+WO-1093,CNC-11,2026-06-17,In Progress,High,J. Hsu,label applicator misfeeding,5.4
+WO-1094,PACK-05,2026-05-03,Open,Urgent,P. Kao,label applicator misfeeding,3.7
+WO-1095,PRESS-01,2026-09-30,Closed,Urgent,P. Kao,spindle overheating,10.5
+WO-1096,PACK-06,2026-06-17,Open,Normal,M. Wu,vacuum seal worn,6.9
+WO-1097,CONV-03,2026-06-19,Awaiting Parts,High,J. Hsu,chain tension out of spec,4.2
+WO-1098,PACK-05,2026-03-08,Open,Normal,S. Yeh,spindle overheating,1.7
+WO-1099,PACK-06,2026-02-27,In Progress,Urgent,A. Lin,vacuum seal worn,7.1
+WO-1100,CNC-12,2026-02-03,In Progress,Low,M. Wu,door interlock failing,9.1
+WO-1101,CNC-12,2026-05-31,Awaiting Parts,High,P. Kao,belt slipping under load,14.3
+WO-1102,PACK-05,2026-04-13,Closed,Normal,J. Hsu,coolant pump intermittent,5.7
+WO-1103,PACK-06,2026-10-10,Awaiting Parts,High,M. Wu,chain tension out of spec,8.3
+WO-1104,PRESS-02,2026-07-23,Awaiting Parts,Normal,J. Hsu,temperature probe drifting,10.5
+WO-1105,CONV-03,2026-04-03,Open,Normal,L. Chen,temperature probe drifting,11.5
+WO-1106,PACK-06,2026-03-13,Open,Low,J. Hsu,label applicator misfeeding,13.8
+WO-1107,CNC-12,2026-03-26,Open,Normal,M. Wu,spindle overheating,8.6
+WO-1108,PACK-06,2026-09-16,Open,Low,L. Chen,spindle overheating,4.1
+WO-1109,CONV-03,2026-10-22,In Progress,High,P. Kao,chain tension out of spec,7.3
+WO-1110,PRESS-02,2026-09-14,Open,High,P. Kao,servo alarm on axis 2,3.5
+WO-1111,CNC-12,2026-06-30,Open,Low,P. Kao,coolant pump intermittent,15.9
+WO-1112,OVEN-02,2026-06-21,In Progress,Urgent,P. Kao,belt slipping under load,9.0
+WO-1113,PACK-05,2026-10-27,Awaiting Parts,Low,L. Chen,belt slipping under load,8.2
+WO-1114,PRESS-02,2026-04-09,Awaiting Parts,Normal,S. Yeh,temperature probe drifting,14.8
+WO-1115,PACK-06,2026-07-17,Open,High,S. Yeh,temperature probe drifting,6.1
+WO-1116,CNC-12,2026-04-22,Open,High,S. Yeh,label applicator misfeeding,1.5
+WO-1117,CNC-12,2026-03-02,Awaiting Parts,Normal,M. Wu,vacuum seal worn,3.9
+WO-1118,PRESS-02,2026-06-12,Closed,Normal,M. Wu,vacuum seal worn,7.0
+WO-1119,CNC-11,2026-10-13,Closed,Low,M. Wu,bearing noise on drive end,15.6
+WO-1120,PACK-05,2026-08-30,Open,Low,M. Wu,temperature probe drifting,7.5

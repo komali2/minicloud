@@ -51,6 +51,16 @@ export function ensureSeedConnections() {
      VALUES (?, ?, ?, ?, ?, ?)
      ON CONFLICT(id) DO UPDATE SET base_url = excluded.base_url, secret_json = excluded.secret_json`
   ).run("erpnext", "Northwind ERP (ERPNext)", "erpnext", base, JSON.stringify({ key, secret }), now());
+
+  // The shared-drive spreadsheets the plant actually keeps. Same gateway, same audit log.
+  const csvDir = process.env.CSV_DATA_DIR;
+  if (csvDir) {
+    db.query(
+      `INSERT INTO connections (id, name, kind, base_url, secret_json, created_at)
+       VALUES (?, ?, ?, ?, ?, ?)
+       ON CONFLICT(id) DO UPDATE SET base_url = excluded.base_url`
+    ).run("sharedrive", "Plant shared drive (CSV)", "csv", csvDir, "{}", now());
+  }
 }
 
 export function listConnections(): Connection[] {

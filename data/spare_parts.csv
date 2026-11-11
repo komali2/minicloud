@@ -1,0 +1,13 @@
+part_code,description,on_hand,reorder_point,bin_location,last_counted
+BRG-6204,Spare for maintenance,30,9,A-15,2026-10-26
+BRG-6307,Spare for maintenance,15,16,D-7,2026-10-18
+SHF-20X400,Spare for maintenance,31,9,C-22,2026-07-27
+GSK-NBR-80,Spare for maintenance,10,16,B-21,2026-07-08
+VLV-BALL-1,Spare for maintenance,39,9,A-1,2026-07-20
+MTR-0K75,Spare for maintenance,29,18,C-13,2026-08-05
+PMP-CF-32,Spare for maintenance,35,18,C-12,2026-04-22
+CPL-FLEX-32,Spare for maintenance,35,6,A-18,2026-09-16
+CHN-08B-5M,Spare for maintenance,19,10,C-17,2026-10-31
+FLT-HYD-10,Spare for maintenance,9,17,B-12,2026-10-17
+SNS-PROX-M18,Spare for maintenance,13,19,B-11,2026-09-11
+CBL-SHLD-50,Spare for maintenance,11,10,D-1,2026-08-23

@@ -99,7 +99,7 @@ const server = Bun.serve({
       if (rest === "/manifest") return json(JSON.parse(app.manifest_json));
 
       const q = rest.match(/^\/api\/q\/([\w-]+)$/);
-      if (q && req.method === "GET") return handleQuery(app, q[1]);
+      if (q && req.method === "GET") return handleQuery(app, q[1], url);
 
       const w = rest.match(/^\/api\/w\/([\w-]+)$/);
       if (w && req.method === "POST") return handleWrite(app, w[1], req);

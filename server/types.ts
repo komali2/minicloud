@@ -8,6 +8,12 @@ export type Query = {
   order_by?: string;
   /** Required when `doctype` is a child table — Frappe rejects the read otherwise. */
   parent_doctype?: string;
+  /**
+   * Names the app may bind into {{placeholder}} values inside `filters`.
+   * The field and operator stay fixed in the manifest; only the value varies,
+   * so a search box cannot widen what the app is allowed to read.
+   */
+  params?: string[];
 };
 
 export type Action = {

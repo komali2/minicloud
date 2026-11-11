@@ -1,0 +1,307 @@
+handover_date,shift,supervisor,line,notes
+2026-08-01,A,S. Yeh,Line 3 - Packing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-08-01,B,L. Chen,Line 1 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-01,C,A. Lin,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-02,A,S. Yeh,Line 4 - Finishing,Line ran clean all shift. Handed over with no open issues.
+2026-08-02,B,A. Lin,Line 4 - Finishing,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-08-02,C,A. Lin,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-03,A,L. Chen,Line 1 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-08-03,B,A. Lin,Line 1 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-08-03,C,J. Hsu,Line 1 - Assembly,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-08-04,A,M. Wu,Line 4 - Finishing,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-08-04,B,A. Lin,Line 4 - Finishing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-08-04,C,L. Chen,Line 4 - Finishing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-05,A,A. Lin,Line 4 - Finishing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-05,B,A. Lin,Line 3 - Packing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-08-05,C,J. Hsu,Line 1 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-06,A,J. Hsu,Line 2 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-06,B,J. Hsu,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-08-06,C,L. Chen,Line 4 - Finishing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-08-07,A,L. Chen,Line 3 - Packing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-07,B,S. Yeh,Line 1 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-08-07,C,A. Lin,Line 3 - Packing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-08-08,A,A. Lin,Line 1 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-08-08,B,S. Yeh,Line 3 - Packing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-08-08,C,A. Lin,Line 1 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-08-09,A,P. Kao,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-08-09,B,M. Wu,Line 1 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-08-09,C,S. Yeh,Line 4 - Finishing,Quality hold on batch pending dimensional check. Do not ship.
+2026-08-10,A,A. Lin,Line 4 - Finishing,"Power dip around 03:10, everything restarted cleanly."
+2026-08-10,B,M. Wu,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-10,C,L. Chen,Line 3 - Packing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-08-11,A,M. Wu,Line 2 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-08-11,B,A. Lin,Line 4 - Finishing,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-08-11,C,P. Kao,Line 1 - Assembly,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-08-12,A,M. Wu,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-12,B,M. Wu,Line 4 - Finishing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-08-12,C,S. Yeh,Line 1 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-08-13,A,P. Kao,Line 3 - Packing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-13,B,J. Hsu,Line 1 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-08-13,C,A. Lin,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-14,A,L. Chen,Line 4 - Finishing,"Power dip around 03:10, everything restarted cleanly."
+2026-08-14,B,S. Yeh,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-14,C,M. Wu,Line 2 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-08-15,A,J. Hsu,Line 2 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-08-15,B,P. Kao,Line 1 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-08-15,C,A. Lin,Line 3 - Packing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-08-16,A,A. Lin,Line 3 - Packing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-08-16,B,S. Yeh,Line 3 - Packing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-16,C,J. Hsu,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-17,A,M. Wu,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-17,B,A. Lin,Line 2 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-08-17,C,L. Chen,Line 4 - Finishing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-08-18,A,M. Wu,Line 2 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-18,B,L. Chen,Line 4 - Finishing,Line ran clean all shift. Handed over with no open issues.
+2026-08-18,C,L. Chen,Line 1 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-08-19,A,M. Wu,Line 4 - Finishing,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-08-19,B,L. Chen,Line 3 - Packing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-19,C,L. Chen,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-20,A,P. Kao,Line 2 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-08-20,B,A. Lin,Line 2 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-08-20,C,P. Kao,Line 3 - Packing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-21,A,L. Chen,Line 1 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-21,B,P. Kao,Line 3 - Packing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-21,C,L. Chen,Line 3 - Packing,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-08-22,A,M. Wu,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-22,B,A. Lin,Line 1 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-08-22,C,S. Yeh,Line 2 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-08-23,A,A. Lin,Line 4 - Finishing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-23,B,A. Lin,Line 2 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-08-23,C,A. Lin,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-24,A,L. Chen,Line 4 - Finishing,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-08-24,B,J. Hsu,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-08-24,C,L. Chen,Line 4 - Finishing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-25,A,P. Kao,Line 2 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-25,B,P. Kao,Line 1 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-25,C,M. Wu,Line 4 - Finishing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-08-26,A,A. Lin,Line 4 - Finishing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-08-26,B,S. Yeh,Line 3 - Packing,Quality hold on batch pending dimensional check. Do not ship.
+2026-08-26,C,L. Chen,Line 3 - Packing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-08-27,A,P. Kao,Line 3 - Packing,Quality hold on batch pending dimensional check. Do not ship.
+2026-08-27,B,J. Hsu,Line 1 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-08-27,C,S. Yeh,Line 2 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-08-28,A,S. Yeh,Line 4 - Finishing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-08-28,B,L. Chen,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-28,C,J. Hsu,Line 1 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-08-29,A,J. Hsu,Line 3 - Packing,"Power dip around 03:10, everything restarted cleanly."
+2026-08-29,B,M. Wu,Line 2 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-08-29,C,L. Chen,Line 2 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-08-30,A,J. Hsu,Line 1 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-08-30,B,P. Kao,Line 3 - Packing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-08-30,C,P. Kao,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-31,A,A. Lin,Line 3 - Packing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-08-31,B,P. Kao,Line 2 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-08-31,C,L. Chen,Line 4 - Finishing,"Power dip around 03:10, everything restarted cleanly."
+2026-09-01,A,M. Wu,Line 3 - Packing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-01,B,L. Chen,Line 4 - Finishing,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-09-01,C,L. Chen,Line 4 - Finishing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-02,A,S. Yeh,Line 2 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-09-02,B,M. Wu,Line 4 - Finishing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-02,C,M. Wu,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-03,A,P. Kao,Line 2 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-09-03,B,J. Hsu,Line 2 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-09-03,C,A. Lin,Line 1 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-04,A,M. Wu,Line 2 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-09-04,B,P. Kao,Line 1 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-09-04,C,A. Lin,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-09-05,A,P. Kao,Line 4 - Finishing,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-09-05,B,S. Yeh,Line 3 - Packing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-09-05,C,J. Hsu,Line 3 - Packing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-06,A,M. Wu,Line 4 - Finishing,Quality hold on batch pending dimensional check. Do not ship.
+2026-09-06,B,S. Yeh,Line 3 - Packing,"Power dip around 03:10, everything restarted cleanly."
+2026-09-06,C,P. Kao,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-07,A,L. Chen,Line 1 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-07,B,J. Hsu,Line 4 - Finishing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-09-07,C,J. Hsu,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-08,A,J. Hsu,Line 4 - Finishing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-08,B,L. Chen,Line 2 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-09-08,C,J. Hsu,Line 3 - Packing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-09,A,J. Hsu,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-09-09,B,S. Yeh,Line 2 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-09,C,S. Yeh,Line 3 - Packing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-09-10,A,P. Kao,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-09-10,B,P. Kao,Line 4 - Finishing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-09-10,C,M. Wu,Line 1 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-11,A,P. Kao,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-09-11,B,M. Wu,Line 4 - Finishing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-09-11,C,M. Wu,Line 2 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-12,A,A. Lin,Line 3 - Packing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-12,B,A. Lin,Line 3 - Packing,"Power dip around 03:10, everything restarted cleanly."
+2026-09-12,C,M. Wu,Line 3 - Packing,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-09-13,A,J. Hsu,Line 2 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-13,B,A. Lin,Line 2 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-09-13,C,A. Lin,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-09-14,A,M. Wu,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-14,B,S. Yeh,Line 3 - Packing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-09-14,C,A. Lin,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-15,A,A. Lin,Line 1 - Assembly,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-09-15,B,L. Chen,Line 3 - Packing,"Power dip around 03:10, everything restarted cleanly."
+2026-09-15,C,P. Kao,Line 1 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-09-16,A,P. Kao,Line 4 - Finishing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-09-16,B,A. Lin,Line 3 - Packing,Quality hold on batch pending dimensional check. Do not ship.
+2026-09-16,C,A. Lin,Line 2 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-09-17,A,A. Lin,Line 1 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-09-17,B,M. Wu,Line 2 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-17,C,S. Yeh,Line 1 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-09-18,A,P. Kao,Line 3 - Packing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-09-18,B,S. Yeh,Line 3 - Packing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-09-18,C,L. Chen,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-09-19,A,M. Wu,Line 3 - Packing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-19,B,S. Yeh,Line 4 - Finishing,Quality hold on batch pending dimensional check. Do not ship.
+2026-09-19,C,P. Kao,Line 3 - Packing,Line ran clean all shift. Handed over with no open issues.
+2026-09-20,A,M. Wu,Line 4 - Finishing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-09-20,B,P. Kao,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-09-20,C,L. Chen,Line 1 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-21,A,A. Lin,Line 3 - Packing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-21,B,P. Kao,Line 3 - Packing,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-09-21,C,M. Wu,Line 4 - Finishing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-22,A,A. Lin,Line 2 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-09-22,B,A. Lin,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-22,C,M. Wu,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-09-23,A,S. Yeh,Line 2 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-09-23,B,L. Chen,Line 1 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-09-23,C,M. Wu,Line 3 - Packing,Quality hold on batch pending dimensional check. Do not ship.
+2026-09-24,A,A. Lin,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-09-24,B,S. Yeh,Line 3 - Packing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-24,C,S. Yeh,Line 4 - Finishing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-25,A,P. Kao,Line 4 - Finishing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-09-25,B,M. Wu,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-09-25,C,L. Chen,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-09-26,A,M. Wu,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-26,B,L. Chen,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-09-26,C,P. Kao,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-27,A,J. Hsu,Line 2 - Assembly,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-09-27,B,P. Kao,Line 4 - Finishing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-09-27,C,M. Wu,Line 3 - Packing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-28,A,A. Lin,Line 1 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-09-28,B,J. Hsu,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-09-28,C,J. Hsu,Line 4 - Finishing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-29,A,S. Yeh,Line 4 - Finishing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-09-29,B,M. Wu,Line 1 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-09-29,C,M. Wu,Line 1 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-09-30,A,A. Lin,Line 3 - Packing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-09-30,B,L. Chen,Line 3 - Packing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-09-30,C,P. Kao,Line 4 - Finishing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-10-01,A,P. Kao,Line 3 - Packing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-10-01,B,S. Yeh,Line 2 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-10-01,C,P. Kao,Line 1 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-10-02,A,A. Lin,Line 2 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-02,B,M. Wu,Line 2 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-02,C,A. Lin,Line 2 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-03,A,A. Lin,Line 2 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-03,B,S. Yeh,Line 4 - Finishing,"Power dip around 03:10, everything restarted cleanly."
+2026-10-03,C,P. Kao,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-10-04,A,J. Hsu,Line 2 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-10-04,B,A. Lin,Line 2 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-04,C,P. Kao,Line 1 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-10-05,A,M. Wu,Line 2 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-10-05,B,L. Chen,Line 1 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-10-05,C,P. Kao,Line 2 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-10-06,A,M. Wu,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-10-06,B,L. Chen,Line 2 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-06,C,S. Yeh,Line 1 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-07,A,L. Chen,Line 1 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-10-07,B,P. Kao,Line 3 - Packing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-10-07,C,P. Kao,Line 1 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-08,A,J. Hsu,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-10-08,B,M. Wu,Line 2 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-10-08,C,L. Chen,Line 1 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-10-09,A,L. Chen,Line 3 - Packing,"Power dip around 03:10, everything restarted cleanly."
+2026-10-09,B,L. Chen,Line 2 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-10-09,C,S. Yeh,Line 2 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-10-10,A,A. Lin,Line 3 - Packing,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-10,B,A. Lin,Line 1 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-10-10,C,A. Lin,Line 3 - Packing,Line ran clean all shift. Handed over with no open issues.
+2026-10-11,A,S. Yeh,Line 3 - Packing,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-10-11,B,P. Kao,Line 4 - Finishing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-10-11,C,P. Kao,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-12,A,L. Chen,Line 4 - Finishing,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-10-12,B,L. Chen,Line 3 - Packing,"Power dip around 03:10, everything restarted cleanly."
+2026-10-12,C,S. Yeh,Line 1 - Assembly,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-10-13,A,P. Kao,Line 2 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-13,B,L. Chen,Line 3 - Packing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-10-13,C,J. Hsu,Line 1 - Assembly,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-10-14,A,M. Wu,Line 3 - Packing,Line ran clean all shift. Handed over with no open issues.
+2026-10-14,B,L. Chen,Line 3 - Packing,"Power dip around 03:10, everything restarted cleanly."
+2026-10-14,C,L. Chen,Line 4 - Finishing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-15,A,M. Wu,Line 4 - Finishing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-10-15,B,A. Lin,Line 3 - Packing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-10-15,C,M. Wu,Line 3 - Packing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-10-16,A,S. Yeh,Line 2 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-10-16,B,M. Wu,Line 1 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-10-16,C,L. Chen,Line 4 - Finishing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-17,A,P. Kao,Line 1 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-10-17,B,A. Lin,Line 3 - Packing,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-10-17,C,J. Hsu,Line 4 - Finishing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-18,A,L. Chen,Line 4 - Finishing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-10-18,B,L. Chen,Line 3 - Packing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-10-18,C,A. Lin,Line 3 - Packing,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-19,A,P. Kao,Line 2 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-19,B,S. Yeh,Line 2 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-10-19,C,M. Wu,Line 1 - Assembly,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-10-20,A,P. Kao,Line 3 - Packing,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-10-20,B,M. Wu,Line 4 - Finishing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-10-20,C,P. Kao,Line 3 - Packing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-10-21,A,J. Hsu,Line 4 - Finishing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-21,B,A. Lin,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-10-21,C,A. Lin,Line 4 - Finishing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-10-22,A,S. Yeh,Line 2 - Assembly,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-10-22,B,M. Wu,Line 3 - Packing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-10-22,C,S. Yeh,Line 2 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-23,A,M. Wu,Line 2 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-23,B,A. Lin,Line 3 - Packing,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-10-23,C,M. Wu,Line 3 - Packing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-10-24,A,A. Lin,Line 1 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-10-24,B,S. Yeh,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-10-24,C,J. Hsu,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-10-25,A,A. Lin,Line 3 - Packing,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-25,B,A. Lin,Line 2 - Assembly,"PRESS-02 making bearing noise again, logged WO. Watch it next shift."
+2026-10-25,C,S. Yeh,Line 1 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-10-26,A,M. Wu,Line 4 - Finishing,"Power dip around 03:10, everything restarted cleanly."
+2026-10-26,B,L. Chen,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-26,C,J. Hsu,Line 2 - Assembly,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-10-27,A,S. Yeh,Line 3 - Packing,"Power dip around 03:10, everything restarted cleanly."
+2026-10-27,B,L. Chen,Line 2 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-10-27,C,P. Kao,Line 4 - Finishing,Line ran clean all shift. Handed over with no open issues.
+2026-10-28,A,S. Yeh,Line 2 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-28,B,S. Yeh,Line 4 - Finishing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-10-28,C,S. Yeh,Line 2 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-10-29,A,M. Wu,Line 1 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-10-29,B,J. Hsu,Line 3 - Packing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-10-29,C,S. Yeh,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-10-30,A,M. Wu,Line 4 - Finishing,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-10-30,B,S. Yeh,Line 2 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-10-30,C,J. Hsu,Line 4 - Finishing,"Power dip around 03:10, everything restarted cleanly."
+2026-10-31,A,L. Chen,Line 4 - Finishing,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-10-31,B,S. Yeh,Line 2 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-10-31,C,A. Lin,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-11-01,A,J. Hsu,Line 1 - Assembly,Line ran clean all shift. Handed over with no open issues.
+2026-11-01,B,A. Lin,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-11-01,C,S. Yeh,Line 2 - Assembly,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-11-02,A,A. Lin,Line 1 - Assembly,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-11-02,B,J. Hsu,Line 2 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-11-02,C,J. Hsu,Line 1 - Assembly,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-11-03,A,A. Lin,Line 3 - Packing,Quality hold on batch pending dimensional check. Do not ship.
+2026-11-03,B,S. Yeh,Line 4 - Finishing,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-11-03,C,S. Yeh,Line 2 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-11-04,A,P. Kao,Line 1 - Assembly,"Vacuum seal on PACK-05 worn, packs failing leak test intermittently."
+2026-11-04,B,P. Kao,Line 3 - Packing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-11-04,C,L. Chen,Line 3 - Packing,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-11-05,A,J. Hsu,Line 4 - Finishing,Line ran clean all shift. Handed over with no open issues.
+2026-11-05,B,L. Chen,Line 1 - Assembly,Quality hold on batch pending dimensional check. Do not ship.
+2026-11-05,C,J. Hsu,Line 3 - Packing,"Short staffed on shift C, ran Line 3 at reduced rate."
+2026-11-06,A,A. Lin,Line 1 - Assembly,CNC-11 spindle temp climbing under long cuts. Reduced feed as a workaround.
+2026-11-06,B,A. Lin,Line 4 - Finishing,"Oven ramp slower than spec, suspect the temperature probe is drifting."
+2026-11-06,C,M. Wu,Line 4 - Finishing,"Power dip around 03:10, everything restarted cleanly."
+2026-11-07,A,M. Wu,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-11-07,B,L. Chen,Line 2 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-11-07,C,S. Yeh,Line 2 - Assembly,"Material shortage on Line 1 for two hours, pallets arrived late from receiving."
+2026-11-08,A,A. Lin,Line 4 - Finishing,"Power dip around 03:10, everything restarted cleanly."
+2026-11-08,B,A. Lin,Line 2 - Assembly,"Power dip around 03:10, everything restarted cleanly."
+2026-11-08,C,A. Lin,Line 2 - Assembly,Conveyor jam cleared twice near the packing transfer. Guard rail is bent.
+2026-11-09,A,S. Yeh,Line 4 - Finishing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-11-09,B,A. Lin,Line 4 - Finishing,"Hydraulic leak at the manifold on PRESS-01, tray placed, parts on order."
+2026-11-09,C,M. Wu,Line 4 - Finishing,Line ran clean all shift. Handed over with no open issues.
+2026-11-10,A,S. Yeh,Line 3 - Packing,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-11-10,B,M. Wu,Line 3 - Packing,"Label printer jammed repeatedly, swapped the ribbon and it settled."
+2026-11-10,C,J. Hsu,Line 4 - Finishing,Quality hold on batch pending dimensional check. Do not ship.

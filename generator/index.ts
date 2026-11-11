@@ -73,6 +73,7 @@ function parseArtifact(raw: string): Artifact {
       limit: Number.isFinite(q.limit) ? Math.min(Number(q.limit), 2000) : 500,
       order_by: typeof q.order_by === "string" ? q.order_by : undefined,
       parent_doctype: typeof q.parent_doctype === "string" ? q.parent_doctype : undefined,
+      params: Array.isArray(q.params) && q.params.every((x: any) => typeof x === "string") ? q.params : undefined,
     };
   });
 

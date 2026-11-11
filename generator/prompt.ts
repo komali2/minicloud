@@ -1,4 +1,5 @@
 import type { Connection } from "../server/types";
+import { listFiles } from "../connectors/csvfile";
 
 /** Schema hints only. Never a credential, never a data row. */
 export function connectionHints(conns: Connection[]): string {
@@ -32,6 +33,17 @@ e.g. [["docstatus", "=", 1], ["posting_date", ">=", "2024-01-01"]]
 Submitted documents have docstatus = 1. Always filter invoices on docstatus = 1.
 Warehouse names are suffixed with the company abbreviation, e.g. "Stores - NM".`;
       }
+      if (c.kind === "csv") {
+        const files = listFiles(c.base_url);
+        return `Connection id: "${c.id}"  (${c.name} — CSV files on the plant's shared drive, READ-ONLY)
+
+Use the FILENAME as the "doctype". Available files:
+${files.map((f) => `- ${f.file}  (${f.rows} rows)\n    columns: ${f.columns.join(", ")}`).join("\n")}
+
+Filters use the same array form: [["minutes_lost", ">", 60]]
+Operators: = != > >= < <= like in
+Numeric columns are already numbers. This connection cannot be written to.`;
+      }
       return `Connection id: "${c.id}" (${c.name}, kind ${c.kind})`;
     })
     .join("\n\n");
@@ -52,8 +64,18 @@ MANIFEST RULES
 - "slug_hint": lowercase kebab-case, max 4 words.
 - "queries": every read the app needs. Each is
   { "id": "q1", "connection": "<connection id>", "doctype": "...", "fields": [...], "filters": [...], "limit": 1000, "order_by": "posting_date asc" }
-  "filters", "order_by" and "parent_doctype" are optional. Keep "limit" <= 2000.
+  "filters", "order_by", "parent_doctype" and "params" are optional. Keep "limit" <= 2000.
   Set "parent_doctype" whenever "doctype" is a child table.
+- SEARCH BOXES AND FILTER CONTROLS: declare "params" and put {{name}} placeholders in filter
+  values. The app then appends them to the fetch as a query string. Example:
+    { "id": "q_search", "connection": "sharedrive", "doctype": "shift_handover.csv",
+      "fields": ["handover_date","shift","line","notes"],
+      "filters": [["notes","like","{{term}}"]], "params": ["term"], "limit": 200 }
+  and the app calls fetch("./api/q/q_search?term=" + encodeURIComponent(input.value)).
+  An empty value matches everything, so an empty search box shows all rows.
+  Only the VALUE is bindable — the column and the operator stay fixed in the manifest, so a
+  search box can never widen what the app is allowed to read. Prefer this over fetching
+  every row and filtering in the browser whenever the user asks to search or filter.
 - "actions": only if the app writes. Each is
   { "id": "a1", "connection": "...", "doctype": "...", "op": "create",
     "allowed_fields": ["item_code","qty","warehouse"],
@@ -69,6 +91,20 @@ MANIFEST RULES
 HTML RULES — these are hard requirements:
 1. ONE self-contained file. No imports, no bundlers, no npm, no external scripts, no external CSS, no web fonts, no CDN links. The appliance may be fully offline.
 2. Draw charts as inline SVG that you build in JavaScript from the data. Never use a charting library.
+2a. CHART RENDERING — these are the most common mistakes, do not make them:
+   - The SVG must FILL the width of its container. Emit it with a viewBox and
+     width:100%: <svg viewBox="0 0 960 320" width="100%" style="display:block;height:auto" preserveAspectRatio="xMidYMid meet">
+     Compute all coordinates in viewBox units. Never set a fixed pixel width — a chart
+     stranded in the left third of a wide card looks broken.
+   - Reserve left padding of at least 64 viewBox units for the y-axis. Draw y-axis labels
+     at x = padLeft - 10 with text-anchor="end", so they sit to the LEFT of the plot area.
+     Never draw them over the bars or past the right edge.
+   - Every piece of text must fall inside the viewBox. Nothing clipped, nothing cut off.
+   - Label every category on the x-axis. If labels would collide, shorten them or rotate
+     them — never silently drop some, which makes the axis look wrong.
+   - Only put a series in the legend if you actually draw that series. Never advertise a
+     comparison series you did not render.
+   - Give bars a subtle rounded top (rx) and leave real gaps between groups.
 3. Read data ONLY via fetch("./api/q/<queryId>"), which resolves to { "rows": [...], "count": n }.
 4. Write data ONLY via fetch("./api/w/<actionId>", { method: "POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify(flatObject) }), which resolves to { "ok": true, "name": "..." } or { "ok": false, "error": "..." }.
 5. Mobile-first. Assume a phone held one-handed on a warehouse floor: large tap targets (min 44px), big legible type, high contrast, no hover-only affordances. Must also look right on a desktop.
