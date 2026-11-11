@@ -5,6 +5,7 @@ import {
 import { homePage, auditPage, adminPage, page } from "./ui";
 import { getType } from "../connectors/registry";
 import { testConnection } from "../connectors/test";
+import { gpuStat } from "./gpu";
 import { generate } from "../generator";
 import { handleQuery, handleWrite } from "../gateway";
 
@@ -112,6 +113,9 @@ const server = Bun.serve({
     const path = url.pathname;
 
     if (path === "/health") return json({ ok: true, apps: listApps().length });
+
+    // Inference hardware telemetry, so on-prem generation can be seen working.
+    if (path === "/api/gpu") return json(await gpuStat());
 
     if (path === "/" && req.method === "GET") return html(homePage(listApps(), listConnections()));
 

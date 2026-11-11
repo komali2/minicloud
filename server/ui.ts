@@ -36,6 +36,10 @@ button:disabled{opacity:.55;cursor:default}
 #build.on{display:block}
 .bhead{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border-bottom:1px solid var(--line);font:600 12px/1 inherit;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
 #elapsed{font:600 13px ui-monospace,Menlo,monospace;color:var(--acc);letter-spacing:0;text-transform:none}
+#gpu{display:none;margin:2px 14px 12px;padding:10px 12px;border:1px solid #2c4c3f;background:#16241e;border-radius:9px;font:12.5px ui-monospace,Menlo,monospace;color:#7ec8a9}
+#gpu.on{display:block}
+#gpu .bar{height:6px;background:#0d1a15;border-radius:3px;margin-top:7px;overflow:hidden}
+#gpu .fill{height:100%;background:#3fbf7f;width:0;transition:width .35s ease}
 #steps{padding:10px 14px 13px;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}
 .step{display:flex;gap:10px;align-items:baseline;padding:3px 0;animation:fade .25s ease}
 @keyframes fade{from{opacity:0;transform:translateY(-2px)}to{opacity:1;transform:none}}
@@ -154,7 +158,8 @@ export function homePage(apps: AppRow[], conns: Connection[]) {
   <div class="row"><select id="m">${opts}</select><button id="go">Build it</button></div>
   <div class="ex">${EXAMPLES.map((e) => `<button data-e="${esc(e)}">${esc(e)}</button>`).join("")}</div>
   <div class="conn">Connected systems: ${connLine} <a href="/admin" style="margin-left:6px">manage</a></div>
-  <div id="build"><div class="bhead"><span id="bphase">building</span><span id="elapsed">0.0s</span></div><div id="steps"></div></div>
+  <div id="build"><div class="bhead"><span id="bphase">building</span><span id="elapsed">0.0s</span></div>
+    <div id="gpu"></div><div id="steps"></div></div>
   <div class="done" id="done">
     <div class="hd"><span class="tick">&#10003;</span><span id="dtitle">Your app is live</span></div>
     <a class="u" id="url" href="#"></a>
@@ -207,7 +212,25 @@ $('#go').onclick=async()=>{
 
   const t0=Date.now();
   const tick=setInterval(()=>{$('#elapsed').textContent=((Date.now()-t0)/1000).toFixed(1)+'s'},100);
-  const stop=()=>{clearInterval(tick);go.disabled=false;go.textContent='Build it'};
+
+  // When the model runs on this appliance, show the hardware doing the work.
+  const onPrem=$('#m').selectedOptions[0].textContent.indexOf('on-prem')!==-1;
+  let gtick=null;
+  if(onPrem){
+    const g=$('#gpu'); g.className='on';
+    const poll=async()=>{
+      try{
+        const s=await (await fetch('/api/gpu')).json();
+        if(!s){g.className='';return}
+        g.innerHTML='inference running on this appliance &nbsp;\u00b7&nbsp; '+s.name+
+          ' &nbsp;\u00b7&nbsp; '+s.util+'% &nbsp;\u00b7&nbsp; '+
+          (s.memUsed/1024).toFixed(1)+' / '+(s.memTotal/1024).toFixed(1)+' GB'+
+          '<div class="bar"><div class="fill" style="width:'+s.util+'%"></div></div>';
+      }catch(e){}
+    };
+    poll(); gtick=setInterval(poll,700);
+  }
+  const stop=()=>{clearInterval(tick);if(gtick)clearInterval(gtick);go.disabled=false;go.textContent='Build it'};
 
   try{
     const res=await fetch('/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt,model})});

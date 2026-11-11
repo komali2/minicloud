@@ -89,22 +89,36 @@ gateway, same rules."*
 
 ---
 
-### 6 · 1:09–1:21 — On-prem (switch the wifi off on camera)
+### 6 · 1:09–1:21 — On-prem, proven by the hardware
 
-**Visual:** turn wifi **off**, visibly, in the menu bar. Change the model
-dropdown to `Devstral 24B — on-prem (RTX 5090)`. Hit Build it. **Jump cut.** The
-finished app appears.
+**Visual:** change the model dropdown to `Devstral 24B — on-prem (RTX 5090)`.
+Hit Build it. A green meter appears in the build panel and the bar pegs:
 
-**On-screen card over the cut:** `generated on-prem · no internet · 2m45s`
+```
+inference running on this appliance · NVIDIA GeForce RTX 5090 · 97% · 30.4 / 31.8 GB
+```
 
-**VO:** *"And it runs inside your building. Local model, no internet, nothing
-leaves."*
+Hold on that for a beat. **Jump cut.** The finished app appears.
 
-> State the 2m45s. A number you admit to reads as honest; a suspiciously fast cut
-> reads as edited. Film this against `localhost:3000`, not the tunnel — the
-> tunnel needs the internet you just switched off.
+**On-screen card over the cut:** `generated on-prem · no API call · 2m45s`
 
----
+**VO:** *"And it can run inside your building. That's a GPU on the appliance, not
+an API. Nothing leaves."*
+
+> **The wifi-off stunt is out** — the appliance is on a machine at Caleb's
+> apartment, and he is filming from the venue, so there is no cable to pull.
+> The GPU meter is better anyway: a utilisation bar pegging while an app is
+> written is harder to fake than a wifi icon going dark, and it is literally the
+> claim being made.
+>
+> Say the 2m45s out loud. A number you admit to reads honest; a suspiciously
+> fast cut reads edited.
+>
+> **A stronger line is available if you want it.** The appliance really is in a
+> different building from the venue, reached over a private network. *"That box
+> is in my apartment. I'm across town. The apps work, and the model that wrote
+> them never left that machine."* That is a truer air-gap demonstration than any
+> toggle, and it is true tonight.
 
 ### 7 · 1:21–1:30 — Close on the QR
 
@@ -134,10 +148,23 @@ seconds. Small caption: **minicloud** — *the app factory inside your network*.
 
 - **Generation stalls:** cut, say *"here's one from a minute ago"*, open a
   pre-generated app. The apps already in the list are the safety net.
+- **On-prem generation is slow on the night:** the GPU meter is the proof, not
+  the finish. Film the meter pegged, cut, and show the finished app. You do not
+  need to sit through 2m45s of footage.
 - **Funnel drops:** fall back to `localhost:3000`. The link story survives; you
   just don't get the phone shot.
 - **ERPNext write fails:** drop beat 3 to read-only and say write-back is next.
   Do not try to fix ERPNext on camera.
+
+## Where everything actually runs
+
+The whole appliance — minicloud, ERPNext, Odoo, the WebDAV share, Ollama and the
+RTX 5090 — is on `caleb-manjarotop`, the machine at Caleb's apartment. Filming
+happens from the venue, over the Tailscale funnel at
+`https://caleb-manjarotop.taile06653.ts.net`.
+
+This is a feature, not a limitation: the shareable link demonstrably works from a
+different building, which is a better proof than localhost would have been.
 
 ## If you are behind at 22:00
 
