@@ -13,6 +13,24 @@ const html = (s: string, status = 200) =>
 const json = (b: unknown, status = 200) =>
   new Response(JSON.stringify(b), { status, headers: { "Content-Type": "application/json" } });
 
+/**
+ * Inline SVG QR for a generated app's URL, so the link can be scanned straight off
+ * the screen onto a phone. Degrades to nothing if qrencode isn't installed.
+ */
+async function qrSvg(url: string): Promise<string> {
+  try {
+    const proc = Bun.spawn(["qrencode", "-t", "SVG", "-m", "1", "-s", "4", "-o", "-", url], {
+      stdout: "pipe", stderr: "ignore",
+    });
+    const svg = await new Response(proc.stdout).text();
+    if ((await proc.exited) !== 0 || !svg.includes("<svg")) return "";
+    // Strip the XML prolog/doctype so it can be inlined directly into the page.
+    return svg.replace(/<\?xml[^>]*\?>/, "").replace(/<!DOCTYPE[^>]*>/, "").trim();
+  } catch {
+    return "";
+  }
+}
+
 function makeSlug(hint: string): string {
   const base =
     hint.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").split("-").slice(0, 4).join("-") || "app";
@@ -40,13 +58,14 @@ async function doGenerate(req: Request): Promise<Response> {
     async start(ctrl) {
       const enc = new TextEncoder();
       const send = (stage: string, detail?: string, extra: Record<string, unknown> = {}) =>
-        ctrl.enqueue(enc.encode(`data: ${JSON.stringify({ stage, detail, ...extra })}\n\n`));
+        ctrl.enqueue(enc.encode(`data: ${JSON.stringify({ stage, detail, ...(extra ?? {}) })}\n\n`));
+      const started = Date.now();
 
       try {
         const conns = listConnections();
         send("connected", `${conns.length} system(s) of record available`);
 
-        const { artifact, model } = await generate(prompt, conns, modelId, (s, d) => send(s, d));
+        const { artifact, model } = await generate(prompt, conns, modelId, (s, d, extra) => send(s, d, extra));
 
         const slug = makeSlug(artifact.slug_hint);
         insertApp({
@@ -59,7 +78,14 @@ async function doGenerate(req: Request): Promise<Response> {
           model,
         });
         send("deployed", `${(artifact.html.length / 1024).toFixed(1)} KB served at /a/${slug}/`);
-        send("done", artifact.title, { url: `${PUBLIC_BASE_URL}/a/${slug}/`, slug });
+        const url = `${PUBLIC_BASE_URL}/a/${slug}/`;
+        send("done", artifact.title, {
+          url,
+          slug,
+          ms: Date.now() - started,
+          model,
+          qr: await qrSvg(url),
+        });
       } catch (err) {
         send("error", (err as Error).message);
       } finally {

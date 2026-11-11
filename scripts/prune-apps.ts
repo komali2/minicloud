@@ -12,7 +12,8 @@ const all = db.query(`SELECT id, slug, title, created_at FROM apps ORDER BY crea
 
 if (cmd !== "keep") {
   console.log(`${all.length} app(s):`);
-  for (const a of all) console.log(`  ${a.slug}\n      ${a.title}  (${a.created_at.slice(11, 19)})`);
+  for (const a of all)
+    console.log(`  ${a.slug}\n      ${a.title}  (${new Date(a.created_at).toLocaleTimeString("en-GB", { hour12: false })})`);
   console.log(`\nto prune:  bun scripts/prune-apps.ts keep ${all.slice(-3).map((a) => a.slug).join(" ")}`);
   process.exit(0);
 }

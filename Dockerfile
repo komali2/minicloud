@@ -1,6 +1,9 @@
 # The minicloud appliance. One image, no build step, no runtime npm install.
 FROM oven/bun:1.4-alpine
 
+# qrencode renders the shareable link as a scannable SVG.
+RUN apk add --no-cache libqrencode-tools
+
 WORKDIR /app
 
 # No dependencies to install — the platform uses only Bun built-ins.

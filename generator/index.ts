@@ -2,11 +2,21 @@ import type { Artifact, Connection, Query, Action } from "../server/types";
 import { getModel, type ModelSpec } from "./models";
 import { SYSTEM_PROMPT, connectionHints } from "./prompt";
 
-export type Progress = (stage: string, detail?: string) => void;
+export type Progress = (stage: string, detail?: string, extra?: Record<string, unknown>) => void;
 
 class GenerationError extends Error {}
 
-async function callModel(spec: ModelSpec, messages: any[], signal?: AbortSignal): Promise<string> {
+/**
+ * Stream the completion, reporting genuine progress as it arrives:
+ * the manifest is announced the moment it closes, then the app's size counts up.
+ * Nothing here is simulated — every event reflects bytes the model actually produced.
+ */
+async function callModel(
+  spec: ModelSpec,
+  messages: any[],
+  onChunk: (acc: string) => void = () => {},
+  signal?: AbortSignal
+): Promise<string> {
   const headers: Record<string, string> = { "Content-Type": "application/json" };
   if (spec.keyEnv) {
     const key = process.env[spec.keyEnv];
@@ -22,16 +32,61 @@ async function callModel(spec: ModelSpec, messages: any[], signal?: AbortSignal)
       messages,
       max_tokens: 8000,
       temperature: 0.2,
-      stream: false,
+      stream: true,
     }),
   });
-  if (!res.ok) {
+  if (!res.ok || !res.body) {
     throw new GenerationError(`Model ${spec.id} returned ${res.status}: ${(await res.text()).slice(0, 300)}`);
   }
-  const json: any = await res.json();
-  const text = json?.choices?.[0]?.message?.content;
-  if (typeof text !== "string" || !text.trim()) throw new GenerationError(`Model ${spec.id} returned no content`);
-  return text;
+
+  const reader = res.body.getReader();
+  const dec = new TextDecoder();
+  let buf = "";
+  let acc = "";
+
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buf += dec.decode(value, { stream: true });
+
+    const lines = buf.split("\n");
+    buf = lines.pop() ?? "";
+    for (const line of lines) {
+      const t = line.trim();
+      if (!t.startsWith("data:")) continue;
+      const payload = t.slice(5).trim();
+      if (payload === "[DONE]") continue;
+      try {
+        const piece = JSON.parse(payload)?.choices?.[0]?.delta?.content;
+        if (typeof piece === "string" && piece) {
+          acc += piece;
+          onChunk(acc);
+        }
+      } catch {
+        // partial or keep-alive frame; the next read completes it
+      }
+    }
+  }
+
+  if (!acc.trim()) throw new GenerationError(`Model ${spec.id} returned no content`);
+  return acc;
+}
+
+/** Human-readable one-liners for what the app just declared it may touch. */
+function describeCapabilities(manifestRaw: string): string[] {
+  try {
+    const m = JSON.parse(manifestRaw);
+    const out: string[] = [];
+    for (const q of m.queries ?? []) {
+      out.push(`read   ${q.doctype}  ·  ${(q.fields ?? []).slice(0, 4).join(", ")}${(q.fields ?? []).length > 4 ? "…" : ""}`);
+    }
+    for (const a of m.actions ?? []) {
+      out.push(`write  ${a.doctype}  ·  ${(a.allowed_fields ?? []).join(", ")}`);
+    }
+    return out;
+  } catch {
+    return [];
+  }
 }
 
 /** Strip markdown fences some models add despite instructions. */
@@ -121,8 +176,34 @@ export async function generate(
     { role: "user", content: `AVAILABLE CONNECTIONS\n\n${connectionHints(conns)}\n\nTHE EMPLOYEE'S REQUEST\n\n${prompt}` },
   ];
 
-  onProgress("thinking", spec.local ? `Generating on-premises with ${spec.label}` : `Generating with ${spec.label}`);
-  let raw = await callModel(spec, messages, signal);
+  onProgress("model", spec.label, { local: spec.local });
+
+  // Emit real milestones as the stream arrives.
+  let announcedDraft = false;
+  let announcedManifest = false;
+  let lastSize = 0;
+  const watch = (acc: string) => {
+    if (!announcedDraft) {
+      announcedDraft = true;
+      onProgress("drafting", "model is responding");
+    }
+    const hIdx = acc.indexOf("===HTML===");
+    if (!announcedManifest && hIdx !== -1) {
+      announcedManifest = true;
+      const mIdx = acc.indexOf("===MANIFEST===");
+      const caps = describeCapabilities(stripFences(acc.slice(mIdx + 14, hIdx)));
+      onProgress("manifest", `${caps.length} capability declaration(s)`, { capabilities: caps });
+    }
+    if (announcedManifest) {
+      const written = acc.length - hIdx - 10;
+      if (written - lastSize > 1200) {
+        lastSize = written;
+        onProgress("writing", `${(written / 1024).toFixed(1)} KB`, { bytes: written });
+      }
+    }
+  };
+
+  let raw = await callModel(spec, messages, watch, signal);
 
   try {
     const artifact = parseArtifact(raw);
@@ -136,7 +217,9 @@ export async function generate(
       role: "user",
       content: `Your previous response was rejected by the validator:\n\n${msg}\n\nReply again with the COMPLETE app in the exact required format. Start your reply with ===MANIFEST=== and include the full ===HTML=== section. No code fences, no commentary.`,
     });
-    raw = await callModel(spec, messages, signal);
+    announcedDraft = announcedManifest = false;
+    lastSize = 0;
+    raw = await callModel(spec, messages, watch, signal);
     const artifact = parseArtifact(raw);
     onProgress("validated", `${artifact.queries.length} query/queries, ${artifact.actions.length} action(s) declared (after repair)`);
     return { artifact, model: spec.id };

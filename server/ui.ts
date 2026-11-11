@@ -30,12 +30,33 @@ button:disabled{opacity:.55;cursor:default}
 .ex{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 .ex button{background:var(--panel2);color:var(--dim);border:1px solid var(--line);font-weight:400;font-size:14px;padding:8px 12px;min-height:0}
 .ex button:hover{color:var(--tx);border-color:var(--acc)}
-#log{margin-top:16px;display:none;font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--dim);white-space:pre-wrap}
-#log.on{display:block}
-#log b{color:var(--tx);font-weight:500}
-.done{margin-top:16px;padding:16px;background:#101c2e;border:1px solid #244166;border-radius:11px;display:none}
+/* build panel */
+#build{margin-top:16px;display:none;border:1px solid var(--line);border-radius:12px;background:var(--panel2);overflow:hidden}
+#build.on{display:block}
+.bhead{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border-bottom:1px solid var(--line);font:600 12px/1 inherit;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+#elapsed{font:600 13px ui-monospace,Menlo,monospace;color:var(--acc);letter-spacing:0;text-transform:none}
+#steps{padding:10px 14px 13px;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace}
+.step{display:flex;gap:10px;align-items:baseline;padding:3px 0;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(-2px)}to{opacity:1;transform:none}}
+.step .k{color:var(--tx);min-width:84px;font-weight:500}
+.step .v{color:var(--dim);word-break:break-word}
+.step.err .k,.step.err .v{color:var(--err)}
+.caps{margin:4px 0 2px 94px;border-left:2px solid #2b3a4d;padding-left:11px}
+.cap{color:#7fb3f5;padding:2px 0;animation:fade .25s ease}
+.cap .w{color:#e0b37a}
+.tick{color:var(--ok)}
+.spin{display:inline-block;width:11px;color:var(--acc)}
+/* success */
+.done{margin-top:16px;padding:18px;background:#0f1d2e;border:1px solid #27496f;border-radius:12px;display:none}
 .done.on{display:block}
-.done .u{display:block;margin-top:6px;font:15px ui-monospace,Menlo,monospace;word-break:break-all}
+.done .hd{display:flex;align-items:center;gap:9px;font-weight:600;font-size:16px}
+.done .u{display:block;margin-top:10px;font:15px ui-monospace,Menlo,monospace;word-break:break-all}
+.done .row2{display:flex;gap:18px;align-items:center;margin-top:14px;flex-wrap:wrap}
+.done .qr{background:#fff;padding:9px;border-radius:9px;line-height:0}
+.done .qr svg{width:116px;height:116px;display:block}
+.done .hint{color:var(--dim);font-size:13.5px;max-width:330px}
+button .sp{display:inline-block;width:13px;height:13px;margin-right:8px;border:2px solid rgba(7,16,31,.3);border-top-color:#07101f;border-radius:50%;animation:rot .6s linear infinite;vertical-align:-2px}
+@keyframes rot{to{transform:rotate(360deg)}}
 h2{font-size:14px;text-transform:uppercase;letter-spacing:.09em;color:var(--dim);margin:40px 0 12px;font-weight:600}
 .app{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:15px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;transition:border-color .15s}
 .app:hover{border-color:#36404d}
@@ -108,18 +129,61 @@ export function homePage(apps: AppRow[], conns: Connection[]) {
   <div class="row"><select id="m">${opts}</select><button id="go">Build it</button></div>
   <div class="ex">${EXAMPLES.map((e) => `<button data-e="${esc(e)}">${esc(e)}</button>`).join("")}</div>
   <div class="conn">Connected systems: ${connLine}</div>
-  <div id="log"></div>
-  <div class="done" id="done">Your app is live.<a class="u" id="url" href="#"></a></div>
+  <div id="build"><div class="bhead"><span id="bphase">building</span><span id="elapsed">0.0s</span></div><div id="steps"></div></div>
+  <div class="done" id="done">
+    <div class="hd"><span class="tick">&#10003;</span><span id="dtitle">Your app is live</span></div>
+    <a class="u" id="url" href="#"></a>
+    <div class="row2"><div class="qr" id="qr"></div><div class="hint">Scan to open it on a phone. It is a normal link &mdash; send it to anyone inside the network.</div></div>
+  </div>
 </div>
 <h2>Apps</h2>${list}
 <script>
 const $=s=>document.querySelector(s);
 document.querySelectorAll('.ex button').forEach(b=>b.onclick=()=>{$('#p').value=b.dataset.e;$('#p').focus()});
+
+const LABEL={connected:'connected',model:'model',drafting:'drafting',manifest:'declared',
+  writing:'writing',repairing:'repairing',validated:'validated',deployed:'deployed',error:'failed'};
+
+function step(stage,detail){
+  const id='st-'+stage;
+  let el=document.getElementById(id);
+  if(!el){
+    el=document.createElement('div');
+    el.className='step'+(stage==='error'?' err':'');
+    el.id=id;
+    el.innerHTML='<span class="k"></span><span class="v"></span>';
+    $('#steps').appendChild(el);
+  }
+  el.querySelector('.k').textContent=LABEL[stage]||stage;
+  el.querySelector('.v').textContent=detail||'';
+  return el;
+}
+
+function caps(list){
+  const box=document.createElement('div');
+  box.className='caps';
+  $('#steps').appendChild(box);
+  list.forEach((c,i)=>setTimeout(()=>{
+    const d=document.createElement('div');
+    d.className='cap';
+    d.innerHTML=c.startsWith('write')?'<span class="w">'+c+'</span>':c;
+    box.appendChild(d);
+  },i*110));
+}
+
 $('#go').onclick=async()=>{
   const prompt=$('#p').value.trim(); if(!prompt)return;
-  const model=$('#m').value, log=$('#log'), done=$('#done');
-  $('#go').disabled=true; done.className='done'; log.className='on'; log.textContent='';
-  const add=(s,d)=>{log.innerHTML+='<b>'+s+'</b>'+(d?'  '+d:'')+'\\n';log.scrollTop=log.scrollHeight};
+  const model=$('#m').value, go=$('#go');
+  $('#done').className='done';
+  $('#steps').innerHTML='';
+  $('#build').className='on';
+  $('#bphase').textContent='building';
+  go.disabled=true; go.innerHTML='<span class="sp"></span>Building';
+
+  const t0=Date.now();
+  const tick=setInterval(()=>{$('#elapsed').textContent=((Date.now()-t0)/1000).toFixed(1)+'s'},100);
+  const stop=()=>{clearInterval(tick);go.disabled=false;go.textContent='Build it'};
+
   try{
     const res=await fetch('/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt,model})});
     const rd=res.body.getReader(), dec=new TextDecoder(); let buf='';
@@ -127,19 +191,29 @@ $('#go').onclick=async()=>{
       const {done:fin,value}=await rd.read(); if(fin)break;
       buf+=dec.decode(value,{stream:true});
       const parts=buf.split('\\n\\n'); buf=parts.pop()||'';
-      for(const p of parts){
-        const line=p.split('\\n').find(l=>l.startsWith('data:')); if(!line)continue;
+      for(const part of parts){
+        const line=part.split('\\n').find(l=>l.startsWith('data:')); if(!line)continue;
         const ev=JSON.parse(line.slice(5));
         if(ev.stage==='done'){
-          done.className='done on';
+          clearInterval(tick);
+          $('#elapsed').textContent=(ev.ms/1000).toFixed(1)+'s';
+          $('#bphase').textContent='built in '+(ev.ms/1000).toFixed(1)+'s';
+          $('#dtitle').textContent=ev.detail+' is live';
           const u=$('#url'); u.textContent=ev.url; u.href=ev.url;
-          add('ready','open it above'); setTimeout(()=>location.reload(),2500);
-        } else if(ev.stage==='error'){ add('failed',ev.detail); }
-        else add(ev.stage,ev.detail||'');
+          $('#qr').innerHTML=ev.qr||'';
+          $('#done').className='done on';
+        } else if(ev.stage==='manifest'){
+          step('manifest',ev.detail);
+          if(ev.capabilities&&ev.capabilities.length)caps(ev.capabilities);
+        } else if(ev.stage==='model'){
+          step('model',ev.detail+(ev.local?'   \u00b7 nothing leaves the building':''));
+        } else {
+          step(ev.stage,ev.detail);
+        }
       }
     }
-  }catch(e){ add('failed',e.message) }
-  $('#go').disabled=false;
+  }catch(e){ step('error',e.message) }
+  stop();
 };
 </script>`
   );
